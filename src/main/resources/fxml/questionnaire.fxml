@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.group1.asda.ui.questionnaire.QuestionnaireController">
+    <top>
+        <HBox spacing="8" styleClass="toolbar">
+            <Label text="Questionnaire" styleClass="title" />
+            <Pane HBox.hgrow="ALWAYS" />
+            <Label fx:id="counterLabel" text="0/0" />
+        </HBox>
+    </top>
+    <center>
+        <VBox spacing="16" alignment="TOP_LEFT" styleClass="card" maxWidth="Infinity">
+            <Label fx:id="questionLabel" wrapText="true"/>
+            <HBox spacing="12">
+                <RadioButton fx:id="opt1" mnemonicParsing="false" />
+                <RadioButton fx:id="opt2" mnemonicParsing="false" />
+                <RadioButton fx:id="opt3" mnemonicParsing="false" />
+            </HBox>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox spacing="8" alignment="CENTER_RIGHT">
+            <padding>
+                <Insets top="12" right="12" bottom="12" left="12" />
+            </padding>
+            <Button fx:id="backBtn" text="Back" onAction="#onBack" />
+            <Button fx:id="nextBtn" text="Next" onAction="#onNext" />
+        </HBox>
+    </bottom>
+</BorderPane>

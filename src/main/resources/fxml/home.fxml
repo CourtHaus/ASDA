@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.group1.asda.ui.home.HomeController">
+    <top>
+        <HBox spacing="8" styleClass="toolbar">
+            <Label fx:id="title" text="ASDA" styleClass="title" />
+        </HBox>
+    </top>
+    <center>
+        <VBox alignment="CENTER" spacing="16">
+            <Label text="Welcome to ASDA" />
+            <Button fx:id="startBtn" text="Start Questionnaire" onAction="#onStart" styleClass="primary" />
+        </VBox>
+    </center>
+</BorderPane>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.group1.asda.ui.disclaimer.DisclaimerController">
+    <top>
+        <HBox spacing="8" styleClass="toolbar">
+            <Label text="Before You Begin" styleClass="title" />
+        </HBox>
+    </top>
+    <center>
+        <VBox spacing="16" alignment="TOP_LEFT" styleClass="card" maxWidth="Infinity">
+            <Label fx:id="titleLabel" wrapText="true" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+            <ScrollPane fitToWidth="true" prefViewportHeight="400">
+                <content>
+                    <VBox spacing="10">
+                        <Label text="INSTRUCTIONS:" style="-fx-font-weight: bold;" />
+                        <Label wrapText="true" text="• Please answer each question honestly based on your typical experiences
+• Select the response option that best describes you
+• Use the Back and Next buttons to navigate between questions
+• All questions are required to complete the assessment" />
+                        <Separator />
+                        <Label fx:id="bodyLabel" wrapText="true" />
+                    </VBox>
+                </content>
+            </ScrollPane>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox spacing="8" alignment="CENTER_RIGHT">
+            <padding>
+                <Insets top="12" right="12" bottom="12" left="12" />
+            </padding>
+            <Button fx:id="cancelBtn" text="Cancel" onAction="#onCancel" />
+            <Button fx:id="continueBtn" text="I Understand, Continue" onAction="#onContinue" defaultButton="true" />
+        </HBox>
+    </bottom>
+</BorderPane>

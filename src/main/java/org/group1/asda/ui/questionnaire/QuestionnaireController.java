@@ -2,14 +2,14 @@ package org.group1.asda.ui.questionnaire;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import org.group1.asda.domain.Question;
+import org.group1.asda.assessment.AQAssessment;
+import org.group1.asda.assessment.AQQuestion;
+import org.group1.asda.assessment.AQResultInterpreter;
+import org.group1.asda.assessment.AQScoreCalculator;
 import org.group1.asda.navigation.Router;
-import org.group1.asda.persistence.QuestionDao;
-import org.group1.asda.persistence.ResponseDao;
-import org.group1.asda.persistence.SessionDao;
-import org.group1.asda.service.AssessmentService;
+import org.group1.asda.ui.results.AqUiState;
 
-import java.util.*;
+import java.util.Locale;
 
 public class QuestionnaireController {
     @FXML private Label questionLabel;
@@ -18,70 +18,63 @@ public class QuestionnaireController {
     @FXML private RadioButton opt1;
     @FXML private RadioButton opt2;
     @FXML private RadioButton opt3;
+    @FXML private RadioButton opt4;
     @FXML private Button backBtn;
     @FXML private Button nextBtn;
 
-    private final List<Question> questions = new ArrayList<>();
+    private final AQAssessment assessment = new AQAssessment();
     private int idx = 0;
-
-    // persistence helpers
-    private final SessionDao sessionDao = new SessionDao();
-    private final ResponseDao responseDao = new ResponseDao();
-    private String sessionId;
-
-    // assessment
-    private final AssessmentService assessmentService = new AssessmentService();
-
-    // keep selections in-memory so Back/Next restores state
-    // key = question code (e.g., Q80), value = 1/2/3
-    private final Map<String, Integer> selectionByCode = new HashMap<>();
 
     @FXML
     public void initialize() {
-        questions.addAll(new QuestionDao().findAll());
         if (answersGroup == null) {
             answersGroup = new ToggleGroup();
         }
         opt1.setToggleGroup(answersGroup);
         opt2.setToggleGroup(answersGroup);
         opt3.setToggleGroup(answersGroup);
-        opt1.setText("1 – Very True");
-        opt2.setText("2 – True");
-        opt3.setText("3 – False");
-
-        // start a new session when entering the questionnaire
-        sessionId = sessionDao.startSession();
+        opt4.setToggleGroup(answersGroup);
+        // AQ option labels (verbatim)
+        opt1.setText("Definitely Agree");
+        opt2.setText("Slightly Agree");
+        opt3.setText("Slightly Disagree");
+        opt4.setText("Definitely Disagree");
 
         showCurrent();
     }
 
     private void showCurrent() {
-        if (questions.isEmpty()) {
-            questionLabel.setText("No questions available. Seed may have failed.");
+        if (assessment.getTotalQuestions() == 0) {
+            questionLabel.setText("No AQ questions available.");
             counterLabel.setText("");
             nextBtn.setDisable(true);
             backBtn.setDisable(true);
             return;
         }
-        Question q = questions.get(idx);
-        questionLabel.setText(q.text());
-        counterLabel.setText((idx + 1) + "/" + questions.size());
+        AQQuestion q = assessment.getQuestions().get(idx);
+        questionLabel.setText(q.getQuestionText());
+        counterLabel.setText((idx + 1) + "/" + assessment.getTotalQuestions());
 
         // Restore previous selection if present
-        Integer saved = selectionByCode.get(q.code());
-        if (saved == null) {
-            answersGroup.selectToggle(null);
-        } else {
-            switch (saved) {
-                case 1 -> answersGroup.selectToggle(opt1);
-                case 2 -> answersGroup.selectToggle(opt2);
-                case 3 -> answersGroup.selectToggle(opt3);
-                default -> answersGroup.selectToggle(null);
+        if (assessment.getUserResponses().size() > idx) {
+            Integer saved = assessment.getUserResponses().get(idx);
+            if (saved == null || saved == 0) {
+                answersGroup.selectToggle(null);
+            } else {
+                switch (saved) {
+                    case 1 -> answersGroup.selectToggle(opt1);
+                    case 2 -> answersGroup.selectToggle(opt2);
+                    case 3 -> answersGroup.selectToggle(opt3);
+                    case 4 -> answersGroup.selectToggle(opt4);
+                    default -> answersGroup.selectToggle(null);
+                }
             }
+        } else {
+            answersGroup.selectToggle(null);
         }
 
         backBtn.setDisable(idx == 0);
-        nextBtn.setText(idx == questions.size() - 1 ? "Finish" : "Next");
+        nextBtn.setText(idx == assessment.getTotalQuestions() - 1 ? "Finish" : "Next");
     }
 
     @FXML
@@ -100,19 +93,19 @@ public class QuestionnaireController {
             return;
         }
 
-        // Persist on Next as requested
-        Question q = questions.get(idx);
-        selectionByCode.put(q.code(), answer);
-        int score = answer; // store as-is for now; can remap later if needed
-        responseDao.saveOrReplace(sessionId, q.code(), answer, score);
+        // Record response for current question
+        assessment.recordResponse(idx, answer);
 
-        if (idx < questions.size() - 1) {
+        if (idx < assessment.getTotalQuestions() - 1) {
             idx++;
             showCurrent();
         } else {
-            // Finish: compute assessment, persist to session, then go to results
-            AssessmentService.AssessmentResult result = assessmentService.assessFromDb(sessionId);
-            sessionDao.endSession(sessionId, result.totalScore(), result.level());
+            // Finish: compute AQ results and go to results screen
+            assessment.completeAssessment();
+            AQScoreCalculator.CategoryScores cat = AQScoreCalculator.calculateCategoryScores(assessment);
+            int total = AQScoreCalculator.calculateTotalScore(assessment);
+            AQResultInterpreter.AssessmentSummary summary = AQResultInterpreter.interpret(total, cat);
+            AqUiState.set(summary, cat);
             Router.getInstance().goTo("results");
         }
     }
@@ -123,6 +116,7 @@ public class QuestionnaireController {
         if (sel == opt1) return 1;
         if (sel == opt2) return 2;
         if (sel == opt3) return 3;
+        if (sel == opt4) return 4;
         return 0;
     }
 }

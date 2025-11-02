@@ -19,6 +19,7 @@
                 <RadioButton fx:id="opt1" mnemonicParsing="false" />
                 <RadioButton fx:id="opt2" mnemonicParsing="false" />
                 <RadioButton fx:id="opt3" mnemonicParsing="false" />
+                <RadioButton fx:id="opt4" mnemonicParsing="false" />
             </HBox>
         </VBox>
     </center>

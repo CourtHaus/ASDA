@@ -23,7 +23,7 @@ public class Router {
         INSTANCE = this;
         this.stage = stage;
         Scene scene = new Scene(root, 1024, 680);
-        // Attach placeholder styles; can be replaced later per Figma
+        // placeholder styles; can be replaced later per Figma
         URL base = getClass().getResource("/css/base.css");
         URL theme = getClass().getResource("/css/theme-light.css");
         if (base != null) scene.getStylesheets().add(base.toExternalForm());
@@ -34,6 +34,7 @@ public class Router {
     public void goTo(String screen) {
         Parent view = switch (screen) {
             case "home" -> load("/fxml/home.fxml");
+            case "disclaimer" -> load("/fxml/disclaimer.fxml");
             case "questionnaire" -> load("/fxml/questionnaire.fxml");
             case "results" -> load("/fxml/results.fxml");
             default -> new Label("Unknown screen: " + screen);

@@ -23,11 +23,16 @@ public class Router {
         INSTANCE = this;
         this.stage = stage;
         Scene scene = new Scene(root, 1024, 680);
-        // placeholder styles; can be replaced later per Figma
+
+        // Load stylesheets
         URL base = getClass().getResource("/css/base.css");
         URL theme = getClass().getResource("/css/theme-light.css");
+        URL assessment = getClass().getResource("/css/assessment.css");
+
         if (base != null) scene.getStylesheets().add(base.toExternalForm());
         if (theme != null) scene.getStylesheets().add(theme.toExternalForm());
+        if (assessment != null) scene.getStylesheets().add(assessment.toExternalForm());
+
         stage.setScene(scene);
     }
 

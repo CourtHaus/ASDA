@@ -2,6 +2,9 @@ package org.group1.asda.ui.questionnaire;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Region;
+import javafx.scene.input.MouseEvent;
 import org.group1.asda.assessment.AQAssessment;
 import org.group1.asda.assessment.AQQuestion;
 import org.group1.asda.assessment.AQResultInterpreter;
@@ -9,11 +12,13 @@ import org.group1.asda.assessment.AQScoreCalculator;
 import org.group1.asda.navigation.Router;
 import org.group1.asda.ui.results.AqUiState;
 
-import java.util.Locale;
-
 public class QuestionnaireController {
     @FXML private Label questionLabel;
+    @FXML private Label questionNumberLabel;
     @FXML private Label counterLabel;
+    @FXML private Label prevArrow;
+    @FXML private Label nextArrow;
+    @FXML private HBox progressDotsContainer;
     @FXML private ToggleGroup answersGroup;
     @FXML private RadioButton opt1;
     @FXML private RadioButton opt2;
@@ -24,6 +29,7 @@ public class QuestionnaireController {
 
     private final AQAssessment assessment = new AQAssessment();
     private int idx = 0;
+    private static final int DOTS_TO_SHOW = 6; // Show 6 progress dots
 
     @FXML
     public void initialize() {
@@ -34,13 +40,90 @@ public class QuestionnaireController {
         opt2.setToggleGroup(answersGroup);
         opt3.setToggleGroup(answersGroup);
         opt4.setToggleGroup(answersGroup);
-        // AQ option labels (verbatim)
+
+        // Set option text
         opt1.setText("Definitely Agree");
         opt2.setText("Slightly Agree");
         opt3.setText("Slightly Disagree");
         opt4.setText("Definitely Disagree");
 
+        // Setup progress dots
+        createProgressDots();
+
+        // Setup arrow navigation
+        setupArrowNavigation();
+
         showCurrent();
+    }
+
+    private void createProgressDots() {
+        progressDotsContainer.getChildren().clear();
+
+        for (int i = 0; i < DOTS_TO_SHOW; i++) {
+            Region dot = new Region();
+            dot.getStyleClass().add("progress-dot");
+            dot.setMinSize(12, 12);
+            dot.setMaxSize(12, 12);
+
+            final int dotIndex = i;
+            dot.setOnMouseClicked(e -> navigateToDot(dotIndex));
+
+            progressDotsContainer.getChildren().add(dot);
+        }
+    }
+
+    private void setupArrowNavigation() {
+        if (prevArrow != null) {
+            prevArrow.setOnMouseClicked(e -> {
+                if (idx > 0) {
+                    idx--;
+                    showCurrent();
+                }
+            });
+        }
+
+        if (nextArrow != null) {
+            nextArrow.setOnMouseClicked(e -> {
+                if (idx < assessment.getTotalQuestions() - 1) {
+                    idx++;
+                    showCurrent();
+                }
+            });
+        }
+    }
+
+    private void navigateToDot(int dotIndex) {
+        // Calculate actual question index based on current position
+        int startIndex = Math.max(0, idx - (DOTS_TO_SHOW / 2));
+        int targetIndex = startIndex + dotIndex;
+
+        if (targetIndex >= 0 && targetIndex < assessment.getTotalQuestions()) {
+            idx = targetIndex;
+            showCurrent();
+        }
+    }
+
+    private void updateProgressDots() {
+        if (progressDotsContainer == null) return;
+
+        int totalQuestions = assessment.getTotalQuestions();
+        int startIndex = Math.max(0, idx - (DOTS_TO_SHOW / 2));
+
+        for (int i = 0; i < progressDotsContainer.getChildren().size(); i++) {
+            Region dot = (Region) progressDotsContainer.getChildren().get(i);
+            int questionIndex = startIndex + i;
+
+            // Remove existing active class
+            dot.getStyleClass().removeAll("active");
+
+            // Add active class if this is the current question
+            if (questionIndex == idx && questionIndex < totalQuestions) {
+                dot.getStyleClass().add("active");
+            }
+
+            // Hide dots that exceed total questions
+            dot.setVisible(questionIndex < totalQuestions);
+        }
     }
 
     private void showCurrent() {
@@ -51,9 +134,11 @@ public class QuestionnaireController {
             backBtn.setDisable(true);
             return;
         }
+
         AQQuestion q = assessment.getQuestions().get(idx);
         questionLabel.setText(q.getQuestionText());
-        counterLabel.setText((idx + 1) + "/" + assessment.getTotalQuestions());
+        questionNumberLabel.setText("Question " + (idx + 1) + ":");
+        counterLabel.setText("Question " + (idx + 1) + " of " + assessment.getTotalQuestions());
 
         // Restore previous selection if present
         if (assessment.getUserResponses().size() > idx) {
@@ -73,13 +158,20 @@ public class QuestionnaireController {
             answersGroup.selectToggle(null);
         }
 
+        // Update button states
         backBtn.setDisable(idx == 0);
-        nextBtn.setText(idx == assessment.getTotalQuestions() - 1 ? "Finish" : "Next");
+        nextBtn.setText(idx == assessment.getTotalQuestions() - 1 ? "Finish" : "Next →");
+
+        // Update progress dots
+        updateProgressDots();
     }
 
     @FXML
     public void onBack() {
-        if (idx > 0) { idx--; showCurrent(); }
+        if (idx > 0) {
+            idx--;
+            showCurrent();
+        }
     }
 
     @FXML
@@ -87,7 +179,9 @@ public class QuestionnaireController {
         // Validate selection
         int answer = currentSelectedValue();
         if (answer == 0) {
-            Alert a = new Alert(Alert.AlertType.INFORMATION, "Please select an answer before continuing.", ButtonType.OK);
+            Alert a = new Alert(Alert.AlertType.INFORMATION,
+                    "Please select an answer before continuing.",
+                    ButtonType.OK);
             a.setHeaderText(null);
             a.showAndWait();
             return;

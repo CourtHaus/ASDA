@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.group1.asda.ui.matchinggame.MatchingGameController"
+            styleClass="game-container">
+    <top>
+        <VBox spacing="8" styleClass="toolbar">
+            <Label text="Memory Matching Game" styleClass="title" />
+            <Label fx:id="statsLabel" text="Round 1" styleClass="stats-label" />
+        </VBox>
+    </top>
+    <center>
+        <StackPane>
+            <GridPane fx:id="grid"
+                      alignment="CENTER"
+                      hgap="10"
+                      vgap="10"
+                      styleClass="game-grid">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+            </GridPane>
+        </StackPane>
+    </center>
+</BorderPane>

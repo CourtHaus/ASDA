@@ -10,6 +10,7 @@ import org.group1.asda.persistence.QuestionDao;
 public class HomeController {
     @FXML private Label title;
     @FXML private Button startBtn;
+    @FXML private Button matchingGameBtn;
 
     @FXML
     public void initialize() {
@@ -23,5 +24,11 @@ public class HomeController {
     public void onStart(ActionEvent e) {
         // Route to disclaimer/acknowledgement screen before starting questions
         Router.getInstance().goTo("disclaimer");
+    }
+
+    @FXML
+    public void onStartMatchingGame(ActionEvent e) {
+        // Route to matching game
+        Router.getInstance().goTo("matching-game");
     }
 }

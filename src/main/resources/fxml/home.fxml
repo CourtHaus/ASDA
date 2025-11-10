@@ -13,6 +13,7 @@
         <VBox alignment="CENTER" spacing="16">
             <Label text="Welcome to ASDA" />
             <Button fx:id="startBtn" text="Start Questionnaire" onAction="#onStart" styleClass="primary" />
+            <Button fx:id="matchingGameBtn" text="Start Matching Game" onAction="#onStartMatchingGame" styleClass="primary" />
         </VBox>
     </center>
 </BorderPane>

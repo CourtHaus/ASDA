@@ -42,6 +42,7 @@ public class Router {
             case "disclaimer" -> load("/fxml/disclaimer.fxml");
             case "questionnaire" -> load("/fxml/questionnaire.fxml");
             case "results" -> load("/fxml/results.fxml");
+            case "matching-game" -> load("/fxml/matching-game.fxml");
             default -> new Label("Unknown screen: " + screen);
         };
         if (root.getChildren().isEmpty()) {

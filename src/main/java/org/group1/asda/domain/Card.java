@@ -1,6 +1,7 @@
 package org.group1.asda.domain;
 
 import javafx.scene.paint.Color;
+import java.util.Objects;
 
 public class Card {
     private String shape;
@@ -13,7 +14,7 @@ public class Card {
     }
 
     public boolean matches(Card other) {
-        return this.shape.equals(other.shape) && this.color.equals(other.color);
+        return Objects.equals(this.shape, other.shape) && Objects.equals(this.color, other.color);
     }
 
     public String getShape() { return shape; }

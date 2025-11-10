@@ -1,6 +1,7 @@
 package org.group1.asda.domain;
 
 import javafx.scene.paint.Color;
+import java.util.Objects;
 
 public class Stimulus {
     private final String shape;
@@ -13,7 +14,7 @@ public class Stimulus {
 
     public boolean matches(Stimulus other) {
         if (other == null) return false;
-        return shape.equals(other.shape) && color.equals(other.color);
+        return Objects.equals(shape, other.shape) && Objects.equals(color, other.color);
     }
 
     public String getShape() {

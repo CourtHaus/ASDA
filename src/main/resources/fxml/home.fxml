@@ -14,6 +14,7 @@
             <Label text="Welcome to ASDA" />
             <Button fx:id="startBtn" text="Start Questionnaire" onAction="#onStart" styleClass="primary" />
             <Button fx:id="matchingGameBtn" text="Start Matching Game" onAction="#onStartMatchingGame" styleClass="primary" />
+            <Button fx:id="attentionGameBtn" text="Start Attention Game" onAction="#onStartAttentionGame" styleClass="primary" />
         </VBox>
     </center>
 </BorderPane>

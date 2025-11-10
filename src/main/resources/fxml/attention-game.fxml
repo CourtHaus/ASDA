@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.group1.asda.ui.attentiongame.AttentionGameController"
+            fx:id="rootPane"
+            style="-fx-background-color: white;">
+
+    <!-- Intro Panel -->
+    <center>
+        <StackPane>
+            <!-- Intro Screen -->
+            <VBox fx:id="introPanel" alignment="CENTER" spacing="20" style="-fx-background-color: white;">
+                <padding>
+                    <Insets top="40" right="40" bottom="40" left="40"/>
+                </padding>
+                <Label text="Welcome to the Concentration &amp; Attention Game!"
+                       style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #404040;"/>
+                <Label wrapText="true" textAlignment="CENTER"
+                       style="-fx-font-size: 16px; -fx-text-fill: #404040;"
+                       maxWidth="500">
+                    <text>You will be shown a sequence of shapes and colors.
+
+Press SPACE when the shape and color match the one before it.
+Do not press if it does not match.
+
+Press Start to begin.</text>
+                </Label>
+                <Button fx:id="startButton" text="Start" onAction="#onStartGame"
+                        style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-padding: 10 30 10 30;"
+                        styleClass="primary"/>
+            </VBox>
+
+            <!-- Game Screen -->
+            <VBox fx:id="gamePanel" spacing="0" style="-fx-background-color: white;">
+                <BorderPane>
+                    <top>
+                        <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 10;">
+                            <Label fx:id="headerLabel" wrapText="true" textAlignment="CENTER"
+                                   style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #404040;"
+                                   maxWidth="600">
+                                <text>Press SPACE when the current shape is the same color &amp; shape as the previous one.
+Withhold press otherwise.</text>
+                            </Label>
+                        </VBox>
+                    </top>
+                    <center>
+                        <StackPane style="-fx-background-color: white;">
+                            <Canvas fx:id="stimulusCanvas" width="500" height="400"/>
+                        </StackPane>
+                    </center>
+                    <bottom>
+                        <Label fx:id="statsLabel" text="Trials: 0/100   Correct: 0   Incorrect: 0   Accuracy: 0%"
+                               style="-fx-font-size: 14px; -fx-text-fill: #404040; -fx-padding: 10; -fx-background-color: white;"/>
+                    </bottom>
+                </BorderPane>
+            </VBox>
+        </StackPane>
+    </center>
+</BorderPane>

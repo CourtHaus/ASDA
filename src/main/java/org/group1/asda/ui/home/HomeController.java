@@ -11,6 +11,7 @@ public class HomeController {
     @FXML private Label title;
     @FXML private Button startBtn;
     @FXML private Button matchingGameBtn;
+    @FXML private Button attentionGameBtn;
 
     @FXML
     public void initialize() {
@@ -30,5 +31,11 @@ public class HomeController {
     public void onStartMatchingGame(ActionEvent e) {
         // Route to matching game
         Router.getInstance().goTo("matching-game");
+    }
+
+    @FXML
+    public void onStartAttentionGame(ActionEvent e) {
+        // Route to attention game
+        Router.getInstance().goTo("attention-game");
     }
 }

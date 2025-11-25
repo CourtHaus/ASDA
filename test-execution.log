@@ -1,0 +1,1296 @@
+Apache Maven 3.9.11 (3e54c93a704957b63ee3494413a2b544fd3d825b)
+Maven home: /opt/homebrew/Cellar/maven/3.9.11/libexec
+Java version: 25, vendor: Homebrew, runtime: /opt/homebrew/Cellar/openjdk/25/libexec/openjdk.jdk/Contents/Home
+Default locale: en_US, platform encoding: UTF-8
+OS name: "mac os x", version: "15.6", arch: "aarch64", family: "mac"
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:/opt/homebrew/Cellar/maven/3.9.11/libexec/lib/guice-5.1.0-classes.jar)
+WARNING: Please consider reporting this to the maintainers of class com.google.inject.internal.aop.HiddenClassDefiner
+WARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release
+[DEBUG] Created new class realm maven.api
+[DEBUG] Importing foreign packages into class realm maven.api
+[DEBUG]   Imported: javax.annotation.* < plexus.core
+[DEBUG]   Imported: javax.annotation.security.* < plexus.core
+[DEBUG]   Imported: javax.inject.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.artifact < plexus.core
+[DEBUG]   Imported: org.apache.maven.classrealm < plexus.core
+[DEBUG]   Imported: org.apache.maven.cli < plexus.core
+[DEBUG]   Imported: org.apache.maven.configuration < plexus.core
+[DEBUG]   Imported: org.apache.maven.exception < plexus.core
+[DEBUG]   Imported: org.apache.maven.execution < plexus.core
+[DEBUG]   Imported: org.apache.maven.execution.scope < plexus.core
+[DEBUG]   Imported: org.apache.maven.graph < plexus.core
+[DEBUG]   Imported: org.apache.maven.lifecycle < plexus.core
+[DEBUG]   Imported: org.apache.maven.model < plexus.core
+[DEBUG]   Imported: org.apache.maven.monitor < plexus.core
+[DEBUG]   Imported: org.apache.maven.plugin < plexus.core
+[DEBUG]   Imported: org.apache.maven.profiles < plexus.core
+[DEBUG]   Imported: org.apache.maven.project < plexus.core
+[DEBUG]   Imported: org.apache.maven.reporting < plexus.core
+[DEBUG]   Imported: org.apache.maven.repository < plexus.core
+[DEBUG]   Imported: org.apache.maven.rtinfo < plexus.core
+[DEBUG]   Imported: org.apache.maven.settings < plexus.core
+[DEBUG]   Imported: org.apache.maven.toolchain < plexus.core
+[DEBUG]   Imported: org.apache.maven.usability < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.authentication < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.authorization < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.events < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.observers < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.proxy < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.repository < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.resource < plexus.core
+[DEBUG]   Imported: org.codehaus.classworlds < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.* < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.classworlds < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.component < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.configuration < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.container < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.context < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.lifecycle < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.logging < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.personality < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.Xpp3Dom < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlPullParser < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlPullParserException < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlSerializer < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.* < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.artifact < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.collection < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.deployment < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.graph < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.impl < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.installation < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.internal.impl < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.metadata < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.repository < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.resolution < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.spi < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.transfer < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.util < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.version < plexus.core
+[DEBUG]   Imported: org.fusesource.jansi.* < plexus.core
+[DEBUG]   Imported: org.slf4j.* < plexus.core
+[DEBUG]   Imported: org.slf4j.event.* < plexus.core
+[DEBUG]   Imported: org.slf4j.helpers.* < plexus.core
+[DEBUG]   Imported: org.slf4j.spi.* < plexus.core
+[DEBUG] Populating class realm maven.api
+[DEBUG] Created adapter factory; available factories [file-lock, rwlock-local, semaphore-local, noop]; available name mappers [discriminating, file-gav, file-hgav, file-static, gav, static]
+[INFO] Error stacktraces are turned on.
+[DEBUG] Message scheme: color
+[DEBUG] Message styles: debug info warning error success failure strong mojo project
+[DEBUG] Reading global settings from /opt/homebrew/Cellar/maven/3.9.11/libexec/conf/settings.xml
+[DEBUG] Reading user settings from /Users/titanichornet/.m2/settings.xml
+[DEBUG] Reading global toolchains from /opt/homebrew/Cellar/maven/3.9.11/libexec/conf/toolchains.xml
+[DEBUG] Reading user toolchains from /Users/titanichornet/.m2/toolchains.xml
+[DEBUG] Using local repository at /Users/titanichornet/.m2/repository
+[DEBUG] Using manager EnhancedLocalRepositoryManager with priority 10.0 for /Users/titanichornet/.m2/repository
+[INFO] Scanning for projects...
+[DEBUG] Extension realms for project org.group1:ASDA:jar:1.0-SNAPSHOT: (none)
+[DEBUG] Looking up lifecycle mappings for packaging jar from ClassRealm[plexus.core, parent: null]
+[DEBUG] === REACTOR BUILD PLAN ================================================
+[DEBUG] Project: org.group1:ASDA:jar:1.0-SNAPSHOT
+[DEBUG] Tasks:   [clean, test]
+[DEBUG] Style:   Regular
+[DEBUG] =======================================================================
+[INFO] 
+[INFO] --------------------------< org.group1:ASDA >---------------------------
+[INFO] Building ASDA 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Creating adapter using nameMapper 'gav' and factory 'rwlock-local'
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] === PROJECT BUILD PLAN ================================================
+[DEBUG] Project:       org.group1:ASDA:1.0-SNAPSHOT
+[DEBUG] Dependencies (collect): []
+[DEBUG] Dependencies (resolve): [compile, test]
+[DEBUG] Repositories (dependencies): [central (https://repo.maven.apache.org/maven2, default, releases)]
+[DEBUG] Repositories (plugins)     : [central (https://repo.maven.apache.org/maven2, default, releases)]
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean (default-clean)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <directory default-value="${project.build.directory}"/>
+  <excludeDefaultDirectories default-value="false">${maven.clean.excludeDefaultDirectories}</excludeDefaultDirectories>
+  <failOnError default-value="true">${maven.clean.failOnError}</failOnError>
+  <fast default-value="false">${maven.clean.fast}</fast>
+  <fastDir>${maven.clean.fastDir}</fastDir>
+  <fastMode default-value="background">${maven.clean.fastMode}</fastMode>
+  <followSymLinks default-value="false">${maven.clean.followSymLinks}</followSymLinks>
+  <outputDirectory default-value="${project.build.outputDirectory}"/>
+  <reportDirectory default-value="${project.build.outputDirectory}"/>
+  <retryOnError default-value="true">${maven.clean.retryOnError}</retryOnError>
+  <session default-value="${session}"/>
+  <skip default-value="false">${maven.clean.skip}</skip>
+  <testOutputDirectory default-value="${project.build.testOutputDirectory}"/>
+  <verbose>${maven.clean.verbose}</verbose>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-resources-plugin:3.3.1:resources (default-resources)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <addDefaultExcludes default-value="true"/>
+  <buildFilters default-value="${project.build.filters}"/>
+  <encoding default-value="${project.build.sourceEncoding}"/>
+  <escapeWindowsPaths default-value="true"/>
+  <fileNameFiltering default-value="false"/>
+  <includeEmptyDirs default-value="false"/>
+  <outputDirectory default-value="${project.build.outputDirectory}"/>
+  <overwrite default-value="false"/>
+  <project default-value="${project}"/>
+  <resources default-value="${project.resources}"/>
+  <session default-value="${session}"/>
+  <skip default-value="false">${maven.resources.skip}</skip>
+  <supportMultiLineFiltering default-value="false"/>
+  <useBuildFilters default-value="true"/>
+  <useDefaultDelimiters default-value="true"/>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <basedir default-value="${basedir}"/>
+  <buildDirectory default-value="${project.build.directory}"/>
+  <compilePath default-value="${project.compileClasspathElements}"/>
+  <compileSourceRoots default-value="${project.compileSourceRoots}"/>
+  <compilerId default-value="javac">${maven.compiler.compilerId}</compilerId>
+  <compilerReuseStrategy default-value="${reuseCreated}">${maven.compiler.compilerReuseStrategy}</compilerReuseStrategy>
+  <compilerVersion>${maven.compiler.compilerVersion}</compilerVersion>
+  <createMissingPackageInfoClass default-value="true">${maven.compiler.createMissingPackageInfoClass}</createMissingPackageInfoClass>
+  <debug default-value="true">${maven.compiler.debug}</debug>
+  <debugFileName default-value="javac"/>
+  <debuglevel>${maven.compiler.debuglevel}</debuglevel>
+  <enablePreview default-value="false">${maven.compiler.enablePreview}</enablePreview>
+  <encoding default-value="${project.build.sourceEncoding}">${encoding}</encoding>
+  <executable>${maven.compiler.executable}</executable>
+  <failOnError default-value="true">${maven.compiler.failOnError}</failOnError>
+  <failOnWarning default-value="false">${maven.compiler.failOnWarning}</failOnWarning>
+  <forceJavacCompilerUse default-value="false">${maven.compiler.forceJavacCompilerUse}</forceJavacCompilerUse>
+  <fork default-value="false">${maven.compiler.fork}</fork>
+  <generatedSourcesDirectory default-value="${project.build.directory}/generated-sources/annotations"/>
+  <implicit>${maven.compiler.implicit}</implicit>
+  <maxmem>${maven.compiler.maxmem}</maxmem>
+  <meminitial>${maven.compiler.meminitial}</meminitial>
+  <mojoExecution default-value="${mojoExecution}"/>
+  <optimize default-value="false">${maven.compiler.optimize}</optimize>
+  <outputDirectory default-value="${project.build.outputDirectory}"/>
+  <parameters default-value="false">${maven.compiler.parameters}</parameters>
+  <project default-value="${project}"/>
+  <projectArtifact default-value="${project.artifact}"/>
+  <release>21</release>
+  <session default-value="${session}"/>
+  <showCompilationChanges default-value="false">${maven.compiler.showCompilationChanges}</showCompilationChanges>
+  <showDeprecation default-value="false">${maven.compiler.showDeprecation}</showDeprecation>
+  <showWarnings default-value="true">${maven.compiler.showWarnings}</showWarnings>
+  <skipMain>${maven.main.skip}</skipMain>
+  <skipMultiThreadWarning default-value="false">${maven.compiler.skipMultiThreadWarning}</skipMultiThreadWarning>
+  <source default-value="1.8">${maven.compiler.source}</source>
+  <staleMillis default-value="0">${lastModGranularityMs}</staleMillis>
+  <target default-value="1.8">${maven.compiler.target}</target>
+  <useIncrementalCompilation default-value="true">${maven.compiler.useIncrementalCompilation}</useIncrementalCompilation>
+  <verbose default-value="false">${maven.compiler.verbose}</verbose>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-resources-plugin:3.3.1:testResources (default-testResources)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <addDefaultExcludes default-value="true"/>
+  <buildFilters default-value="${project.build.filters}"/>
+  <encoding default-value="${project.build.sourceEncoding}"/>
+  <escapeWindowsPaths default-value="true"/>
+  <fileNameFiltering default-value="false"/>
+  <includeEmptyDirs default-value="false"/>
+  <outputDirectory default-value="${project.build.testOutputDirectory}"/>
+  <overwrite default-value="false"/>
+  <project default-value="${project}"/>
+  <resources default-value="${project.testResources}"/>
+  <session default-value="${session}"/>
+  <skip default-value="false">${maven.test.skip}</skip>
+  <supportMultiLineFiltering default-value="false"/>
+  <useBuildFilters default-value="true"/>
+  <useDefaultDelimiters default-value="true"/>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-compiler-plugin:3.11.0:testCompile (default-testCompile)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <basedir default-value="${basedir}"/>
+  <buildDirectory default-value="${project.build.directory}"/>
+  <compileSourceRoots default-value="${project.testCompileSourceRoots}"/>
+  <compilerId default-value="javac">${maven.compiler.compilerId}</compilerId>
+  <compilerReuseStrategy default-value="${reuseCreated}">${maven.compiler.compilerReuseStrategy}</compilerReuseStrategy>
+  <compilerVersion>${maven.compiler.compilerVersion}</compilerVersion>
+  <createMissingPackageInfoClass default-value="true">${maven.compiler.createMissingPackageInfoClass}</createMissingPackageInfoClass>
+  <debug default-value="true">${maven.compiler.debug}</debug>
+  <debugFileName default-value="javac-test"/>
+  <debuglevel>${maven.compiler.debuglevel}</debuglevel>
+  <enablePreview default-value="false">${maven.compiler.enablePreview}</enablePreview>
+  <encoding default-value="${project.build.sourceEncoding}">${encoding}</encoding>
+  <executable>${maven.compiler.executable}</executable>
+  <failOnError default-value="true">${maven.compiler.failOnError}</failOnError>
+  <failOnWarning default-value="false">${maven.compiler.failOnWarning}</failOnWarning>
+  <forceJavacCompilerUse default-value="false">${maven.compiler.forceJavacCompilerUse}</forceJavacCompilerUse>
+  <fork default-value="false">${maven.compiler.fork}</fork>
+  <generatedTestSourcesDirectory default-value="${project.build.directory}/generated-test-sources/test-annotations"/>
+  <implicit>${maven.compiler.implicit}</implicit>
+  <maxmem>${maven.compiler.maxmem}</maxmem>
+  <meminitial>${maven.compiler.meminitial}</meminitial>
+  <mojoExecution default-value="${mojoExecution}"/>
+  <optimize default-value="false">${maven.compiler.optimize}</optimize>
+  <outputDirectory default-value="${project.build.testOutputDirectory}"/>
+  <parameters default-value="false">${maven.compiler.parameters}</parameters>
+  <project default-value="${project}"/>
+  <release>21</release>
+  <session default-value="${session}"/>
+  <showCompilationChanges default-value="false">${maven.compiler.showCompilationChanges}</showCompilationChanges>
+  <showDeprecation default-value="false">${maven.compiler.showDeprecation}</showDeprecation>
+  <showWarnings default-value="true">${maven.compiler.showWarnings}</showWarnings>
+  <skip>${maven.test.skip}</skip>
+  <skipMultiThreadWarning default-value="false">${maven.compiler.skipMultiThreadWarning}</skipMultiThreadWarning>
+  <source default-value="1.8">${maven.compiler.source}</source>
+  <staleMillis default-value="0">${lastModGranularityMs}</staleMillis>
+  <target default-value="1.8">${maven.compiler.target}</target>
+  <testPath default-value="${project.testClasspathElements}"/>
+  <testRelease>${maven.compiler.testRelease}</testRelease>
+  <testSource>${maven.compiler.testSource}</testSource>
+  <testTarget>${maven.compiler.testTarget}</testTarget>
+  <useIncrementalCompilation default-value="true">${maven.compiler.useIncrementalCompilation}</useIncrementalCompilation>
+  <useModulePath default-value="true"/>
+  <verbose default-value="false">${maven.compiler.verbose}</verbose>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-surefire-plugin:3.2.5:test (default-test)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <additionalClasspathDependencies>${maven.test.additionalClasspathDependencies}</additionalClasspathDependencies>
+  <additionalClasspathElements>${maven.test.additionalClasspath}</additionalClasspathElements>
+  <argLine>${argLine}</argLine>
+  <basedir default-value="${basedir}"/>
+  <childDelegation default-value="false">${childDelegation}</childDelegation>
+  <classesDirectory default-value="${project.build.outputDirectory}"/>
+  <classpathDependencyExcludes>${maven.test.dependency.excludes}</classpathDependencyExcludes>
+  <debugForkedProcess>${maven.surefire.debug}</debugForkedProcess>
+  <dependenciesToScan>${dependenciesToScan}</dependenciesToScan>
+  <disableXmlReport default-value="false">${disableXmlReport}</disableXmlReport>
+  <enableAssertions default-value="true">${enableAssertions}</enableAssertions>
+  <enableProcessChecker>${surefire.enableProcessChecker}</enableProcessChecker>
+  <encoding default-value="${project.reporting.outputEncoding}">${surefire.encoding}</encoding>
+  <excludeJUnit5Engines>${surefire.excludeJUnit5Engines}</excludeJUnit5Engines>
+  <excludedEnvironmentVariables>${surefire.excludedEnvironmentVariables}</excludedEnvironmentVariables>
+  <excludedGroups>${excludedGroups}</excludedGroups>
+  <excludes>${surefire.excludes}</excludes>
+  <excludesFile>${surefire.excludesFile}</excludesFile>
+  <failIfNoSpecifiedTests default-value="true">${surefire.failIfNoSpecifiedTests}</failIfNoSpecifiedTests>
+  <failIfNoTests default-value="false">${failIfNoTests}</failIfNoTests>
+  <failOnFlakeCount default-value="0">${surefire.failOnFlakeCount}</failOnFlakeCount>
+  <forkCount default-value="1">${forkCount}</forkCount>
+  <forkNode>${surefire.forkNode}</forkNode>
+  <forkedProcessExitTimeoutInSeconds default-value="30">${surefire.exitTimeout}</forkedProcessExitTimeoutInSeconds>
+  <forkedProcessTimeoutInSeconds>${surefire.timeout}</forkedProcessTimeoutInSeconds>
+  <groups>${groups}</groups>
+  <includeJUnit5Engines>${surefire.includeJUnit5Engines}</includeJUnit5Engines>
+  <includes>${surefire.includes}</includes>
+  <includesFile>${surefire.includesFile}</includesFile>
+  <junitArtifactName default-value="junit:junit">${junitArtifactName}</junitArtifactName>
+  <jvm>${jvm}</jvm>
+  <objectFactory>${objectFactory}</objectFactory>
+  <parallel>${parallel}</parallel>
+  <parallelMavenExecution default-value="${session.parallel}"/>
+  <parallelOptimized default-value="true">${parallelOptimized}</parallelOptimized>
+  <parallelTestsTimeoutForcedInSeconds>${surefire.parallel.forcedTimeout}</parallelTestsTimeoutForcedInSeconds>
+  <parallelTestsTimeoutInSeconds>${surefire.parallel.timeout}</parallelTestsTimeoutInSeconds>
+  <perCoreThreadCount default-value="true">${perCoreThreadCount}</perCoreThreadCount>
+  <pluginArtifactMap>${plugin.artifactMap}</pluginArtifactMap>
+  <pluginDescriptor default-value="${plugin}"/>
+  <printSummary default-value="true">${surefire.printSummary}</printSummary>
+  <project default-value="${project}"/>
+  <projectArtifactMap>${project.artifactMap}</projectArtifactMap>
+  <projectBuildDirectory default-value="${project.build.directory}"/>
+  <redirectTestOutputToFile default-value="false">${maven.test.redirectTestOutputToFile}</redirectTestOutputToFile>
+  <reportFormat default-value="brief">${surefire.reportFormat}</reportFormat>
+  <reportNameSuffix default-value="">${surefire.reportNameSuffix}</reportNameSuffix>
+  <reportsDirectory default-value="${project.build.directory}/surefire-reports"/>
+  <rerunFailingTestsCount default-value="0">${surefire.rerunFailingTestsCount}</rerunFailingTestsCount>
+  <reuseForks default-value="true">${reuseForks}</reuseForks>
+  <runOrder default-value="filesystem">${surefire.runOrder}</runOrder>
+  <runOrderRandomSeed>${surefire.runOrder.random.seed}</runOrderRandomSeed>
+  <session default-value="${session}"/>
+  <shutdown default-value="exit">${surefire.shutdown}</shutdown>
+  <skip default-value="false">${maven.test.skip}</skip>
+  <skipAfterFailureCount default-value="0">${surefire.skipAfterFailureCount}</skipAfterFailureCount>
+  <skipExec>${maven.test.skip.exec}</skipExec>
+  <skipTests default-value="false">${skipTests}</skipTests>
+  <suiteXmlFiles>${surefire.suiteXmlFiles}</suiteXmlFiles>
+  <systemPropertiesFile>${surefire.systemPropertiesFile}</systemPropertiesFile>
+  <tempDir default-value="surefire">${tempDir}</tempDir>
+  <test>${test}</test>
+  <testClassesDirectory default-value="${project.build.testOutputDirectory}"/>
+  <testFailureIgnore default-value="false">${maven.test.failure.ignore}</testFailureIgnore>
+  <testNGArtifactName default-value="org.testng:testng">${testNGArtifactName}</testNGArtifactName>
+  <testSourceDirectory default-value="${project.build.testSourceDirectory}"/>
+  <threadCount>${threadCount}</threadCount>
+  <threadCountClasses default-value="0">${threadCountClasses}</threadCountClasses>
+  <threadCountMethods default-value="0">${threadCountMethods}</threadCountMethods>
+  <threadCountSuites default-value="0">${threadCountSuites}</threadCountSuites>
+  <trimStackTrace default-value="false">${trimStackTrace}</trimStackTrace>
+  <useFile default-value="true">${surefire.useFile}</useFile>
+  <useManifestOnlyJar default-value="true">${surefire.useManifestOnlyJar}</useManifestOnlyJar>
+  <useModulePath default-value="true">false</useModulePath>
+  <useSystemClassLoader default-value="true">${surefire.useSystemClassLoader}</useSystemClassLoader>
+  <useUnlimitedThreads default-value="false">${useUnlimitedThreads}</useUnlimitedThreads>
+  <workingDirectory>${basedir}</workingDirectory>
+</configuration>
+[DEBUG] =======================================================================
+[DEBUG] Dependency collection stats {ConflictMarker.analyzeTime=248208, ConflictMarker.markTime=62000, ConflictMarker.nodeCount=43, ConflictIdSorter.graphTime=146541, ConflictIdSorter.topsortTime=150584, ConflictIdSorter.conflictIdCount=25, ConflictIdSorter.conflictIdCycleCount=4, ConflictResolver.totalTime=2197125, ConflictResolver.conflictItemCount=37, DfDependencyCollector.collectTime=49587708, DfDependencyCollector.transformTime=3688625}
+[DEBUG] org.group1:ASDA:jar:1.0-SNAPSHOT
+[DEBUG]    org.openjfx:javafx-controls:jar:21.0.5:compile
+[DEBUG]       org.openjfx:javafx-controls:jar:mac-aarch64:21.0.5:compile
+[DEBUG]       org.openjfx:javafx-graphics:jar:21.0.5:compile
+[DEBUG]          org.openjfx:javafx-graphics:jar:mac-aarch64:21.0.5:compile
+[DEBUG]          org.openjfx:javafx-base:jar:21.0.5:compile
+[DEBUG]             org.openjfx:javafx-base:jar:mac-aarch64:21.0.5:compile
+[DEBUG]    org.openjfx:javafx-fxml:jar:21.0.5:compile
+[DEBUG]       org.openjfx:javafx-fxml:jar:mac-aarch64:21.0.5:compile
+[DEBUG]    org.controlsfx:controlsfx:jar:11.2.1:compile
+[DEBUG]    org.kordamp.ikonli:ikonli-javafx:jar:12.3.1:compile
+[DEBUG]       org.kordamp.ikonli:ikonli-core:jar:12.3.1:compile
+[DEBUG]    org.kordamp.ikonli:ikonli-materialdesign2-pack:jar:12.3.1:compile
+[DEBUG]    com.fasterxml.jackson.core:jackson-databind:jar:2.17.2:compile
+[DEBUG]       com.fasterxml.jackson.core:jackson-annotations:jar:2.17.2:compile
+[DEBUG]       com.fasterxml.jackson.core:jackson-core:jar:2.17.2:compile
+[DEBUG]    org.xerial:sqlite-jdbc:jar:3.43.2.2:compile
+[DEBUG]       org.slf4j:slf4j-api:jar:1.7.36:compile
+[DEBUG]    org.junit.jupiter:junit-jupiter:jar:5.11.0:test
+[DEBUG]       org.junit.jupiter:junit-jupiter-api:jar:5.11.0:test
+[DEBUG]          org.opentest4j:opentest4j:jar:1.3.0:test
+[DEBUG]          org.junit.platform:junit-platform-commons:jar:1.11.0:test
+[DEBUG]          org.apiguardian:apiguardian-api:jar:1.1.2:test
+[DEBUG]       org.junit.jupiter:junit-jupiter-params:jar:5.11.0:test
+[DEBUG]       org.junit.jupiter:junit-jupiter-engine:jar:5.11.0:test
+[DEBUG]          org.junit.platform:junit-platform-engine:jar:1.11.0:test
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ ASDA ---
+[DEBUG] Dependency collection stats {ConflictMarker.analyzeTime=9292, ConflictMarker.markTime=32083, ConflictMarker.nodeCount=3, ConflictIdSorter.graphTime=3916, ConflictIdSorter.topsortTime=8459, ConflictIdSorter.conflictIdCount=3, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=159833, ConflictResolver.conflictItemCount=3, DfDependencyCollector.collectTime=14918708, DfDependencyCollector.transformTime=221875}
+[DEBUG] org.apache.maven.plugins:maven-clean-plugin:jar:3.2.0
+[DEBUG]    org.apache.maven.shared:maven-shared-utils:jar:3.3.4:compile
+[DEBUG]       commons-io:commons-io:jar:2.6:compile
+[DEBUG] Created new class realm plugin>org.apache.maven.plugins:maven-clean-plugin:3.2.0
+[DEBUG] Importing foreign packages into class realm plugin>org.apache.maven.plugins:maven-clean-plugin:3.2.0
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.apache.maven.plugins:maven-clean-plugin:3.2.0
+[DEBUG]   Included: org.apache.maven.plugins:maven-clean-plugin:jar:3.2.0
+[DEBUG]   Included: org.apache.maven.shared:maven-shared-utils:jar:3.3.4
+[DEBUG]   Included: commons-io:commons-io:jar:2.6
+[DEBUG] Loading mojo org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-clean-plugin:3.2.0, parent: jdk.internal.loader.ClassLoaders$AppClassLoader@5bc2b487]
+[DEBUG] Configuring mojo execution 'org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean:default-clean' with basic configurator -->
+[DEBUG]   (f) directory = /Users/titanichornet/IdeaProjects/ASDA/target
+[DEBUG]   (f) excludeDefaultDirectories = false
+[DEBUG]   (f) failOnError = true
+[DEBUG]   (f) fast = false
+[DEBUG]   (f) fastMode = background
+[DEBUG]   (f) followSymLinks = false
+[DEBUG]   (f) outputDirectory = /Users/titanichornet/IdeaProjects/ASDA/target/classes
+[DEBUG]   (f) reportDirectory = /Users/titanichornet/IdeaProjects/ASDA/target/classes
+[DEBUG]   (f) retryOnError = true
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@47447ccf
+[DEBUG]   (f) skip = false
+[DEBUG]   (f) testOutputDirectory = /Users/titanichornet/IdeaProjects/ASDA/target/test-classes
+[DEBUG] -- end configuration --
+[INFO] Deleting /Users/titanichornet/IdeaProjects/ASDA/target
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/surefire-reports/org.group1.asda.domain.StimulusTest.txt
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/surefire-reports/TEST-org.group1.asda.service.AssessmentServiceTest.xml
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/surefire-reports/org.group1.asda.assessment.AQScoreCalculatorTest.txt
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/surefire-reports/org.group1.asda.domain.GameStateTest.txt
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/surefire-reports/TEST-org.group1.asda.domain.CardTest.xml
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/surefire-reports/TEST-org.group1.asda.domain.GameStateTest.xml
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/surefire-reports/org.group1.asda.domain.CardTest.txt
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/surefire-reports/org.group1.asda.assessment.AQAssessmentTest.txt
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/surefire-reports/TEST-org.group1.asda.domain.QuestionTest.xml
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/surefire-reports/org.group1.asda.assessment.AQQuestionTest.txt
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/surefire-reports/TEST-org.group1.asda.domain.AttentionGameStateTest.xml
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/surefire-reports/org.group1.asda.domain.AttentionGameStateTest.txt
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/surefire-reports/org.group1.asda.assessment.AQResultInterpreterTest.txt
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/surefire-reports/TEST-org.group1.asda.assessment.AQResultInterpreterTest.xml
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/surefire-reports/TEST-org.group1.asda.assessment.AQAssessmentTest.xml
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/surefire-reports/TEST-org.group1.asda.assessment.AQQuestionTest.xml
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/surefire-reports/TEST-org.group1.asda.domain.StimulusTest.xml
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/surefire-reports/TEST-org.group1.asda.assessment.AQScoreCalculatorTest.xml
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/surefire-reports/org.group1.asda.domain.QuestionTest.txt
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/surefire-reports/org.group1.asda.service.AssessmentServiceTest.txt
+[INFO] Deleting directory /Users/titanichornet/IdeaProjects/ASDA/target/surefire-reports
+[INFO] Deleting directory /Users/titanichornet/IdeaProjects/ASDA/target/generated-test-sources/test-annotations
+[INFO] Deleting directory /Users/titanichornet/IdeaProjects/ASDA/target/generated-test-sources
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+[INFO] Deleting directory /Users/titanichornet/IdeaProjects/ASDA/target/maven-status/maven-compiler-plugin/compile/default-compile
+[INFO] Deleting directory /Users/titanichornet/IdeaProjects/ASDA/target/maven-status/maven-compiler-plugin/compile
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst
+[INFO] Deleting directory /Users/titanichornet/IdeaProjects/ASDA/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile
+[INFO] Deleting directory /Users/titanichornet/IdeaProjects/ASDA/target/maven-status/maven-compiler-plugin/testCompile
+[INFO] Deleting directory /Users/titanichornet/IdeaProjects/ASDA/target/maven-status/maven-compiler-plugin
+[INFO] Deleting directory /Users/titanichornet/IdeaProjects/ASDA/target/maven-status
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/fxml/attention-game.fxml
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/fxml/home.fxml
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/fxml/questionnaire.fxml
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/fxml/matching-game.fxml
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/fxml/disclaimer.fxml
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/fxml/results.fxml
+[INFO] Deleting directory /Users/titanichornet/IdeaProjects/ASDA/target/classes/fxml
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/domain/AttentionGameState.class
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/domain/GameState.class
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/domain/Card.class
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/domain/Question.class
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/domain/Stimulus.class
+[INFO] Deleting directory /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/domain
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/service/AssessmentService.class
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/service/AssessmentService$AssessmentResult.class
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/service/QuestionnaireService$ScaleOption.class
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/service/QuestionnaireService.class
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/service/QuestionnaireService$QuestionPage.class
+[INFO] Deleting directory /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/service
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/App.class
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/persistence/ResponseDao.class
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/persistence/Database.class
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/persistence/QuestionDao.class
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/persistence/SessionDao.class
+[INFO] Deleting directory /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/persistence
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/assessment/AQAssessment.class
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/assessment/AQResultInterpreter$AssessmentSummary.class
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/assessment/AssessmentCli.class
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/assessment/AQScoreCalculator$CategoryScores.class
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/assessment/AQQuestion.class
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/assessment/AQResultInterpreter.class
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/assessment/AQScoreCalculator.class
+[INFO] Deleting directory /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/assessment
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/navigation/Router.class
+[INFO] Deleting directory /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/navigation
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/ui/results/AqUiState.class
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/ui/results/ResultsController.class
+[INFO] Deleting directory /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/ui/results
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/ui/matchinggame/MatchingGameController.class
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/ui/matchinggame/MatchingGameController$CardButton.class
+[INFO] Deleting directory /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/ui/matchinggame
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/ui/questionnaire/QuestionnaireController.class
+[INFO] Deleting directory /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/ui/questionnaire
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/ui/disclaimer/DisclaimerController.class
+[INFO] Deleting directory /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/ui/disclaimer
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/ui/home/HomeController.class
+[INFO] Deleting directory /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/ui/home
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/ui/attentiongame/AttentionGameController.class
+[INFO] Deleting directory /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/ui/attentiongame
+[INFO] Deleting directory /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda/ui
+[INFO] Deleting directory /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1/asda
+[INFO] Deleting directory /Users/titanichornet/IdeaProjects/ASDA/target/classes/org/group1
+[INFO] Deleting directory /Users/titanichornet/IdeaProjects/ASDA/target/classes/org
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/css/base.css
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/css/assessment.css
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/classes/css/theme-light.css
+[INFO] Deleting directory /Users/titanichornet/IdeaProjects/ASDA/target/classes/css
+[INFO] Deleting directory /Users/titanichornet/IdeaProjects/ASDA/target/classes
+[INFO] Deleting directory /Users/titanichornet/IdeaProjects/ASDA/target/generated-sources/annotations
+[INFO] Deleting directory /Users/titanichornet/IdeaProjects/ASDA/target/generated-sources
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/test-classes/org/group1/asda/domain/GameStateTest.class
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/test-classes/org/group1/asda/domain/AttentionGameStateTest.class
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/test-classes/org/group1/asda/domain/StimulusTest.class
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/test-classes/org/group1/asda/domain/QuestionTest.class
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/test-classes/org/group1/asda/domain/CardTest.class
+[INFO] Deleting directory /Users/titanichornet/IdeaProjects/ASDA/target/test-classes/org/group1/asda/domain
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/test-classes/org/group1/asda/service/AssessmentServiceTest.class
+[INFO] Deleting directory /Users/titanichornet/IdeaProjects/ASDA/target/test-classes/org/group1/asda/service
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/test-classes/org/group1/asda/assessment/AQScoreCalculatorTest.class
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/test-classes/org/group1/asda/assessment/AQAssessmentTest.class
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/test-classes/org/group1/asda/assessment/AQResultInterpreterTest.class
+[INFO] Deleting file /Users/titanichornet/IdeaProjects/ASDA/target/test-classes/org/group1/asda/assessment/AQQuestionTest.class
+[INFO] Deleting directory /Users/titanichornet/IdeaProjects/ASDA/target/test-classes/org/group1/asda/assessment
+[INFO] Deleting directory /Users/titanichornet/IdeaProjects/ASDA/target/test-classes/org/group1/asda
+[INFO] Deleting directory /Users/titanichornet/IdeaProjects/ASDA/target/test-classes/org/group1
+[INFO] Deleting directory /Users/titanichornet/IdeaProjects/ASDA/target/test-classes/org
+[INFO] Deleting directory /Users/titanichornet/IdeaProjects/ASDA/target/test-classes
+[INFO] Deleting directory /Users/titanichornet/IdeaProjects/ASDA/target
+[DEBUG] Skipping non-existing directory /Users/titanichornet/IdeaProjects/ASDA/target/classes
+[DEBUG] Skipping non-existing directory /Users/titanichornet/IdeaProjects/ASDA/target/test-classes
+[DEBUG] Skipping non-existing directory /Users/titanichornet/IdeaProjects/ASDA/target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ ASDA ---
+[DEBUG] Dependency collection stats {ConflictMarker.analyzeTime=27916, ConflictMarker.markTime=33584, ConflictMarker.nodeCount=13, ConflictIdSorter.graphTime=9833, ConflictIdSorter.topsortTime=7167, ConflictIdSorter.conflictIdCount=9, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=119125, ConflictResolver.conflictItemCount=13, DfDependencyCollector.collectTime=24335833, DfDependencyCollector.transformTime=210083}
+[DEBUG] org.apache.maven.plugins:maven-resources-plugin:jar:3.3.1
+[DEBUG]    org.codehaus.plexus:plexus-interpolation:jar:1.26:runtime
+[DEBUG]    org.codehaus.plexus:plexus-utils:jar:3.5.1:compile
+[DEBUG]    org.apache.maven.shared:maven-filtering:jar:3.3.1:compile
+[DEBUG]       javax.inject:javax.inject:jar:1:compile
+[DEBUG]       org.slf4j:slf4j-api:jar:1.7.36:compile
+[DEBUG]       org.sonatype.plexus:plexus-build-api:jar:0.0.7:compile
+[DEBUG]    commons-io:commons-io:jar:2.11.0:compile
+[DEBUG]    org.apache.commons:commons-lang3:jar:3.12.0:compile
+[DEBUG] Created new class realm plugin>org.apache.maven.plugins:maven-resources-plugin:3.3.1
+[DEBUG] Importing foreign packages into class realm plugin>org.apache.maven.plugins:maven-resources-plugin:3.3.1
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.apache.maven.plugins:maven-resources-plugin:3.3.1
+[DEBUG]   Included: org.apache.maven.plugins:maven-resources-plugin:jar:3.3.1
+[DEBUG]   Included: org.codehaus.plexus:plexus-interpolation:jar:1.26
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:3.5.1
+[DEBUG]   Included: org.apache.maven.shared:maven-filtering:jar:3.3.1
+[DEBUG]   Included: org.sonatype.plexus:plexus-build-api:jar:0.0.7
+[DEBUG]   Included: commons-io:commons-io:jar:2.11.0
+[DEBUG]   Included: org.apache.commons:commons-lang3:jar:3.12.0
+[DEBUG] Loading mojo org.apache.maven.plugins:maven-resources-plugin:3.3.1:resources from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-resources-plugin:3.3.1, parent: jdk.internal.loader.ClassLoaders$AppClassLoader@5bc2b487]
+[DEBUG] Configuring mojo execution 'org.apache.maven.plugins:maven-resources-plugin:3.3.1:resources:default-resources' with basic configurator -->
+[DEBUG]   (f) addDefaultExcludes = true
+[DEBUG]   (f) buildFilters = []
+[DEBUG]   (f) encoding = UTF-8
+[DEBUG]   (f) escapeWindowsPaths = true
+[DEBUG]   (f) fileNameFiltering = false
+[DEBUG]   (s) includeEmptyDirs = false
+[DEBUG]   (s) outputDirectory = /Users/titanichornet/IdeaProjects/ASDA/target/classes
+[DEBUG]   (s) overwrite = false
+[DEBUG]   (f) project = MavenProject: org.group1:ASDA:1.0-SNAPSHOT @ /Users/titanichornet/IdeaProjects/ASDA/pom.xml
+[DEBUG]   (s) resources = [Resource {targetPath: null, filtering: false, FileSet {directory: /Users/titanichornet/IdeaProjects/ASDA/src/main/resources, PatternSet [includes: {}, excludes: {}]}}]
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@47447ccf
+[DEBUG]   (f) skip = false
+[DEBUG]   (f) supportMultiLineFiltering = false
+[DEBUG]   (f) useBuildFilters = true
+[DEBUG]   (s) useDefaultDelimiters = true
+[DEBUG] -- end configuration --
+[DEBUG] properties used:
+[DEBUG] apple.awt.application.name: Launcher
+[DEBUG] classworlds.conf: /opt/homebrew/Cellar/maven/3.9.11/libexec/bin/m2.conf
+[DEBUG] controlsfx.version: 11.2.1
+[DEBUG] env.CLAUDECODE: 1
+[DEBUG] env.CLAUDE_CODE_ENTRYPOINT: cli
+[DEBUG] env.COMMAND_MODE: unix2003
+[DEBUG] env.COREPACK_ENABLE_AUTO_PIN: 0
+[DEBUG] env.FIG_TERM: 1
+[DEBUG] env.GIT_EDITOR: true
+[DEBUG] env.HOME: /Users/titanichornet
+[DEBUG] env.HOMEBREW_CELLAR: /opt/homebrew/Cellar
+[DEBUG] env.HOMEBREW_PREFIX: /opt/homebrew
+[DEBUG] env.HOMEBREW_REPOSITORY: /opt/homebrew
+[DEBUG] env.INFOPATH: /opt/homebrew/share/info:/opt/homebrew/share/info:
+[DEBUG] env.JAVA_HOME: /opt/homebrew/opt/openjdk/libexec/openjdk.jdk/Contents/Home
+[DEBUG] env.LC_CTYPE: UTF-8
+[DEBUG] env.LOGNAME: titanichornet
+[DEBUG] env.MAVEN_CMD_LINE_ARGS:  clean test -X
+[DEBUG] env.MAVEN_PROJECTBASEDIR: /Users/titanichornet/IdeaProjects/ASDA
+[DEBUG] env.NVM_BIN: /Users/titanichornet/.nvm/versions/node/v16.20.2/bin
+[DEBUG] env.NVM_CD_FLAGS: -q
+[DEBUG] env.NVM_DIR: /Users/titanichornet/.nvm
+[DEBUG] env.NVM_INC: /Users/titanichornet/.nvm/versions/node/v16.20.2/include/node
+[DEBUG] env.NoDefaultCurrentDirectoryInExePath: 1
+[DEBUG] env.OLDPWD: /Users/titanichornet/IdeaProjects/ASDA
+[DEBUG] env.OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE: delta
+[DEBUG] env.PATH: /Users/titanichornet/.nvm/versions/node/v16.20.2/bin:/Users/titanichornet/miniconda3/bin:/opt/homebrew/opt/postgresql@17/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/titanichornet/Library/Python/3.9/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/Users/titanichornet/.local/bin:/Users/titanichornet/.local/bin
+[DEBUG] env.PROCESS_LAUNCHED_BY_CW: 1
+[DEBUG] env.PROCESS_LAUNCHED_BY_Q: 1
+[DEBUG] env.PWD: /Users/titanichornet/IdeaProjects/ASDA
+[DEBUG] env.SHELL: /bin/zsh
+[DEBUG] env.SHLVL: 2
+[DEBUG] env.SSH_AUTH_SOCK: /private/tmp/com.apple.launchd.5b8uvE27id/Listeners
+[DEBUG] env.TERM: xterm-256color
+[DEBUG] env.TERMINAL_EMULATOR: JetBrains-JediTerm
+[DEBUG] env.TERM_SESSION_ID: 5974b5ec-4c21-4cda-99fc-8a329016ba26
+[DEBUG] env.TMPDIR: /var/folders/jn/ntw1m8n13j7f2n38tv0_87k00000gn/T/
+[DEBUG] env.USER: titanichornet
+[DEBUG] env.XPC_FLAGS: 0x0
+[DEBUG] env.XPC_SERVICE_NAME: 0
+[DEBUG] env.__CFBundleIdentifier: com.jetbrains.intellij
+[DEBUG] env.__CF_USER_TEXT_ENCODING: 0x1F5:0x0:0x0
+[DEBUG] file.encoding: UTF-8
+[DEBUG] file.separator: /
+[DEBUG] ftp.nonProxyHosts: local|*.local|169.254/16|*.169.254/16
+[DEBUG] http.nonProxyHosts: local|*.local|169.254/16|*.169.254/16
+[DEBUG] ikonli.version: 12.3.1
+[DEBUG] jackson.version: 2.17.2
+[DEBUG] java.class.path: /opt/homebrew/Cellar/maven/3.9.11/libexec/boot/plexus-classworlds-2.9.0.jar
+[DEBUG] java.class.version: 69.0
+[DEBUG] java.home: /opt/homebrew/Cellar/openjdk/25/libexec/openjdk.jdk/Contents/Home
+[DEBUG] java.io.tmpdir: /var/folders/jn/ntw1m8n13j7f2n38tv0_87k00000gn/T/
+[DEBUG] java.library.path: /Users/titanichornet/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+[DEBUG] java.runtime.name: OpenJDK Runtime Environment
+[DEBUG] java.runtime.version: 25
+[DEBUG] java.specification.name: Java Platform API Specification
+[DEBUG] java.specification.vendor: Oracle Corporation
+[DEBUG] java.specification.version: 25
+[DEBUG] java.vendor: Homebrew
+[DEBUG] java.vendor.url: https://github.com/Homebrew/homebrew-core/issues
+[DEBUG] java.vendor.url.bug: https://github.com/Homebrew/homebrew-core/issues
+[DEBUG] java.vendor.version: Homebrew
+[DEBUG] java.version: 25
+[DEBUG] java.version.date: 2025-09-16
+[DEBUG] java.vm.compressedOopsMode: Zero based
+[DEBUG] java.vm.info: mixed mode, sharing
+[DEBUG] java.vm.name: OpenJDK 64-Bit Server VM
+[DEBUG] java.vm.specification.name: Java Virtual Machine Specification
+[DEBUG] java.vm.specification.vendor: Oracle Corporation
+[DEBUG] java.vm.specification.version: 25
+[DEBUG] java.vm.vendor: Homebrew
+[DEBUG] java.vm.version: 25
+[DEBUG] javafx.version: 21.0.5
+[DEBUG] jdk.debug: release
+[DEBUG] junit.version: 5.11.0
+[DEBUG] library.jansi.path: /opt/homebrew/Cellar/maven/3.9.11/libexec/lib/jansi-native
+[DEBUG] line.separator: 
+
+[DEBUG] maven.build.timestamp: 2025-11-25T00:03:30Z
+[DEBUG] maven.build.version: Apache Maven 3.9.11 (3e54c93a704957b63ee3494413a2b544fd3d825b)
+[DEBUG] maven.compiler.release: 21
+[DEBUG] maven.conf: /opt/homebrew/Cellar/maven/3.9.11/libexec/conf
+[DEBUG] maven.home: /opt/homebrew/Cellar/maven/3.9.11/libexec
+[DEBUG] maven.multiModuleProjectDirectory: /Users/titanichornet/IdeaProjects/ASDA
+[DEBUG] maven.version: 3.9.11
+[DEBUG] native.encoding: UTF-8
+[DEBUG] os.arch: aarch64
+[DEBUG] os.name: Mac OS X
+[DEBUG] os.version: 15.6
+[DEBUG] path.separator: :
+[DEBUG] project.baseUri: file:/Users/titanichornet/IdeaProjects/ASDA/
+[DEBUG] project.build.sourceEncoding: UTF-8
+[DEBUG] slf4j.version: 2.0.12
+[DEBUG] socksNonProxyHosts: local|*.local|169.254/16|*.169.254/16
+[DEBUG] stderr.encoding: UTF-8
+[DEBUG] stdin.encoding: UTF-8
+[DEBUG] stdout.encoding: UTF-8
+[DEBUG] sun.arch.data.model: 64
+[DEBUG] sun.boot.library.path: /opt/homebrew/Cellar/openjdk/25/libexec/openjdk.jdk/Contents/Home/lib
+[DEBUG] sun.cpu.endian: little
+[DEBUG] sun.io.unicode.encoding: UnicodeBig
+[DEBUG] sun.java.command: org.codehaus.plexus.classworlds.launcher.Launcher clean test -X
+[DEBUG] sun.java.launcher: SUN_STANDARD
+[DEBUG] sun.jnu.encoding: UTF-8
+[DEBUG] sun.management.compiler: HotSpot 64-Bit Tiered Compilers
+[DEBUG] user.country: US
+[DEBUG] user.dir: /Users/titanichornet/IdeaProjects/ASDA
+[DEBUG] user.home: /Users/titanichornet
+[DEBUG] user.language: en
+[DEBUG] user.name: titanichornet
+[DEBUG] Using 'UTF-8' encoding to copy filtered resources.
+[DEBUG] Using 'UTF-8' encoding to copy filtered properties files.
+[DEBUG] resource with targetPath null
+directory /Users/titanichornet/IdeaProjects/ASDA/src/main/resources
+excludes []
+includes []
+[DEBUG] ignoreDelta true
+[INFO] Copying 9 resources from src/main/resources to target/classes
+[DEBUG] Copying file css/theme-light.css
+[DEBUG] file theme-light.css has a filtered file extension
+[DEBUG] Using 'UTF-8' encoding to copy filtered resource 'theme-light.css'.
+[DEBUG] copy /Users/titanichornet/IdeaProjects/ASDA/src/main/resources/css/theme-light.css to /Users/titanichornet/IdeaProjects/ASDA/target/classes/css/theme-light.css
+[DEBUG] Copying file css/assessment.css
+[DEBUG] file assessment.css has a filtered file extension
+[DEBUG] Using 'UTF-8' encoding to copy filtered resource 'assessment.css'.
+[DEBUG] copy /Users/titanichornet/IdeaProjects/ASDA/src/main/resources/css/assessment.css to /Users/titanichornet/IdeaProjects/ASDA/target/classes/css/assessment.css
+[DEBUG] Copying file css/base.css
+[DEBUG] file base.css has a filtered file extension
+[DEBUG] Using 'UTF-8' encoding to copy filtered resource 'base.css'.
+[DEBUG] copy /Users/titanichornet/IdeaProjects/ASDA/src/main/resources/css/base.css to /Users/titanichornet/IdeaProjects/ASDA/target/classes/css/base.css
+[DEBUG] Copying file fxml/results.fxml
+[DEBUG] file results.fxml has a filtered file extension
+[DEBUG] Using 'UTF-8' encoding to copy filtered resource 'results.fxml'.
+[DEBUG] copy /Users/titanichornet/IdeaProjects/ASDA/src/main/resources/fxml/results.fxml to /Users/titanichornet/IdeaProjects/ASDA/target/classes/fxml/results.fxml
+[DEBUG] Copying file fxml/disclaimer.fxml
+[DEBUG] file disclaimer.fxml has a filtered file extension
+[DEBUG] Using 'UTF-8' encoding to copy filtered resource 'disclaimer.fxml'.
+[DEBUG] copy /Users/titanichornet/IdeaProjects/ASDA/src/main/resources/fxml/disclaimer.fxml to /Users/titanichornet/IdeaProjects/ASDA/target/classes/fxml/disclaimer.fxml
+[DEBUG] Copying file fxml/matching-game.fxml
+[DEBUG] file matching-game.fxml has a filtered file extension
+[DEBUG] Using 'UTF-8' encoding to copy filtered resource 'matching-game.fxml'.
+[DEBUG] copy /Users/titanichornet/IdeaProjects/ASDA/src/main/resources/fxml/matching-game.fxml to /Users/titanichornet/IdeaProjects/ASDA/target/classes/fxml/matching-game.fxml
+[DEBUG] Copying file fxml/questionnaire.fxml
+[DEBUG] file questionnaire.fxml has a filtered file extension
+[DEBUG] Using 'UTF-8' encoding to copy filtered resource 'questionnaire.fxml'.
+[DEBUG] copy /Users/titanichornet/IdeaProjects/ASDA/src/main/resources/fxml/questionnaire.fxml to /Users/titanichornet/IdeaProjects/ASDA/target/classes/fxml/questionnaire.fxml
+[DEBUG] Copying file fxml/home.fxml
+[DEBUG] file home.fxml has a filtered file extension
+[DEBUG] Using 'UTF-8' encoding to copy filtered resource 'home.fxml'.
+[DEBUG] copy /Users/titanichornet/IdeaProjects/ASDA/src/main/resources/fxml/home.fxml to /Users/titanichornet/IdeaProjects/ASDA/target/classes/fxml/home.fxml
+[DEBUG] Copying file fxml/attention-game.fxml
+[DEBUG] file attention-game.fxml has a filtered file extension
+[DEBUG] Using 'UTF-8' encoding to copy filtered resource 'attention-game.fxml'.
+[DEBUG] copy /Users/titanichornet/IdeaProjects/ASDA/src/main/resources/fxml/attention-game.fxml to /Users/titanichornet/IdeaProjects/ASDA/target/classes/fxml/attention-game.fxml
+[DEBUG] no user filter components
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ ASDA ---
+[DEBUG] Using mirror maven-default-http-blocker (http://0.0.0.0/) for apache.snapshots (http://repository.apache.org/snapshots).
+[DEBUG] Dependency collection stats {ConflictMarker.analyzeTime=30333, ConflictMarker.markTime=36375, ConflictMarker.nodeCount=17, ConflictIdSorter.graphTime=12291, ConflictIdSorter.topsortTime=9250, ConflictIdSorter.conflictIdCount=12, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=183334, ConflictResolver.conflictItemCount=17, DfDependencyCollector.collectTime=31314417, DfDependencyCollector.transformTime=280583}
+[DEBUG] org.apache.maven.plugins:maven-compiler-plugin:jar:3.11.0
+[DEBUG]    org.apache.maven.shared:maven-shared-utils:jar:3.3.4:compile
+[DEBUG]       commons-io:commons-io:jar:2.6:compile
+[DEBUG]    org.apache.maven.shared:maven-shared-incremental:jar:1.1:compile
+[DEBUG]       org.codehaus.plexus:plexus-component-annotations:jar:1.5.5:compile
+[DEBUG]    org.codehaus.plexus:plexus-java:jar:1.1.2:compile
+[DEBUG]       org.ow2.asm:asm:jar:9.4:compile
+[DEBUG]       com.thoughtworks.qdox:qdox:jar:2.0.3:compile (version managed from default)
+[DEBUG]    org.codehaus.plexus:plexus-compiler-api:jar:2.13.0:compile
+[DEBUG]       org.codehaus.plexus:plexus-utils:jar:3.5.0:compile (version managed from default)
+[DEBUG]    org.codehaus.plexus:plexus-compiler-manager:jar:2.13.0:compile
+[DEBUG]    org.codehaus.plexus:plexus-compiler-javac:jar:2.13.0:runtime
+[DEBUG] Created new class realm plugin>org.apache.maven.plugins:maven-compiler-plugin:3.11.0
+[DEBUG] Importing foreign packages into class realm plugin>org.apache.maven.plugins:maven-compiler-plugin:3.11.0
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.apache.maven.plugins:maven-compiler-plugin:3.11.0
+[DEBUG]   Included: org.apache.maven.plugins:maven-compiler-plugin:jar:3.11.0
+[DEBUG]   Included: org.apache.maven.shared:maven-shared-utils:jar:3.3.4
+[DEBUG]   Included: commons-io:commons-io:jar:2.6
+[DEBUG]   Included: org.apache.maven.shared:maven-shared-incremental:jar:1.1
+[DEBUG]   Included: org.codehaus.plexus:plexus-component-annotations:jar:1.5.5
+[DEBUG]   Included: org.codehaus.plexus:plexus-java:jar:1.1.2
+[DEBUG]   Included: org.ow2.asm:asm:jar:9.4
+[DEBUG]   Included: com.thoughtworks.qdox:qdox:jar:2.0.3
+[DEBUG]   Included: org.codehaus.plexus:plexus-compiler-api:jar:2.13.0
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:3.5.0
+[DEBUG]   Included: org.codehaus.plexus:plexus-compiler-manager:jar:2.13.0
+[DEBUG]   Included: org.codehaus.plexus:plexus-compiler-javac:jar:2.13.0
+[DEBUG] Loading mojo org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-compiler-plugin:3.11.0, parent: jdk.internal.loader.ClassLoaders$AppClassLoader@5bc2b487]
+[DEBUG] Configuring mojo execution 'org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile:default-compile' with basic configurator -->
+[DEBUG]   (f) basedir = /Users/titanichornet/IdeaProjects/ASDA
+[DEBUG]   (f) buildDirectory = /Users/titanichornet/IdeaProjects/ASDA/target
+[DEBUG]   (f) compilePath = [/Users/titanichornet/IdeaProjects/ASDA/target/classes, /Users/titanichornet/.m2/repository/org/openjfx/javafx-controls/21.0.5/javafx-controls-21.0.5.jar, /Users/titanichornet/.m2/repository/org/openjfx/javafx-controls/21.0.5/javafx-controls-21.0.5-mac-aarch64.jar, /Users/titanichornet/.m2/repository/org/openjfx/javafx-graphics/21.0.5/javafx-graphics-21.0.5.jar, /Users/titanichornet/.m2/repository/org/openjfx/javafx-graphics/21.0.5/javafx-graphics-21.0.5-mac-aarch64.jar, /Users/titanichornet/.m2/repository/org/openjfx/javafx-base/21.0.5/javafx-base-21.0.5.jar, /Users/titanichornet/.m2/repository/org/openjfx/javafx-base/21.0.5/javafx-base-21.0.5-mac-aarch64.jar, /Users/titanichornet/.m2/repository/org/openjfx/javafx-fxml/21.0.5/javafx-fxml-21.0.5.jar, /Users/titanichornet/.m2/repository/org/openjfx/javafx-fxml/21.0.5/javafx-fxml-21.0.5-mac-aarch64.jar, /Users/titanichornet/.m2/repository/org/controlsfx/controlsfx/11.2.1/controlsfx-11.2.1.jar, /Users/titanichornet/.m2/repository/org/kordamp/ikonli/ikonli-javafx/12.3.1/ikonli-javafx-12.3.1.jar, /Users/titanichornet/.m2/repository/org/kordamp/ikonli/ikonli-core/12.3.1/ikonli-core-12.3.1.jar, /Users/titanichornet/.m2/repository/org/kordamp/ikonli/ikonli-materialdesign2-pack/12.3.1/ikonli-materialdesign2-pack-12.3.1.jar, /Users/titanichornet/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.17.2/jackson-databind-2.17.2.jar, /Users/titanichornet/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.17.2/jackson-annotations-2.17.2.jar, /Users/titanichornet/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.17.2/jackson-core-2.17.2.jar, /Users/titanichornet/.m2/repository/org/xerial/sqlite-jdbc/3.43.2.2/sqlite-jdbc-3.43.2.2.jar, /Users/titanichornet/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar]
+[DEBUG]   (f) compileSourceRoots = [/Users/titanichornet/IdeaProjects/ASDA/src/main/java]
+[DEBUG]   (f) compilerId = javac
+[DEBUG]   (f) createMissingPackageInfoClass = true
+[DEBUG]   (f) debug = true
+[DEBUG]   (f) debugFileName = javac
+[DEBUG]   (f) enablePreview = false
+[DEBUG]   (f) encoding = UTF-8
+[DEBUG]   (f) failOnError = true
+[DEBUG]   (f) failOnWarning = false
+[DEBUG]   (f) forceJavacCompilerUse = false
+[DEBUG]   (f) fork = false
+[DEBUG]   (f) generatedSourcesDirectory = /Users/titanichornet/IdeaProjects/ASDA/target/generated-sources/annotations
+[DEBUG]   (f) mojoExecution = org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile {execution: default-compile}
+[DEBUG]   (f) optimize = false
+[DEBUG]   (f) outputDirectory = /Users/titanichornet/IdeaProjects/ASDA/target/classes
+[DEBUG]   (f) parameters = false
+[DEBUG]   (f) project = MavenProject: org.group1:ASDA:1.0-SNAPSHOT @ /Users/titanichornet/IdeaProjects/ASDA/pom.xml
+[DEBUG]   (f) projectArtifact = org.group1:ASDA:jar:1.0-SNAPSHOT
+[DEBUG]   (s) release = 21
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@47447ccf
+[DEBUG]   (f) showCompilationChanges = false
+[DEBUG]   (f) showDeprecation = false
+[DEBUG]   (f) showWarnings = true
+[DEBUG]   (f) skipMultiThreadWarning = false
+[DEBUG]   (f) source = 1.8
+[DEBUG]   (f) staleMillis = 0
+[DEBUG]   (s) target = 1.8
+[DEBUG]   (f) useIncrementalCompilation = true
+[DEBUG]   (f) verbose = false
+[DEBUG] -- end configuration --
+[DEBUG] Using compiler 'javac'.
+[DEBUG] Adding /Users/titanichornet/IdeaProjects/ASDA/target/generated-sources/annotations to compile source roots:
+  /Users/titanichornet/IdeaProjects/ASDA/src/main/java
+[DEBUG] New compile source roots:
+  /Users/titanichornet/IdeaProjects/ASDA/src/main/java
+  /Users/titanichornet/IdeaProjects/ASDA/target/generated-sources/annotations
+[DEBUG] CompilerReuseStrategy: reuseCreated
+[DEBUG] useIncrementalCompilation enabled
+[DEBUG] Stale source detected: /Users/titanichornet/IdeaProjects/ASDA/src/main/java/org/group1/asda/navigation/Router.java
+[DEBUG] Stale source detected: /Users/titanichornet/IdeaProjects/ASDA/src/main/java/org/group1/asda/domain/GameState.java
+[DEBUG] Stale source detected: /Users/titanichornet/IdeaProjects/ASDA/src/main/java/org/group1/asda/assessment/AQAssessment.java
+[DEBUG] Stale source detected: /Users/titanichornet/IdeaProjects/ASDA/src/main/java/org/group1/asda/assessment/AQScoreCalculator.java
+[DEBUG] Stale source detected: /Users/titanichornet/IdeaProjects/ASDA/src/main/java/org/group1/asda/ui/questionnaire/QuestionnaireController.java
+[DEBUG] Stale source detected: /Users/titanichornet/IdeaProjects/ASDA/src/main/java/org/group1/asda/persistence/Database.java
+[DEBUG] Stale source detected: /Users/titanichornet/IdeaProjects/ASDA/src/main/java/org/group1/asda/App.java
+[DEBUG] Stale source detected: /Users/titanichornet/IdeaProjects/ASDA/src/main/java/org/group1/asda/domain/AttentionGameState.java
+[DEBUG] Stale source detected: /Users/titanichornet/IdeaProjects/ASDA/src/main/java/org/group1/asda/persistence/ResponseDao.java
+[DEBUG] Stale source detected: /Users/titanichornet/IdeaProjects/ASDA/src/main/java/org/group1/asda/ui/home/HomeController.java
+[DEBUG] Stale source detected: /Users/titanichornet/IdeaProjects/ASDA/src/main/java/org/group1/asda/domain/Question.java
+[DEBUG] Stale source detected: /Users/titanichornet/IdeaProjects/ASDA/src/main/java/org/group1/asda/service/AssessmentService.java
+[DEBUG] Stale source detected: /Users/titanichornet/IdeaProjects/ASDA/src/main/java/org/group1/asda/service/QuestionnaireService.java
+[DEBUG] Stale source detected: /Users/titanichornet/IdeaProjects/ASDA/src/main/java/org/group1/asda/ui/attentiongame/AttentionGameController.java
+[DEBUG] Stale source detected: /Users/titanichornet/IdeaProjects/ASDA/src/main/java/org/group1/asda/ui/disclaimer/DisclaimerController.java
+[DEBUG] Stale source detected: /Users/titanichornet/IdeaProjects/ASDA/src/main/java/org/group1/asda/domain/Stimulus.java
+[DEBUG] Stale source detected: /Users/titanichornet/IdeaProjects/ASDA/src/main/java/org/group1/asda/assessment/AssessmentCli.java
+[DEBUG] Stale source detected: /Users/titanichornet/IdeaProjects/ASDA/src/main/java/org/group1/asda/persistence/QuestionDao.java
+[DEBUG] Stale source detected: /Users/titanichornet/IdeaProjects/ASDA/src/main/java/org/group1/asda/assessment/AQResultInterpreter.java
+[DEBUG] Stale source detected: /Users/titanichornet/IdeaProjects/ASDA/src/main/java/org/group1/asda/domain/Card.java
+[DEBUG] Stale source detected: /Users/titanichornet/IdeaProjects/ASDA/src/main/java/org/group1/asda/assessment/AQQuestion.java
+[DEBUG] Stale source detected: /Users/titanichornet/IdeaProjects/ASDA/src/main/java/org/group1/asda/ui/matchinggame/MatchingGameController.java
+[DEBUG] Stale source detected: /Users/titanichornet/IdeaProjects/ASDA/src/main/java/org/group1/asda/persistence/SessionDao.java
+[DEBUG] Stale source detected: /Users/titanichornet/IdeaProjects/ASDA/src/main/java/org/group1/asda/ui/results/ResultsController.java
+[DEBUG] Stale source detected: /Users/titanichornet/IdeaProjects/ASDA/src/main/java/org/group1/asda/ui/results/AqUiState.java
+[INFO] Changes detected - recompiling the module! :source
+[DEBUG] Classpath:
+[DEBUG]  /Users/titanichornet/IdeaProjects/ASDA/target/classes
+[DEBUG]  /Users/titanichornet/.m2/repository/org/openjfx/javafx-controls/21.0.5/javafx-controls-21.0.5.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/org/openjfx/javafx-controls/21.0.5/javafx-controls-21.0.5-mac-aarch64.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/org/openjfx/javafx-graphics/21.0.5/javafx-graphics-21.0.5.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/org/openjfx/javafx-graphics/21.0.5/javafx-graphics-21.0.5-mac-aarch64.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/org/openjfx/javafx-base/21.0.5/javafx-base-21.0.5.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/org/openjfx/javafx-base/21.0.5/javafx-base-21.0.5-mac-aarch64.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/org/openjfx/javafx-fxml/21.0.5/javafx-fxml-21.0.5.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/org/openjfx/javafx-fxml/21.0.5/javafx-fxml-21.0.5-mac-aarch64.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/org/controlsfx/controlsfx/11.2.1/controlsfx-11.2.1.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/org/kordamp/ikonli/ikonli-javafx/12.3.1/ikonli-javafx-12.3.1.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/org/kordamp/ikonli/ikonli-core/12.3.1/ikonli-core-12.3.1.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/org/kordamp/ikonli/ikonli-materialdesign2-pack/12.3.1/ikonli-materialdesign2-pack-12.3.1.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.17.2/jackson-databind-2.17.2.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.17.2/jackson-annotations-2.17.2.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.17.2/jackson-core-2.17.2.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/org/xerial/sqlite-jdbc/3.43.2.2/sqlite-jdbc-3.43.2.2.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar
+[DEBUG] Source roots:
+[DEBUG]  /Users/titanichornet/IdeaProjects/ASDA/src/main/java
+[DEBUG]  /Users/titanichornet/IdeaProjects/ASDA/target/generated-sources/annotations
+[DEBUG] Command line options:
+[DEBUG] -d /Users/titanichornet/IdeaProjects/ASDA/target/classes -classpath /Users/titanichornet/IdeaProjects/ASDA/target/classes:/Users/titanichornet/.m2/repository/org/openjfx/javafx-controls/21.0.5/javafx-controls-21.0.5.jar:/Users/titanichornet/.m2/repository/org/openjfx/javafx-controls/21.0.5/javafx-controls-21.0.5-mac-aarch64.jar:/Users/titanichornet/.m2/repository/org/openjfx/javafx-graphics/21.0.5/javafx-graphics-21.0.5.jar:/Users/titanichornet/.m2/repository/org/openjfx/javafx-graphics/21.0.5/javafx-graphics-21.0.5-mac-aarch64.jar:/Users/titanichornet/.m2/repository/org/openjfx/javafx-base/21.0.5/javafx-base-21.0.5.jar:/Users/titanichornet/.m2/repository/org/openjfx/javafx-base/21.0.5/javafx-base-21.0.5-mac-aarch64.jar:/Users/titanichornet/.m2/repository/org/openjfx/javafx-fxml/21.0.5/javafx-fxml-21.0.5.jar:/Users/titanichornet/.m2/repository/org/openjfx/javafx-fxml/21.0.5/javafx-fxml-21.0.5-mac-aarch64.jar:/Users/titanichornet/.m2/repository/org/controlsfx/controlsfx/11.2.1/controlsfx-11.2.1.jar:/Users/titanichornet/.m2/repository/org/kordamp/ikonli/ikonli-javafx/12.3.1/ikonli-javafx-12.3.1.jar:/Users/titanichornet/.m2/repository/org/kordamp/ikonli/ikonli-core/12.3.1/ikonli-core-12.3.1.jar:/Users/titanichornet/.m2/repository/org/kordamp/ikonli/ikonli-materialdesign2-pack/12.3.1/ikonli-materialdesign2-pack-12.3.1.jar:/Users/titanichornet/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.17.2/jackson-databind-2.17.2.jar:/Users/titanichornet/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.17.2/jackson-annotations-2.17.2.jar:/Users/titanichornet/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.17.2/jackson-core-2.17.2.jar:/Users/titanichornet/.m2/repository/org/xerial/sqlite-jdbc/3.43.2.2/sqlite-jdbc-3.43.2.2.jar:/Users/titanichornet/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar: -sourcepath /Users/titanichornet/IdeaProjects/ASDA/src/main/java:/Users/titanichornet/IdeaProjects/ASDA/target/generated-sources/annotations: -s /Users/titanichornet/IdeaProjects/ASDA/target/generated-sources/annotations -g --release 21 -encoding UTF-8
+[DEBUG] incrementalBuildHelper#beforeRebuildExecution
+[INFO] Compiling 25 source files with javac [debug release 21] to target/classes
+[DEBUG] incrementalBuildHelper#afterRebuildExecution
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ ASDA ---
+[DEBUG] Loading mojo org.apache.maven.plugins:maven-resources-plugin:3.3.1:testResources from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-resources-plugin:3.3.1, parent: jdk.internal.loader.ClassLoaders$AppClassLoader@5bc2b487]
+[DEBUG] Configuring mojo execution 'org.apache.maven.plugins:maven-resources-plugin:3.3.1:testResources:default-testResources' with basic configurator -->
+[DEBUG]   (f) addDefaultExcludes = true
+[DEBUG]   (f) buildFilters = []
+[DEBUG]   (f) encoding = UTF-8
+[DEBUG]   (f) escapeWindowsPaths = true
+[DEBUG]   (f) fileNameFiltering = false
+[DEBUG]   (s) includeEmptyDirs = false
+[DEBUG]   (s) outputDirectory = /Users/titanichornet/IdeaProjects/ASDA/target/test-classes
+[DEBUG]   (s) overwrite = false
+[DEBUG]   (f) project = MavenProject: org.group1:ASDA:1.0-SNAPSHOT @ /Users/titanichornet/IdeaProjects/ASDA/pom.xml
+[DEBUG]   (s) resources = [Resource {targetPath: null, filtering: false, FileSet {directory: /Users/titanichornet/IdeaProjects/ASDA/src/test/resources, PatternSet [includes: {}, excludes: {}]}}]
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@47447ccf
+[DEBUG]   (f) skip = false
+[DEBUG]   (f) supportMultiLineFiltering = false
+[DEBUG]   (f) useBuildFilters = true
+[DEBUG]   (s) useDefaultDelimiters = true
+[DEBUG] -- end configuration --
+[DEBUG] properties used:
+[DEBUG] apple.awt.application.name: Launcher
+[DEBUG] classworlds.conf: /opt/homebrew/Cellar/maven/3.9.11/libexec/bin/m2.conf
+[DEBUG] controlsfx.version: 11.2.1
+[DEBUG] env.CLAUDECODE: 1
+[DEBUG] env.CLAUDE_CODE_ENTRYPOINT: cli
+[DEBUG] env.COMMAND_MODE: unix2003
+[DEBUG] env.COREPACK_ENABLE_AUTO_PIN: 0
+[DEBUG] env.FIG_TERM: 1
+[DEBUG] env.GIT_EDITOR: true
+[DEBUG] env.HOME: /Users/titanichornet
+[DEBUG] env.HOMEBREW_CELLAR: /opt/homebrew/Cellar
+[DEBUG] env.HOMEBREW_PREFIX: /opt/homebrew
+[DEBUG] env.HOMEBREW_REPOSITORY: /opt/homebrew
+[DEBUG] env.INFOPATH: /opt/homebrew/share/info:/opt/homebrew/share/info:
+[DEBUG] env.JAVA_HOME: /opt/homebrew/opt/openjdk/libexec/openjdk.jdk/Contents/Home
+[DEBUG] env.LC_CTYPE: UTF-8
+[DEBUG] env.LOGNAME: titanichornet
+[DEBUG] env.MAVEN_CMD_LINE_ARGS:  clean test -X
+[DEBUG] env.MAVEN_PROJECTBASEDIR: /Users/titanichornet/IdeaProjects/ASDA
+[DEBUG] env.NVM_BIN: /Users/titanichornet/.nvm/versions/node/v16.20.2/bin
+[DEBUG] env.NVM_CD_FLAGS: -q
+[DEBUG] env.NVM_DIR: /Users/titanichornet/.nvm
+[DEBUG] env.NVM_INC: /Users/titanichornet/.nvm/versions/node/v16.20.2/include/node
+[DEBUG] env.NoDefaultCurrentDirectoryInExePath: 1
+[DEBUG] env.OLDPWD: /Users/titanichornet/IdeaProjects/ASDA
+[DEBUG] env.OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE: delta
+[DEBUG] env.PATH: /Users/titanichornet/.nvm/versions/node/v16.20.2/bin:/Users/titanichornet/miniconda3/bin:/opt/homebrew/opt/postgresql@17/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/titanichornet/Library/Python/3.9/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/Users/titanichornet/.local/bin:/Users/titanichornet/.local/bin
+[DEBUG] env.PROCESS_LAUNCHED_BY_CW: 1
+[DEBUG] env.PROCESS_LAUNCHED_BY_Q: 1
+[DEBUG] env.PWD: /Users/titanichornet/IdeaProjects/ASDA
+[DEBUG] env.SHELL: /bin/zsh
+[DEBUG] env.SHLVL: 2
+[DEBUG] env.SSH_AUTH_SOCK: /private/tmp/com.apple.launchd.5b8uvE27id/Listeners
+[DEBUG] env.TERM: xterm-256color
+[DEBUG] env.TERMINAL_EMULATOR: JetBrains-JediTerm
+[DEBUG] env.TERM_SESSION_ID: 5974b5ec-4c21-4cda-99fc-8a329016ba26
+[DEBUG] env.TMPDIR: /var/folders/jn/ntw1m8n13j7f2n38tv0_87k00000gn/T/
+[DEBUG] env.USER: titanichornet
+[DEBUG] env.XPC_FLAGS: 0x0
+[DEBUG] env.XPC_SERVICE_NAME: 0
+[DEBUG] env.__CFBundleIdentifier: com.jetbrains.intellij
+[DEBUG] env.__CF_USER_TEXT_ENCODING: 0x1F5:0x0:0x0
+[DEBUG] file.encoding: UTF-8
+[DEBUG] file.separator: /
+[DEBUG] ftp.nonProxyHosts: local|*.local|169.254/16|*.169.254/16
+[DEBUG] http.nonProxyHosts: local|*.local|169.254/16|*.169.254/16
+[DEBUG] ikonli.version: 12.3.1
+[DEBUG] jackson.version: 2.17.2
+[DEBUG] java.class.path: /opt/homebrew/Cellar/maven/3.9.11/libexec/boot/plexus-classworlds-2.9.0.jar
+[DEBUG] java.class.version: 69.0
+[DEBUG] java.home: /opt/homebrew/Cellar/openjdk/25/libexec/openjdk.jdk/Contents/Home
+[DEBUG] java.io.tmpdir: /var/folders/jn/ntw1m8n13j7f2n38tv0_87k00000gn/T/
+[DEBUG] java.library.path: /Users/titanichornet/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+[DEBUG] java.runtime.name: OpenJDK Runtime Environment
+[DEBUG] java.runtime.version: 25
+[DEBUG] java.specification.name: Java Platform API Specification
+[DEBUG] java.specification.vendor: Oracle Corporation
+[DEBUG] java.specification.version: 25
+[DEBUG] java.vendor: Homebrew
+[DEBUG] java.vendor.url: https://github.com/Homebrew/homebrew-core/issues
+[DEBUG] java.vendor.url.bug: https://github.com/Homebrew/homebrew-core/issues
+[DEBUG] java.vendor.version: Homebrew
+[DEBUG] java.version: 25
+[DEBUG] java.version.date: 2025-09-16
+[DEBUG] java.vm.compressedOopsMode: Zero based
+[DEBUG] java.vm.info: mixed mode, sharing
+[DEBUG] java.vm.name: OpenJDK 64-Bit Server VM
+[DEBUG] java.vm.specification.name: Java Virtual Machine Specification
+[DEBUG] java.vm.specification.vendor: Oracle Corporation
+[DEBUG] java.vm.specification.version: 25
+[DEBUG] java.vm.vendor: Homebrew
+[DEBUG] java.vm.version: 25
+[DEBUG] javafx.version: 21.0.5
+[DEBUG] jdk.debug: release
+[DEBUG] junit.version: 5.11.0
+[DEBUG] library.jansi.path: /opt/homebrew/Cellar/maven/3.9.11/libexec/lib/jansi-native
+[DEBUG] line.separator: 
+
+[DEBUG] maven.build.timestamp: 2025-11-25T00:03:31Z
+[DEBUG] maven.build.version: Apache Maven 3.9.11 (3e54c93a704957b63ee3494413a2b544fd3d825b)
+[DEBUG] maven.compiler.release: 21
+[DEBUG] maven.conf: /opt/homebrew/Cellar/maven/3.9.11/libexec/conf
+[DEBUG] maven.home: /opt/homebrew/Cellar/maven/3.9.11/libexec
+[DEBUG] maven.multiModuleProjectDirectory: /Users/titanichornet/IdeaProjects/ASDA
+[DEBUG] maven.version: 3.9.11
+[DEBUG] native.encoding: UTF-8
+[DEBUG] os.arch: aarch64
+[DEBUG] os.name: Mac OS X
+[DEBUG] os.version: 15.6
+[DEBUG] path.separator: :
+[DEBUG] project.baseUri: file:/Users/titanichornet/IdeaProjects/ASDA/
+[DEBUG] project.build.sourceEncoding: UTF-8
+[DEBUG] slf4j.version: 2.0.12
+[DEBUG] socksNonProxyHosts: local|*.local|169.254/16|*.169.254/16
+[DEBUG] stderr.encoding: UTF-8
+[DEBUG] stdin.encoding: UTF-8
+[DEBUG] stdout.encoding: UTF-8
+[DEBUG] sun.arch.data.model: 64
+[DEBUG] sun.boot.library.path: /opt/homebrew/Cellar/openjdk/25/libexec/openjdk.jdk/Contents/Home/lib
+[DEBUG] sun.cpu.endian: little
+[DEBUG] sun.io.unicode.encoding: UnicodeBig
+[DEBUG] sun.java.command: org.codehaus.plexus.classworlds.launcher.Launcher clean test -X
+[DEBUG] sun.java.launcher: SUN_STANDARD
+[DEBUG] sun.jnu.encoding: UTF-8
+[DEBUG] sun.management.compiler: HotSpot 64-Bit Tiered Compilers
+[DEBUG] user.country: US
+[DEBUG] user.dir: /Users/titanichornet/IdeaProjects/ASDA
+[DEBUG] user.home: /Users/titanichornet
+[DEBUG] user.language: en
+[DEBUG] user.name: titanichornet
+[DEBUG] Using 'UTF-8' encoding to copy filtered resources.
+[DEBUG] Using 'UTF-8' encoding to copy filtered properties files.
+[DEBUG] resource with targetPath null
+directory /Users/titanichornet/IdeaProjects/ASDA/src/test/resources
+excludes []
+includes []
+[INFO] skip non existing resourceDirectory /Users/titanichornet/IdeaProjects/ASDA/src/test/resources
+[DEBUG] no user filter components
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ ASDA ---
+[DEBUG] Loading mojo org.apache.maven.plugins:maven-compiler-plugin:3.11.0:testCompile from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-compiler-plugin:3.11.0, parent: jdk.internal.loader.ClassLoaders$AppClassLoader@5bc2b487]
+[DEBUG] Configuring mojo execution 'org.apache.maven.plugins:maven-compiler-plugin:3.11.0:testCompile:default-testCompile' with basic configurator -->
+[DEBUG]   (f) basedir = /Users/titanichornet/IdeaProjects/ASDA
+[DEBUG]   (f) buildDirectory = /Users/titanichornet/IdeaProjects/ASDA/target
+[DEBUG]   (f) compileSourceRoots = [/Users/titanichornet/IdeaProjects/ASDA/src/test/java]
+[DEBUG]   (f) compilerId = javac
+[DEBUG]   (f) createMissingPackageInfoClass = true
+[DEBUG]   (f) debug = true
+[DEBUG]   (f) debugFileName = javac-test
+[DEBUG]   (f) enablePreview = false
+[DEBUG]   (f) encoding = UTF-8
+[DEBUG]   (f) failOnError = true
+[DEBUG]   (f) failOnWarning = false
+[DEBUG]   (f) forceJavacCompilerUse = false
+[DEBUG]   (f) fork = false
+[DEBUG]   (f) generatedTestSourcesDirectory = /Users/titanichornet/IdeaProjects/ASDA/target/generated-test-sources/test-annotations
+[DEBUG]   (f) mojoExecution = org.apache.maven.plugins:maven-compiler-plugin:3.11.0:testCompile {execution: default-testCompile}
+[DEBUG]   (f) optimize = false
+[DEBUG]   (f) outputDirectory = /Users/titanichornet/IdeaProjects/ASDA/target/test-classes
+[DEBUG]   (f) parameters = false
+[DEBUG]   (f) project = MavenProject: org.group1:ASDA:1.0-SNAPSHOT @ /Users/titanichornet/IdeaProjects/ASDA/pom.xml
+[DEBUG]   (s) release = 21
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@47447ccf
+[DEBUG]   (f) showCompilationChanges = false
+[DEBUG]   (f) showDeprecation = false
+[DEBUG]   (f) showWarnings = true
+[DEBUG]   (f) skipMultiThreadWarning = false
+[DEBUG]   (f) source = 1.8
+[DEBUG]   (f) staleMillis = 0
+[DEBUG]   (s) target = 1.8
+[DEBUG]   (f) testPath = [/Users/titanichornet/IdeaProjects/ASDA/target/test-classes, /Users/titanichornet/IdeaProjects/ASDA/target/classes, /Users/titanichornet/.m2/repository/org/openjfx/javafx-controls/21.0.5/javafx-controls-21.0.5.jar, /Users/titanichornet/.m2/repository/org/openjfx/javafx-controls/21.0.5/javafx-controls-21.0.5-mac-aarch64.jar, /Users/titanichornet/.m2/repository/org/openjfx/javafx-graphics/21.0.5/javafx-graphics-21.0.5.jar, /Users/titanichornet/.m2/repository/org/openjfx/javafx-graphics/21.0.5/javafx-graphics-21.0.5-mac-aarch64.jar, /Users/titanichornet/.m2/repository/org/openjfx/javafx-base/21.0.5/javafx-base-21.0.5.jar, /Users/titanichornet/.m2/repository/org/openjfx/javafx-base/21.0.5/javafx-base-21.0.5-mac-aarch64.jar, /Users/titanichornet/.m2/repository/org/openjfx/javafx-fxml/21.0.5/javafx-fxml-21.0.5.jar, /Users/titanichornet/.m2/repository/org/openjfx/javafx-fxml/21.0.5/javafx-fxml-21.0.5-mac-aarch64.jar, /Users/titanichornet/.m2/repository/org/controlsfx/controlsfx/11.2.1/controlsfx-11.2.1.jar, /Users/titanichornet/.m2/repository/org/kordamp/ikonli/ikonli-javafx/12.3.1/ikonli-javafx-12.3.1.jar, /Users/titanichornet/.m2/repository/org/kordamp/ikonli/ikonli-core/12.3.1/ikonli-core-12.3.1.jar, /Users/titanichornet/.m2/repository/org/kordamp/ikonli/ikonli-materialdesign2-pack/12.3.1/ikonli-materialdesign2-pack-12.3.1.jar, /Users/titanichornet/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.17.2/jackson-databind-2.17.2.jar, /Users/titanichornet/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.17.2/jackson-annotations-2.17.2.jar, /Users/titanichornet/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.17.2/jackson-core-2.17.2.jar, /Users/titanichornet/.m2/repository/org/xerial/sqlite-jdbc/3.43.2.2/sqlite-jdbc-3.43.2.2.jar, /Users/titanichornet/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar, /Users/titanichornet/.m2/repository/org/junit/jupiter/junit-jupiter/5.11.0/junit-jupiter-5.11.0.jar, /Users/titanichornet/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.0/junit-jupiter-api-5.11.0.jar, /Users/titanichornet/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar, /Users/titanichornet/.m2/repository/org/junit/platform/junit-platform-commons/1.11.0/junit-platform-commons-1.11.0.jar, /Users/titanichornet/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar, /Users/titanichornet/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.0/junit-jupiter-params-5.11.0.jar, /Users/titanichornet/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.11.0/junit-jupiter-engine-5.11.0.jar, /Users/titanichornet/.m2/repository/org/junit/platform/junit-platform-engine/1.11.0/junit-platform-engine-1.11.0.jar]
+[DEBUG]   (f) useIncrementalCompilation = true
+[DEBUG]   (f) useModulePath = true
+[DEBUG]   (f) verbose = false
+[DEBUG] -- end configuration --
+[DEBUG] Using compiler 'javac'.
+[DEBUG] Adding /Users/titanichornet/IdeaProjects/ASDA/target/generated-test-sources/test-annotations to test-compile source roots:
+  /Users/titanichornet/IdeaProjects/ASDA/src/test/java
+[DEBUG] New test-compile source roots:
+  /Users/titanichornet/IdeaProjects/ASDA/src/test/java
+  /Users/titanichornet/IdeaProjects/ASDA/target/generated-test-sources/test-annotations
+[DEBUG] CompilerReuseStrategy: reuseCreated
+[DEBUG] useIncrementalCompilation enabled
+[DEBUG] New dependency detected: /Users/titanichornet/IdeaProjects/ASDA/target/classes
+[DEBUG] Stale source detected: /Users/titanichornet/IdeaProjects/ASDA/src/test/java/org/group1/asda/domain/QuestionTest.java
+[DEBUG] Stale source detected: /Users/titanichornet/IdeaProjects/ASDA/src/test/java/org/group1/asda/domain/StimulusTest.java
+[DEBUG] Stale source detected: /Users/titanichornet/IdeaProjects/ASDA/src/test/java/org/group1/asda/assessment/AQAssessmentTest.java
+[DEBUG] Stale source detected: /Users/titanichornet/IdeaProjects/ASDA/src/test/java/org/group1/asda/domain/GameStateTest.java
+[DEBUG] Stale source detected: /Users/titanichornet/IdeaProjects/ASDA/src/test/java/org/group1/asda/assessment/AQScoreCalculatorTest.java
+[DEBUG] Stale source detected: /Users/titanichornet/IdeaProjects/ASDA/src/test/java/org/group1/asda/assessment/AQResultInterpreterTest.java
+[DEBUG] Stale source detected: /Users/titanichornet/IdeaProjects/ASDA/src/test/java/org/group1/asda/service/AssessmentServiceTest.java
+[DEBUG] Stale source detected: /Users/titanichornet/IdeaProjects/ASDA/src/test/java/org/group1/asda/domain/AttentionGameStateTest.java
+[DEBUG] Stale source detected: /Users/titanichornet/IdeaProjects/ASDA/src/test/java/org/group1/asda/assessment/AQQuestionTest.java
+[DEBUG] Stale source detected: /Users/titanichornet/IdeaProjects/ASDA/src/test/java/org/group1/asda/domain/CardTest.java
+[INFO] Changes detected - recompiling the module! :dependency
+[DEBUG] Classpath:
+[DEBUG]  /Users/titanichornet/IdeaProjects/ASDA/target/test-classes
+[DEBUG]  /Users/titanichornet/IdeaProjects/ASDA/target/classes
+[DEBUG]  /Users/titanichornet/.m2/repository/org/openjfx/javafx-controls/21.0.5/javafx-controls-21.0.5.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/org/openjfx/javafx-controls/21.0.5/javafx-controls-21.0.5-mac-aarch64.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/org/openjfx/javafx-graphics/21.0.5/javafx-graphics-21.0.5.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/org/openjfx/javafx-graphics/21.0.5/javafx-graphics-21.0.5-mac-aarch64.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/org/openjfx/javafx-base/21.0.5/javafx-base-21.0.5.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/org/openjfx/javafx-base/21.0.5/javafx-base-21.0.5-mac-aarch64.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/org/openjfx/javafx-fxml/21.0.5/javafx-fxml-21.0.5.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/org/openjfx/javafx-fxml/21.0.5/javafx-fxml-21.0.5-mac-aarch64.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/org/controlsfx/controlsfx/11.2.1/controlsfx-11.2.1.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/org/kordamp/ikonli/ikonli-javafx/12.3.1/ikonli-javafx-12.3.1.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/org/kordamp/ikonli/ikonli-core/12.3.1/ikonli-core-12.3.1.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/org/kordamp/ikonli/ikonli-materialdesign2-pack/12.3.1/ikonli-materialdesign2-pack-12.3.1.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.17.2/jackson-databind-2.17.2.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.17.2/jackson-annotations-2.17.2.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.17.2/jackson-core-2.17.2.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/org/xerial/sqlite-jdbc/3.43.2.2/sqlite-jdbc-3.43.2.2.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/org/junit/jupiter/junit-jupiter/5.11.0/junit-jupiter-5.11.0.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.0/junit-jupiter-api-5.11.0.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/org/junit/platform/junit-platform-commons/1.11.0/junit-platform-commons-1.11.0.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.0/junit-jupiter-params-5.11.0.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.11.0/junit-jupiter-engine-5.11.0.jar
+[DEBUG]  /Users/titanichornet/.m2/repository/org/junit/platform/junit-platform-engine/1.11.0/junit-platform-engine-1.11.0.jar
+[DEBUG] Source roots:
+[DEBUG]  /Users/titanichornet/IdeaProjects/ASDA/src/test/java
+[DEBUG]  /Users/titanichornet/IdeaProjects/ASDA/target/generated-test-sources/test-annotations
+[DEBUG] Command line options:
+[DEBUG] -d /Users/titanichornet/IdeaProjects/ASDA/target/test-classes -classpath /Users/titanichornet/IdeaProjects/ASDA/target/test-classes:/Users/titanichornet/IdeaProjects/ASDA/target/classes:/Users/titanichornet/.m2/repository/org/openjfx/javafx-controls/21.0.5/javafx-controls-21.0.5.jar:/Users/titanichornet/.m2/repository/org/openjfx/javafx-controls/21.0.5/javafx-controls-21.0.5-mac-aarch64.jar:/Users/titanichornet/.m2/repository/org/openjfx/javafx-graphics/21.0.5/javafx-graphics-21.0.5.jar:/Users/titanichornet/.m2/repository/org/openjfx/javafx-graphics/21.0.5/javafx-graphics-21.0.5-mac-aarch64.jar:/Users/titanichornet/.m2/repository/org/openjfx/javafx-base/21.0.5/javafx-base-21.0.5.jar:/Users/titanichornet/.m2/repository/org/openjfx/javafx-base/21.0.5/javafx-base-21.0.5-mac-aarch64.jar:/Users/titanichornet/.m2/repository/org/openjfx/javafx-fxml/21.0.5/javafx-fxml-21.0.5.jar:/Users/titanichornet/.m2/repository/org/openjfx/javafx-fxml/21.0.5/javafx-fxml-21.0.5-mac-aarch64.jar:/Users/titanichornet/.m2/repository/org/controlsfx/controlsfx/11.2.1/controlsfx-11.2.1.jar:/Users/titanichornet/.m2/repository/org/kordamp/ikonli/ikonli-javafx/12.3.1/ikonli-javafx-12.3.1.jar:/Users/titanichornet/.m2/repository/org/kordamp/ikonli/ikonli-core/12.3.1/ikonli-core-12.3.1.jar:/Users/titanichornet/.m2/repository/org/kordamp/ikonli/ikonli-materialdesign2-pack/12.3.1/ikonli-materialdesign2-pack-12.3.1.jar:/Users/titanichornet/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.17.2/jackson-databind-2.17.2.jar:/Users/titanichornet/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.17.2/jackson-annotations-2.17.2.jar:/Users/titanichornet/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.17.2/jackson-core-2.17.2.jar:/Users/titanichornet/.m2/repository/org/xerial/sqlite-jdbc/3.43.2.2/sqlite-jdbc-3.43.2.2.jar:/Users/titanichornet/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:/Users/titanichornet/.m2/repository/org/junit/jupiter/junit-jupiter/5.11.0/junit-jupiter-5.11.0.jar:/Users/titanichornet/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.0/junit-jupiter-api-5.11.0.jar:/Users/titanichornet/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/titanichornet/.m2/repository/org/junit/platform/junit-platform-commons/1.11.0/junit-platform-commons-1.11.0.jar:/Users/titanichornet/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/titanichornet/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.0/junit-jupiter-params-5.11.0.jar:/Users/titanichornet/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.11.0/junit-jupiter-engine-5.11.0.jar:/Users/titanichornet/.m2/repository/org/junit/platform/junit-platform-engine/1.11.0/junit-platform-engine-1.11.0.jar: -sourcepath /Users/titanichornet/IdeaProjects/ASDA/src/test/java:/Users/titanichornet/IdeaProjects/ASDA/target/generated-test-sources/test-annotations: -s /Users/titanichornet/IdeaProjects/ASDA/target/generated-test-sources/test-annotations -g --release 21 -encoding UTF-8
+[DEBUG] incrementalBuildHelper#beforeRebuildExecution
+[INFO] Compiling 10 source files with javac [debug release 21] to target/test-classes
+[DEBUG] incrementalBuildHelper#afterRebuildExecution
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ ASDA ---
+[DEBUG] Using mirror maven-default-http-blocker (http://0.0.0.0/) for jboss-public-repository-group (http://repository.jboss.org/nexus/content/groups/public).
+[DEBUG] Dependency collection stats {ConflictMarker.analyzeTime=125500, ConflictMarker.markTime=83875, ConflictMarker.nodeCount=78, ConflictIdSorter.graphTime=59541, ConflictIdSorter.topsortTime=25500, ConflictIdSorter.conflictIdCount=39, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=806417, ConflictResolver.conflictItemCount=76, DfDependencyCollector.collectTime=96552000, DfDependencyCollector.transformTime=1117042}
+[DEBUG] org.apache.maven.plugins:maven-surefire-plugin:jar:3.2.5
+[DEBUG]    org.apache.maven.surefire:maven-surefire-common:jar:3.2.5:compile
+[DEBUG]       org.apache.maven.surefire:surefire-api:jar:3.2.5:compile
+[DEBUG]          org.apache.maven.surefire:surefire-logger-api:jar:3.2.5:compile
+[DEBUG]       org.apache.maven.surefire:surefire-extensions-api:jar:3.2.5:compile
+[DEBUG]       org.apache.maven.surefire:surefire-booter:jar:3.2.5:compile
+[DEBUG]          org.apache.maven.surefire:surefire-extensions-spi:jar:3.2.5:compile
+[DEBUG]       org.eclipse.aether:aether-util:jar:1.0.0.v20140518:compile
+[DEBUG]          org.eclipse.aether:aether-api:jar:1.0.0.v20140518:compile
+[DEBUG]       org.apache.maven.shared:maven-common-artifact-filters:jar:3.1.1:compile (version managed from default) (exclusions managed from default)
+[DEBUG]          org.apache.maven:maven-artifact:jar:3.2.5:provided (scope managed from default) (version managed from default)
+[DEBUG]             org.codehaus.plexus:plexus-utils:jar:4.0.0:provided (version managed from default)
+[DEBUG]          org.apache.maven:maven-core:jar:3.2.5:provided (scope managed from default) (version managed from default)
+[DEBUG]             org.apache.maven:maven-settings:jar:3.2.5:provided (version managed from default)
+[DEBUG]             org.apache.maven:maven-settings-builder:jar:3.2.5:provided
+[DEBUG]             org.apache.maven:maven-repository-metadata:jar:3.2.5:provided
+[DEBUG]             org.apache.maven:maven-model-builder:jar:3.2.5:provided
+[DEBUG]             org.apache.maven:maven-aether-provider:jar:3.2.5:provided
+[DEBUG]                org.eclipse.aether:aether-spi:jar:1.0.0.v20140518:provided
+[DEBUG]             org.eclipse.aether:aether-impl:jar:1.0.0.v20140518:provided
+[DEBUG]             org.eclipse.sisu:org.eclipse.sisu.plexus:jar:0.9.0.M2:provided (version managed from default)
+[DEBUG]                javax.annotation:javax.annotation-api:jar:1.2:provided
+[DEBUG]                javax.enterprise:cdi-api:jar:1.2:provided
+[DEBUG]                org.eclipse.sisu:org.eclipse.sisu.inject:jar:0.9.0.M2:provided (version managed from default)
+[DEBUG]             org.sonatype.sisu:sisu-guice:jar:no_aop:3.2.3:provided
+[DEBUG]                javax.inject:javax.inject:jar:1:provided
+[DEBUG]                aopalliance:aopalliance:jar:1.0:provided
+[DEBUG]                com.google.guava:guava:jar:16.0.1:provided
+[DEBUG]             org.codehaus.plexus:plexus-interpolation:jar:1.21:provided
+[DEBUG]             org.codehaus.plexus:plexus-classworlds:jar:2.5.2:provided
+[DEBUG]             org.codehaus.plexus:plexus-component-annotations:jar:1.5.5:provided
+[DEBUG]             org.sonatype.plexus:plexus-sec-dispatcher:jar:1.3:provided
+[DEBUG]                org.sonatype.plexus:plexus-cipher:jar:1.4:provided
+[DEBUG]          org.apache.maven:maven-plugin-api:jar:3.2.5:provided (scope managed from default) (version managed from default)
+[DEBUG]          commons-io:commons-io:jar:2.15.1:compile (version managed from default)
+[DEBUG]       org.codehaus.plexus:plexus-java:jar:1.2.0:compile (version managed from default)
+[DEBUG]          org.ow2.asm:asm:jar:9.6:compile
+[DEBUG]          com.thoughtworks.qdox:qdox:jar:2.0.3:compile
+[DEBUG]       org.apache.maven.surefire:surefire-shared-utils:jar:3.2.5:compile
+[DEBUG] Created new class realm plugin>org.apache.maven.plugins:maven-surefire-plugin:3.2.5
+[DEBUG] Importing foreign packages into class realm plugin>org.apache.maven.plugins:maven-surefire-plugin:3.2.5
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.apache.maven.plugins:maven-surefire-plugin:3.2.5
+[DEBUG]   Included: org.apache.maven.plugins:maven-surefire-plugin:jar:3.2.5
+[DEBUG]   Included: org.apache.maven.surefire:maven-surefire-common:jar:3.2.5
+[DEBUG]   Included: org.apache.maven.surefire:surefire-api:jar:3.2.5
+[DEBUG]   Included: org.apache.maven.surefire:surefire-logger-api:jar:3.2.5
+[DEBUG]   Included: org.apache.maven.surefire:surefire-extensions-api:jar:3.2.5
+[DEBUG]   Included: org.apache.maven.surefire:surefire-booter:jar:3.2.5
+[DEBUG]   Included: org.apache.maven.surefire:surefire-extensions-spi:jar:3.2.5
+[DEBUG]   Included: org.apache.maven.shared:maven-common-artifact-filters:jar:3.1.1
+[DEBUG]   Included: commons-io:commons-io:jar:2.15.1
+[DEBUG]   Included: org.codehaus.plexus:plexus-java:jar:1.2.0
+[DEBUG]   Included: org.ow2.asm:asm:jar:9.6
+[DEBUG]   Included: com.thoughtworks.qdox:qdox:jar:2.0.3
+[DEBUG]   Included: org.apache.maven.surefire:surefire-shared-utils:jar:3.2.5
+[DEBUG] Loading mojo org.apache.maven.plugins:maven-surefire-plugin:3.2.5:test from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-surefire-plugin:3.2.5, parent: jdk.internal.loader.ClassLoaders$AppClassLoader@5bc2b487]
+[DEBUG] Configuring mojo execution 'org.apache.maven.plugins:maven-surefire-plugin:3.2.5:test:default-test' with basic configurator -->
+[DEBUG]   (f) additionalClasspathDependencies = []
+[DEBUG]   (s) additionalClasspathElements = []
+[DEBUG]   (s) basedir = /Users/titanichornet/IdeaProjects/ASDA
+[DEBUG]   (s) childDelegation = false
+[DEBUG]   (f) classesDirectory = /Users/titanichornet/IdeaProjects/ASDA/target/classes
+[DEBUG]   (s) classpathDependencyExcludes = []
+[DEBUG]   (s) dependenciesToScan = []
+[DEBUG]   (s) disableXmlReport = false
+[DEBUG]   (s) enableAssertions = true
+[DEBUG]   (s) excludeJUnit5Engines = []
+[DEBUG]   (f) excludedEnvironmentVariables = []
+[DEBUG]   (s) excludes = []
+[DEBUG]   (s) failIfNoSpecifiedTests = true
+[DEBUG]   (s) failIfNoTests = false
+[DEBUG]   (s) failOnFlakeCount = 0
+[DEBUG]   (f) forkCount = 1
+[DEBUG]   (s) forkedProcessExitTimeoutInSeconds = 30
+[DEBUG]   (s) includeJUnit5Engines = []
+[DEBUG]   (s) includes = []
+[DEBUG]   (s) junitArtifactName = junit:junit
+[DEBUG]   (f) parallelMavenExecution = false
+[DEBUG]   (s) parallelOptimized = true
+[DEBUG]   (s) perCoreThreadCount = true
+[DEBUG]   (s) pluginArtifactMap = {org.apache.maven.plugins:maven-surefire-plugin=org.apache.maven.plugins:maven-surefire-plugin:maven-plugin:3.2.5:, org.apache.maven.surefire:maven-surefire-common=org.apache.maven.surefire:maven-surefire-common:jar:3.2.5:compile, org.apache.maven.surefire:surefire-api=org.apache.maven.surefire:surefire-api:jar:3.2.5:compile, org.apache.maven.surefire:surefire-logger-api=org.apache.maven.surefire:surefire-logger-api:jar:3.2.5:compile, org.apache.maven.surefire:surefire-extensions-api=org.apache.maven.surefire:surefire-extensions-api:jar:3.2.5:compile, org.apache.maven.surefire:surefire-booter=org.apache.maven.surefire:surefire-booter:jar:3.2.5:compile, org.apache.maven.surefire:surefire-extensions-spi=org.apache.maven.surefire:surefire-extensions-spi:jar:3.2.5:compile, org.eclipse.aether:aether-util=org.eclipse.aether:aether-util:jar:1.0.0.v20140518:compile, org.eclipse.aether:aether-api=org.eclipse.aether:aether-api:jar:1.0.0.v20140518:compile, org.apache.maven.shared:maven-common-artifact-filters=org.apache.maven.shared:maven-common-artifact-filters:jar:3.1.1:compile, commons-io:commons-io=commons-io:commons-io:jar:2.15.1:compile, org.codehaus.plexus:plexus-java=org.codehaus.plexus:plexus-java:jar:1.2.0:compile, org.ow2.asm:asm=org.ow2.asm:asm:jar:9.6:compile, com.thoughtworks.qdox:qdox=com.thoughtworks.qdox:qdox:jar:2.0.3:compile, org.apache.maven.surefire:surefire-shared-utils=org.apache.maven.surefire:surefire-shared-utils:jar:3.2.5:compile}
+[DEBUG]   (f) pluginDescriptor = Component Descriptor: role: 'org.apache.maven.plugin.Mojo', implementation: 'org.apache.maven.plugins.maven_surefire_plugin.HelpMojo', role hint: 'org.apache.maven.plugins:maven-surefire-plugin:3.2.5:help'
+role: 'org.apache.maven.plugin.Mojo', implementation: 'org.apache.maven.plugin.surefire.SurefirePlugin', role hint: 'org.apache.maven.plugins:maven-surefire-plugin:3.2.5:test'
+---
+[DEBUG]   (s) printSummary = true
+[DEBUG]   (s) project = MavenProject: org.group1:ASDA:1.0-SNAPSHOT @ /Users/titanichornet/IdeaProjects/ASDA/pom.xml
+[DEBUG]   (s) projectArtifactMap = {org.openjfx:javafx-controls=org.openjfx:javafx-controls:jar:mac-aarch64:21.0.5:compile, org.openjfx:javafx-graphics=org.openjfx:javafx-graphics:jar:mac-aarch64:21.0.5:compile, org.openjfx:javafx-base=org.openjfx:javafx-base:jar:mac-aarch64:21.0.5:compile, org.openjfx:javafx-fxml=org.openjfx:javafx-fxml:jar:mac-aarch64:21.0.5:compile, org.controlsfx:controlsfx=org.controlsfx:controlsfx:jar:11.2.1:compile, org.kordamp.ikonli:ikonli-javafx=org.kordamp.ikonli:ikonli-javafx:jar:12.3.1:compile, org.kordamp.ikonli:ikonli-core=org.kordamp.ikonli:ikonli-core:jar:12.3.1:compile, org.kordamp.ikonli:ikonli-materialdesign2-pack=org.kordamp.ikonli:ikonli-materialdesign2-pack:jar:12.3.1:compile, com.fasterxml.jackson.core:jackson-databind=com.fasterxml.jackson.core:jackson-databind:jar:2.17.2:compile, com.fasterxml.jackson.core:jackson-annotations=com.fasterxml.jackson.core:jackson-annotations:jar:2.17.2:compile, com.fasterxml.jackson.core:jackson-core=com.fasterxml.jackson.core:jackson-core:jar:2.17.2:compile, org.xerial:sqlite-jdbc=org.xerial:sqlite-jdbc:jar:3.43.2.2:compile, org.slf4j:slf4j-api=org.slf4j:slf4j-api:jar:1.7.36:compile, org.junit.jupiter:junit-jupiter=org.junit.jupiter:junit-jupiter:jar:5.11.0:test, org.junit.jupiter:junit-jupiter-api=org.junit.jupiter:junit-jupiter-api:jar:5.11.0:test, org.opentest4j:opentest4j=org.opentest4j:opentest4j:jar:1.3.0:test, org.junit.platform:junit-platform-commons=org.junit.platform:junit-platform-commons:jar:1.11.0:test, org.apiguardian:apiguardian-api=org.apiguardian:apiguardian-api:jar:1.1.2:test, org.junit.jupiter:junit-jupiter-params=org.junit.jupiter:junit-jupiter-params:jar:5.11.0:test, org.junit.jupiter:junit-jupiter-engine=org.junit.jupiter:junit-jupiter-engine:jar:5.11.0:test, org.junit.platform:junit-platform-engine=org.junit.platform:junit-platform-engine:jar:1.11.0:test}
+[DEBUG]   (s) projectBuildDirectory = /Users/titanichornet/IdeaProjects/ASDA/target
+[DEBUG]   (s) redirectTestOutputToFile = false
+[DEBUG]   (s) reportFormat = brief
+[DEBUG]   (s) reportsDirectory = /Users/titanichornet/IdeaProjects/ASDA/target/surefire-reports
+[DEBUG]   (f) rerunFailingTestsCount = 0
+[DEBUG]   (f) reuseForks = true
+[DEBUG]   (s) runOrder = filesystem
+[DEBUG]   (s) session = org.apache.maven.execution.MavenSession@47447ccf
+[DEBUG]   (f) shutdown = exit
+[DEBUG]   (s) skip = false
+[DEBUG]   (f) skipAfterFailureCount = 0
+[DEBUG]   (s) skipTests = false
+[DEBUG]   (s) suiteXmlFiles = []
+[DEBUG]   (s) tempDir = surefire
+[DEBUG]   (s) testClassesDirectory = /Users/titanichornet/IdeaProjects/ASDA/target/test-classes
+[DEBUG]   (s) testFailureIgnore = false
+[DEBUG]   (s) testNGArtifactName = org.testng:testng
+[DEBUG]   (s) testSourceDirectory = /Users/titanichornet/IdeaProjects/ASDA/src/test/java
+[DEBUG]   (s) threadCountClasses = 0
+[DEBUG]   (s) threadCountMethods = 0
+[DEBUG]   (s) threadCountSuites = 0
+[DEBUG]   (s) trimStackTrace = false
+[DEBUG]   (s) useFile = true
+[DEBUG]   (s) useManifestOnlyJar = true
+[DEBUG]   (f) useModulePath = false
+[DEBUG]   (s) useSystemClassLoader = true
+[DEBUG]   (s) useUnlimitedThreads = false
+[DEBUG]   (s) workingDirectory = /Users/titanichornet/IdeaProjects/ASDA
+[DEBUG] -- end configuration --
+[DEBUG] Using JVM: /opt/homebrew/Cellar/openjdk/25/libexec/openjdk.jdk/Contents/Home/bin/java with Java version 25.0
+[DEBUG] Resolved included and excluded patterns: **/Test*.java, **/*Test.java, **/*Tests.java, **/*TestCase.java, !**/*$*
+[DEBUG] Surefire report directory: /Users/titanichornet/IdeaProjects/ASDA/target/surefire-reports
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[DEBUG] Using the provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[DEBUG] Setting system property [basedir]=[/Users/titanichornet/IdeaProjects/ASDA]
+[DEBUG] Setting system property [localRepository]=[/Users/titanichornet/.m2/repository]
+[DEBUG] Dependency collection stats {ConflictMarker.analyzeTime=30208, ConflictMarker.markTime=10292, ConflictMarker.nodeCount=7, ConflictIdSorter.graphTime=6666, ConflictIdSorter.topsortTime=5709, ConflictIdSorter.conflictIdCount=5, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=75834, ConflictResolver.conflictItemCount=6, DfDependencyCollector.collectTime=2072333, DfDependencyCollector.transformTime=136625}
+[DEBUG] Found implementation of fork node factory: org.apache.maven.plugin.surefire.extensions.LegacyForkNodeFactory
+[DEBUG] Using fork starter with configuration implementation org.apache.maven.plugin.surefire.booterclient.JarManifestForkConfiguration
+[DEBUG] Dependency collection stats {ConflictMarker.analyzeTime=19167, ConflictMarker.markTime=13000, ConflictMarker.nodeCount=15, ConflictIdSorter.graphTime=12959, ConflictIdSorter.topsortTime=7208, ConflictIdSorter.conflictIdCount=10, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=130916, ConflictResolver.conflictItemCount=14, DfDependencyCollector.collectTime=6706833, DfDependencyCollector.transformTime=193000}
+[DEBUG] Resolving artifact org.junit.platform:junit-platform-launcher:1.11.0
+[DEBUG] Dependency collection stats {ConflictMarker.analyzeTime=13000, ConflictMarker.markTime=10083, ConflictMarker.nodeCount=8, ConflictIdSorter.graphTime=6500, ConflictIdSorter.topsortTime=5625, ConflictIdSorter.conflictIdCount=5, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=54083, ConflictResolver.conflictItemCount=7, DfDependencyCollector.collectTime=981916, DfDependencyCollector.transformTime=96334}
+[DEBUG] Resolved artifact org.junit.platform:junit-platform-launcher:1.11.0 to [org.junit.platform:junit-platform-launcher:jar:1.11.0, org.junit.platform:junit-platform-engine:jar:1.11.0, org.opentest4j:opentest4j:jar:1.3.0, org.junit.platform:junit-platform-commons:jar:1.11.0, org.apiguardian:apiguardian-api:jar:1.1.2]
+[DEBUG] test classpath:  /Users/titanichornet/IdeaProjects/ASDA/target/test-classes  /Users/titanichornet/IdeaProjects/ASDA/target/classes  /Users/titanichornet/.m2/repository/org/openjfx/javafx-controls/21.0.5/javafx-controls-21.0.5.jar  /Users/titanichornet/.m2/repository/org/openjfx/javafx-controls/21.0.5/javafx-controls-21.0.5-mac-aarch64.jar  /Users/titanichornet/.m2/repository/org/openjfx/javafx-graphics/21.0.5/javafx-graphics-21.0.5.jar  /Users/titanichornet/.m2/repository/org/openjfx/javafx-graphics/21.0.5/javafx-graphics-21.0.5-mac-aarch64.jar  /Users/titanichornet/.m2/repository/org/openjfx/javafx-base/21.0.5/javafx-base-21.0.5.jar  /Users/titanichornet/.m2/repository/org/openjfx/javafx-base/21.0.5/javafx-base-21.0.5-mac-aarch64.jar  /Users/titanichornet/.m2/repository/org/openjfx/javafx-fxml/21.0.5/javafx-fxml-21.0.5.jar  /Users/titanichornet/.m2/repository/org/openjfx/javafx-fxml/21.0.5/javafx-fxml-21.0.5-mac-aarch64.jar  /Users/titanichornet/.m2/repository/org/controlsfx/controlsfx/11.2.1/controlsfx-11.2.1.jar  /Users/titanichornet/.m2/repository/org/kordamp/ikonli/ikonli-javafx/12.3.1/ikonli-javafx-12.3.1.jar  /Users/titanichornet/.m2/repository/org/kordamp/ikonli/ikonli-core/12.3.1/ikonli-core-12.3.1.jar  /Users/titanichornet/.m2/repository/org/kordamp/ikonli/ikonli-materialdesign2-pack/12.3.1/ikonli-materialdesign2-pack-12.3.1.jar  /Users/titanichornet/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.17.2/jackson-databind-2.17.2.jar  /Users/titanichornet/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.17.2/jackson-annotations-2.17.2.jar  /Users/titanichornet/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.17.2/jackson-core-2.17.2.jar  /Users/titanichornet/.m2/repository/org/xerial/sqlite-jdbc/3.43.2.2/sqlite-jdbc-3.43.2.2.jar  /Users/titanichornet/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar  /Users/titanichornet/.m2/repository/org/junit/jupiter/junit-jupiter/5.11.0/junit-jupiter-5.11.0.jar  /Users/titanichornet/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.0/junit-jupiter-api-5.11.0.jar  /Users/titanichornet/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar  /Users/titanichornet/.m2/repository/org/junit/platform/junit-platform-commons/1.11.0/junit-platform-commons-1.11.0.jar  /Users/titanichornet/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar  /Users/titanichornet/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.0/junit-jupiter-params-5.11.0.jar  /Users/titanichornet/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.11.0/junit-jupiter-engine-5.11.0.jar  /Users/titanichornet/.m2/repository/org/junit/platform/junit-platform-engine/1.11.0/junit-platform-engine-1.11.0.jar
+[DEBUG] provider classpath:  /Users/titanichornet/.m2/repository/org/apache/maven/surefire/surefire-junit-platform/3.2.5/surefire-junit-platform-3.2.5.jar  /Users/titanichornet/.m2/repository/org/apache/maven/surefire/surefire-api/3.2.5/surefire-api-3.2.5.jar  /Users/titanichornet/.m2/repository/org/apache/maven/surefire/surefire-logger-api/3.2.5/surefire-logger-api-3.2.5.jar  /Users/titanichornet/.m2/repository/org/apache/maven/surefire/surefire-shared-utils/3.2.5/surefire-shared-utils-3.2.5.jar  /Users/titanichornet/.m2/repository/org/apache/maven/surefire/common-java5/3.2.5/common-java5-3.2.5.jar  /Users/titanichornet/.m2/repository/org/junit/platform/junit-platform-launcher/1.11.0/junit-platform-launcher-1.11.0.jar
+[DEBUG] test(compact) classpath:  test-classes  classes  javafx-controls-21.0.5.jar  javafx-controls-21.0.5-mac-aarch64.jar  javafx-graphics-21.0.5.jar  javafx-graphics-21.0.5-mac-aarch64.jar  javafx-base-21.0.5.jar  javafx-base-21.0.5-mac-aarch64.jar  javafx-fxml-21.0.5.jar  javafx-fxml-21.0.5-mac-aarch64.jar  controlsfx-11.2.1.jar  ikonli-javafx-12.3.1.jar  ikonli-core-12.3.1.jar  ikonli-materialdesign2-pack-12.3.1.jar  jackson-databind-2.17.2.jar  jackson-annotations-2.17.2.jar  jackson-core-2.17.2.jar  sqlite-jdbc-3.43.2.2.jar  slf4j-api-1.7.36.jar  junit-jupiter-5.11.0.jar  junit-jupiter-api-5.11.0.jar  opentest4j-1.3.0.jar  junit-platform-commons-1.11.0.jar  apiguardian-api-1.1.2.jar  junit-jupiter-params-5.11.0.jar  junit-jupiter-engine-5.11.0.jar  junit-platform-engine-1.11.0.jar
+[DEBUG] provider(compact) classpath:  surefire-junit-platform-3.2.5.jar  surefire-api-3.2.5.jar  surefire-logger-api-3.2.5.jar  surefire-shared-utils-3.2.5.jar  common-java5-3.2.5.jar  junit-platform-launcher-1.11.0.jar
+[DEBUG] in-process classpath:  /Users/titanichornet/.m2/repository/org/apache/maven/surefire/surefire-junit-platform/3.2.5/surefire-junit-platform-3.2.5.jar  /Users/titanichornet/.m2/repository/org/apache/maven/surefire/surefire-api/3.2.5/surefire-api-3.2.5.jar  /Users/titanichornet/.m2/repository/org/apache/maven/surefire/surefire-logger-api/3.2.5/surefire-logger-api-3.2.5.jar  /Users/titanichornet/.m2/repository/org/apache/maven/surefire/surefire-shared-utils/3.2.5/surefire-shared-utils-3.2.5.jar  /Users/titanichornet/.m2/repository/org/apache/maven/surefire/common-java5/3.2.5/common-java5-3.2.5.jar  /Users/titanichornet/.m2/repository/org/junit/platform/junit-platform-launcher/1.11.0/junit-platform-launcher-1.11.0.jar  /Users/titanichornet/.m2/repository/org/apache/maven/surefire/maven-surefire-common/3.2.5/maven-surefire-common-3.2.5.jar  /Users/titanichornet/.m2/repository/org/apache/maven/surefire/surefire-booter/3.2.5/surefire-booter-3.2.5.jar  /Users/titanichornet/.m2/repository/org/apache/maven/surefire/surefire-extensions-api/3.2.5/surefire-extensions-api-3.2.5.jar  /Users/titanichornet/.m2/repository/org/apache/maven/surefire/surefire-extensions-spi/3.2.5/surefire-extensions-spi-3.2.5.jar
+[DEBUG] in-process(compact) classpath:  surefire-junit-platform-3.2.5.jar  surefire-api-3.2.5.jar  surefire-logger-api-3.2.5.jar  surefire-shared-utils-3.2.5.jar  common-java5-3.2.5.jar  junit-platform-launcher-1.11.0.jar  maven-surefire-common-3.2.5.jar  surefire-booter-3.2.5.jar  surefire-extensions-api-3.2.5.jar  surefire-extensions-spi-3.2.5.jar
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[DEBUG] Determined Maven Process ID 27613
+[DEBUG] Fork Channel [1] connection string 'pipe://1' for the implementation class org.apache.maven.plugin.surefire.extensions.LegacyForkChannel
+[DEBUG] boot classpath:  /Users/titanichornet/.m2/repository/org/apache/maven/surefire/surefire-booter/3.2.5/surefire-booter-3.2.5.jar  /Users/titanichornet/.m2/repository/org/apache/maven/surefire/surefire-api/3.2.5/surefire-api-3.2.5.jar  /Users/titanichornet/.m2/repository/org/apache/maven/surefire/surefire-logger-api/3.2.5/surefire-logger-api-3.2.5.jar  /Users/titanichornet/.m2/repository/org/apache/maven/surefire/surefire-shared-utils/3.2.5/surefire-shared-utils-3.2.5.jar  /Users/titanichornet/.m2/repository/org/apache/maven/surefire/surefire-extensions-spi/3.2.5/surefire-extensions-spi-3.2.5.jar  /Users/titanichornet/IdeaProjects/ASDA/target/test-classes  /Users/titanichornet/IdeaProjects/ASDA/target/classes  /Users/titanichornet/.m2/repository/org/openjfx/javafx-controls/21.0.5/javafx-controls-21.0.5.jar  /Users/titanichornet/.m2/repository/org/openjfx/javafx-controls/21.0.5/javafx-controls-21.0.5-mac-aarch64.jar  /Users/titanichornet/.m2/repository/org/openjfx/javafx-graphics/21.0.5/javafx-graphics-21.0.5.jar  /Users/titanichornet/.m2/repository/org/openjfx/javafx-graphics/21.0.5/javafx-graphics-21.0.5-mac-aarch64.jar  /Users/titanichornet/.m2/repository/org/openjfx/javafx-base/21.0.5/javafx-base-21.0.5.jar  /Users/titanichornet/.m2/repository/org/openjfx/javafx-base/21.0.5/javafx-base-21.0.5-mac-aarch64.jar  /Users/titanichornet/.m2/repository/org/openjfx/javafx-fxml/21.0.5/javafx-fxml-21.0.5.jar  /Users/titanichornet/.m2/repository/org/openjfx/javafx-fxml/21.0.5/javafx-fxml-21.0.5-mac-aarch64.jar  /Users/titanichornet/.m2/repository/org/controlsfx/controlsfx/11.2.1/controlsfx-11.2.1.jar  /Users/titanichornet/.m2/repository/org/kordamp/ikonli/ikonli-javafx/12.3.1/ikonli-javafx-12.3.1.jar  /Users/titanichornet/.m2/repository/org/kordamp/ikonli/ikonli-core/12.3.1/ikonli-core-12.3.1.jar  /Users/titanichornet/.m2/repository/org/kordamp/ikonli/ikonli-materialdesign2-pack/12.3.1/ikonli-materialdesign2-pack-12.3.1.jar  /Users/titanichornet/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.17.2/jackson-databind-2.17.2.jar  /Users/titanichornet/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.17.2/jackson-annotations-2.17.2.jar  /Users/titanichornet/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.17.2/jackson-core-2.17.2.jar  /Users/titanichornet/.m2/repository/org/xerial/sqlite-jdbc/3.43.2.2/sqlite-jdbc-3.43.2.2.jar  /Users/titanichornet/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar  /Users/titanichornet/.m2/repository/org/junit/jupiter/junit-jupiter/5.11.0/junit-jupiter-5.11.0.jar  /Users/titanichornet/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.0/junit-jupiter-api-5.11.0.jar  /Users/titanichornet/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar  /Users/titanichornet/.m2/repository/org/junit/platform/junit-platform-commons/1.11.0/junit-platform-commons-1.11.0.jar  /Users/titanichornet/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar  /Users/titanichornet/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.0/junit-jupiter-params-5.11.0.jar  /Users/titanichornet/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.11.0/junit-jupiter-engine-5.11.0.jar  /Users/titanichornet/.m2/repository/org/junit/platform/junit-platform-engine/1.11.0/junit-platform-engine-1.11.0.jar  /Users/titanichornet/.m2/repository/org/apache/maven/surefire/surefire-junit-platform/3.2.5/surefire-junit-platform-3.2.5.jar  /Users/titanichornet/.m2/repository/org/apache/maven/surefire/common-java5/3.2.5/common-java5-3.2.5.jar  /Users/titanichornet/.m2/repository/org/junit/platform/junit-platform-launcher/1.11.0/junit-platform-launcher-1.11.0.jar
+[DEBUG] boot(compact) classpath:  surefire-booter-3.2.5.jar  surefire-api-3.2.5.jar  surefire-logger-api-3.2.5.jar  surefire-shared-utils-3.2.5.jar  surefire-extensions-spi-3.2.5.jar  test-classes  classes  javafx-controls-21.0.5.jar  javafx-controls-21.0.5-mac-aarch64.jar  javafx-graphics-21.0.5.jar  javafx-graphics-21.0.5-mac-aarch64.jar  javafx-base-21.0.5.jar  javafx-base-21.0.5-mac-aarch64.jar  javafx-fxml-21.0.5.jar  javafx-fxml-21.0.5-mac-aarch64.jar  controlsfx-11.2.1.jar  ikonli-javafx-12.3.1.jar  ikonli-core-12.3.1.jar  ikonli-materialdesign2-pack-12.3.1.jar  jackson-databind-2.17.2.jar  jackson-annotations-2.17.2.jar  jackson-core-2.17.2.jar  sqlite-jdbc-3.43.2.2.jar  slf4j-api-1.7.36.jar  junit-jupiter-5.11.0.jar  junit-jupiter-api-5.11.0.jar  opentest4j-1.3.0.jar  junit-platform-commons-1.11.0.jar  apiguardian-api-1.1.2.jar  junit-jupiter-params-5.11.0.jar  junit-jupiter-engine-5.11.0.jar  junit-platform-engine-1.11.0.jar  surefire-junit-platform-3.2.5.jar  common-java5-3.2.5.jar  junit-platform-launcher-1.11.0.jar
+[DEBUG] Forking command line: /bin/sh -c cd '/Users/titanichornet/IdeaProjects/ASDA' && '/opt/homebrew/Cellar/openjdk/25/libexec/openjdk.jdk/Contents/Home/bin/java' '-jar' '/Users/titanichornet/IdeaProjects/ASDA/target/surefire/surefirebooter-20251124190332208_3.jar' '/Users/titanichornet/IdeaProjects/ASDA/target/surefire' '2025-11-24T19-03-32_165-jvmRun1' 'surefire-20251124190332208_1tmp' 'surefire_0-20251124190332208_2tmp'
+[DEBUG] Fork Channel [1] connected to the client.
+[INFO] Running org.group1.asda.assessment.AQQuestionTest
+Question 1:
+Test question text?
+
+1. Definitely Agree
+2. Slightly Agree
+3. Slightly Disagree
+4. Definitely Disagree
+
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 s -- in org.group1.asda.assessment.AQQuestionTest
+[INFO] Running org.group1.asda.assessment.AQResultInterpreterTest
+[INFO] Tests run: 28, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.043 s -- in org.group1.asda.assessment.AQResultInterpreterTest
+[INFO] Running org.group1.asda.assessment.AQAssessmentTest
+[INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in org.group1.asda.assessment.AQAssessmentTest
+[INFO] Running org.group1.asda.assessment.AQScoreCalculatorTest
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in org.group1.asda.assessment.AQScoreCalculatorTest
+[INFO] Running org.group1.asda.service.AssessmentServiceTest
+[INFO] Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.030 s -- in org.group1.asda.service.AssessmentServiceTest
+[INFO] Running org.group1.asda.domain.CardTest
+[INFO] Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in org.group1.asda.domain.CardTest
+[INFO] Running org.group1.asda.domain.QuestionTest
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in org.group1.asda.domain.QuestionTest
+[INFO] Running org.group1.asda.domain.StimulusTest
+[INFO] Tests run: 26, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in org.group1.asda.domain.StimulusTest
+[INFO] Running org.group1.asda.domain.AttentionGameStateTest
+[INFO] Tests run: 31, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.120 s -- in org.group1.asda.domain.AttentionGameStateTest
+[INFO] Running org.group1.asda.domain.GameStateTest
+[INFO] Tests run: 26, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.228 s -- in org.group1.asda.domain.GameStateTest
+[DEBUG] Closing the fork 1 after saying GoodBye.
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 200, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.405 s
+[INFO] Finished at: 2025-11-24T19:03:34-05:00
+[INFO] ------------------------------------------------------------------------
+[DEBUG] Shutting down adapter factory; available factories [file-lock, rwlock-local, semaphore-local, noop]; available name mappers [discriminating, file-gav, file-hgav, file-static, gav, static]
+[DEBUG] Shutting down 'file-lock' factory
+[DEBUG] Shutting down 'rwlock-local' factory
+[DEBUG] Shutting down 'semaphore-local' factory
+[DEBUG] Shutting down 'noop' factory

@@ -28,10 +28,12 @@ public class Router {
         URL base = getClass().getResource("/css/base.css");
         URL theme = getClass().getResource("/css/theme-light.css");
         URL assessment = getClass().getResource("/css/assessment.css");
+        URL loading = getClass().getResource("/css/loading.css");
 
         if (base != null) scene.getStylesheets().add(base.toExternalForm());
         if (theme != null) scene.getStylesheets().add(theme.toExternalForm());
         if (assessment != null) scene.getStylesheets().add(assessment.toExternalForm());
+        if (loading != null) scene.getStylesheets().add(loading.toExternalForm());
 
         stage.setScene(scene);
     }
@@ -39,6 +41,7 @@ public class Router {
     public void goTo(String screen) {
         Parent view = switch (screen) {
             case "home" -> load("/fxml/home.fxml");
+            case "loading" -> load("/fxml/loading.fxml");
             case "disclaimer" -> load("/fxml/disclaimer.fxml");
             case "questionnaire" -> load("/fxml/questionnaire.fxml");
             case "results" -> load("/fxml/results.fxml");
@@ -46,6 +49,50 @@ public class Router {
             case "attention-game" -> load("/fxml/attention-game.fxml");
             default -> new Label("Unknown screen: " + screen);
         };
+        if (root.getChildren().isEmpty()) {
+            root.getChildren().setAll(view);
+        } else {
+            fadeTo(view);
+        }
+    }
+
+    /**
+     * Load the screen, set it as current view, and return its controller.
+     * Returns null if FXML is missing or controller cannot be obtained/cast.
+     */
+    public <T> T goToAndGetController(String screen, Class<T> controllerType) {
+        String path = switch (screen) {
+            case "home" -> "/fxml/home.fxml";
+            case "loading" -> "/fxml/loading.fxml";
+            case "disclaimer" -> "/fxml/disclaimer.fxml";
+            case "questionnaire" -> "/fxml/questionnaire.fxml";
+            case "results" -> "/fxml/results.fxml";
+            case "matching-game" -> "/fxml/matching-game.fxml";
+            case "attention-game" -> "/fxml/attention-game.fxml";
+            default -> null;
+        };
+        if (path == null) return null;
+        try {
+            URL url = getClass().getResource(path);
+            if (url == null) {
+                setView(new Label("Missing view: " + path));
+                return null;
+            }
+            FXMLLoader loader = new FXMLLoader(url);
+            Parent view = loader.load();
+            setView(view);
+            Object controller = loader.getController();
+            if (controllerType.isInstance(controller)) {
+                return controllerType.cast(controller);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            setView(new Label("Failed to load: " + path + " (" + e.getMessage() + ")"));
+        }
+        return null;
+    }
+
+    private void setView(Parent view) {
         if (root.getChildren().isEmpty()) {
             root.getChildren().setAll(view);
         } else {

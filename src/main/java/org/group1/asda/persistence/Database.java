@@ -2,6 +2,7 @@ package org.group1.asda.persistence;
 
 import java.sql.*;
 import java.util.List;
+import java.util.function.Consumer;
 
 public final class Database {
     // Default DB file in working dir; can be overridden via -Dasda.db.url=jdbc:sqlite:/path/to/asda.db
@@ -14,13 +15,22 @@ public final class Database {
     }
 
     public static void init() {
+        init((Consumer<Double>) null);
+    }
+
+    public static void init(Consumer<Double> progress) {
         try (Connection conn = DriverManager.getConnection(dbUrl())) {
             if (conn == null) return;
+            if (progress != null) progress.accept(0.05);
             conn.setAutoCommit(false);
             createSchema(conn);
+            if (progress != null) progress.accept(0.35);
             createIndexes(conn);
+            if (progress != null) progress.accept(0.60);
             seedIfEmpty(conn);
+            if (progress != null) progress.accept(0.90);
             conn.commit();
+            if (progress != null) progress.accept(1.0);
         } catch (SQLException e) {
             throw new RuntimeException("Failed to initialize database: " + e.getMessage(), e);
         }

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane fx:id="scaleContainer" styleClass="loading-root" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.group1.asda.ui.loading.LoadingController">
+    <children>
+        <Group>
+            <children>
+                <Pane fx:id="designCanvas" layoutY="14.0" prefHeight="1024" prefWidth="1280">
+            <!-- Icon tile left (rectangle-container) -->
+            <StackPane layoutX="441" layoutY="296" prefHeight="120" prefWidth="120" styleClass="loading-card loading-card-purple" />
+
+            <!-- Icon tile center (rectangle-parent) -->
+            <StackPane layoutX="634" layoutY="180" prefHeight="180" prefWidth="180" styleClass="loading-card loading-card-teal" />
+
+            <!-- Icon tile right (rectangle-group) -->
+            <StackPane layoutX="887" layoutY="296" prefHeight="120" prefWidth="120" styleClass="loading-card loading-card-blue" />
+
+            <!-- Gradient headline (Gameplay) -->
+            <Text layoutX="374.0" layoutY="572.0" styleClass="loading-headline" text="GamePlay">
+                <fill>
+                    <LinearGradient endX="1.0" endY="0.0" startX="0.0" startY="0.0">
+                        <stops>
+                            <Stop color="#c5b4e3" offset="0.0" />
+                            <Stop color="#8da9c4" offset="0.5" />
+                            <Stop color="#b0d0d3" offset="1.0" />
+                        </stops>
+                    </LinearGradient>
+                </fill>
+            </Text>
+
+            <!-- Subheading -->
+            <Label layoutX="451.0" layoutY="619.0" styleClass="loading-subtitle" text="A Safe Space to Learn and Play" />
+
+            <!-- Caption under headline (centered) -->
+            <StackPane alignment="CENTER" layoutX="0" layoutY="737" prefWidth="1280">
+                <children>
+                    <Label styleClass="loading-caption" text="Preparing your experience" />
+                </children>
+            </StackPane>
+
+            <!-- Progress track (centered, fixed 400px width) -->
+            <HBox alignment="CENTER" layoutX="0" layoutY="788" prefWidth="1280">
+                <children>
+                    <StackPane fx:id="progressTrack" prefHeight="15" prefWidth="400" styleClass="progress-track">
+                        <children>
+                            <!-- Progress fill (intro-screen-item) -->
+                            <Region fx:id="progressFill" maxHeight="15" styleClass="progress-fill" />
+                        </children>
+                    </StackPane>
+                </children>
+            </HBox>
+
+            <!-- Progress label percentage (centered) -->
+            <StackPane alignment="CENTER" layoutX="0" layoutY="816" prefWidth="1280">
+                <children>
+                    <Label fx:id="percentLabel" styleClass="loading-percent" text="75%" />
+                </children>
+            </StackPane>
+              <ImageView fitHeight="74.0" fitWidth="72.0" layoutX="369.0" layoutY="324.0">
+                  <image>
+                      <Image preserveRatio="true" url="@/images/loading/Group 204.png" />
+                  </image>
+              </ImageView>
+              <ImageView fitHeight="87" fitWidth="87" layoutX="784.0" layoutY="318.0">
+                  <image>
+                      <Image preserveRatio="true" url="@/images/loading/Group 205.png" />
+                  </image>
+              </ImageView>
+              <!-- Use PNG for the white circle (Group 206.png) -->
+              <ImageView fitHeight="94.5" fitWidth="94.5" layoutX="567.0" layoutY="183.0" preserveRatio="true">
+                  <image>
+                      <Image url="@/images/loading/Group 206.png" />
+                  </image>
+              </ImageView>
+        </Pane>
+            </children>
+        </Group>
+    </children>
+</StackPane>

@@ -1,0 +1,23 @@
+/* Loading screen base */
+.loading-root { -fx-background-color: #f5f7fa; }
+
+/* Icon tiles */
+.loading-card {
+    -fx-background-radius: 25;
+    -fx-effect: dropshadow(gaussian, rgba(12,12,13,0.4), 32, 0.0, 0, 16);
+    -fx-alignment: CENTER;
+}
+.loading-card-teal   { -fx-background-color: #b0d0d3; }
+.loading-card-blue   { -fx-background-color: #8da9c4; }
+.loading-card-purple { -fx-background-color: #c5b4e3; }
+.loading-card-inner  { -fx-background-color: white; -fx-background-radius: 25; }
+
+/* Typography */
+.loading-headline { -fx-font-size: 128px; -fx-font-weight: 300; }
+.loading-subtitle { -fx-text-fill: #8da9c4; -fx-font-size: 32px; }
+.loading-caption  { -fx-font-size: 26px; -fx-text-fill: rgba(0,0,0,0.6); }
+.loading-percent  { -fx-font-size: 24px; -fx-text-fill: rgba(0,0,0,0.5); }
+
+/* Progress bar */
+.progress-track { -fx-background-color: #d9d9d9; -fx-background-radius: 5; }
+.progress-fill    { -fx-background-radius: 5; -fx-background-color: linear-gradient(to right, #b0d0d3 50%, #8da9c4); }

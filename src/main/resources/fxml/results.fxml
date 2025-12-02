@@ -1,26 +1,133 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.geometry.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="org.group1.asda.ui.results.ResultsController">
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.group1.asda.ui.results.ResultsController"
+            styleClass="results-root">
+
+    <!-- Header with gradient -->
     <top>
-        <HBox spacing="8" styleClass="toolbar">
-            <Label text="Results" styleClass="title" />
-        </HBox>
+        <StackPane styleClass="results-header">
+            <VBox alignment="CENTER" spacing="4">
+                <Label text="Assessment Results" styleClass="results-header-title"/>
+                <Label text="Your AQ Score Summary" styleClass="results-header-subtitle"/>
+            </VBox>
+        </StackPane>
     </top>
+
+    <!-- Main scrollable content -->
     <center>
-        <VBox alignment="CENTER" spacing="16" styleClass="card">
-            <Label fx:id="summaryLabel" wrapText="true" />
-        </VBox>
+        <ScrollPane fitToWidth="true" styleClass="results-scroll">
+            <VBox fx:id="contentVBox" spacing="20" styleClass="results-content">
+                <padding>
+                    <Insets top="24" right="28" bottom="24" left="28"/>
+                </padding>
+
+                <!-- AQ Score Summary Box -->
+                <VBox styleClass="summary-container" spacing="12">
+                    <Label text="AQ Score Summary" styleClass="summary-title"/>
+                    <HBox styleClass="summary-cards-container" alignment="CENTER">
+                        <VBox styleClass="summary-card" spacing="8">
+                            <Label text="Total AQ Score" styleClass="card-subtitle"/>
+                            <Label fx:id="totalScoreLabel" text="--/50" styleClass="card-score"/>
+                        </VBox>
+                        <VBox styleClass="summary-card" spacing="8">
+                            <Label text="Trait Level" styleClass="card-subtitle"/>
+                            <Label fx:id="traitLevelLabel" text="--" styleClass="card-trait"/>
+                        </VBox>
+                    </HBox>
+                </VBox>
+
+                <!-- Reference Information Box -->
+                <VBox styleClass="reference-box" spacing="4">
+                    <Label text="Reference Information" styleClass="section-heading"/>
+                    <VBox spacing="2">
+                        <Label text="• Most neurotypical individuals score 0-15" styleClass="reference-item"/>
+                        <Label text="• Scores of 26+ may indicate autism spectrum traits" styleClass="reference-item"/>
+                        <Label text="• Scores of 32+ are strongly associated with autism spectrum conditions" styleClass="reference-item"/>
+                    </VBox>
+                </VBox>
+
+                <!-- Subscale Breakdown Section -->
+                <VBox styleClass="subscales-section">
+                    <Label text="AQ Subscale Breakdown" styleClass="subscales-title"/>
+
+                    <!-- Social Skills -->
+                    <HBox styleClass="subscale-row">
+                        <Label text="Social Skills" styleClass="subscale-label"/>
+                        <ProgressBar fx:id="socialSkillsProgress" progress="0" styleClass="subscale-bar" HBox.hgrow="ALWAYS"/>
+                        <Label fx:id="socialSkillsScore" text="--/10" styleClass="subscale-score"/>
+                    </HBox>
+
+                    <!-- Attention Switching -->
+                    <HBox styleClass="subscale-row">
+                        <Label text="Attention Switching" styleClass="subscale-label"/>
+                        <ProgressBar fx:id="attentionSwitchingProgress" progress="0" styleClass="subscale-bar" HBox.hgrow="ALWAYS"/>
+                        <Label fx:id="attentionSwitchingScore" text="--/10" styleClass="subscale-score"/>
+                    </HBox>
+
+                    <!-- Attention to Detail -->
+                    <HBox styleClass="subscale-row">
+                        <Label text="Attention to Detail" styleClass="subscale-label"/>
+                        <ProgressBar fx:id="attentionToDetailProgress" progress="0" styleClass="subscale-bar" HBox.hgrow="ALWAYS"/>
+                        <Label fx:id="attentionToDetailScore" text="--/10" styleClass="subscale-score"/>
+                    </HBox>
+
+                    <!-- Communication -->
+                    <HBox styleClass="subscale-row">
+                        <Label text="Communication" styleClass="subscale-label"/>
+                        <ProgressBar fx:id="communicationProgress" progress="0" styleClass="subscale-bar" HBox.hgrow="ALWAYS"/>
+                        <Label fx:id="communicationScore" text="--/10" styleClass="subscale-score"/>
+                    </HBox>
+
+                    <!-- Imagination -->
+                    <HBox styleClass="subscale-row">
+                        <Label text="Imagination" styleClass="subscale-label"/>
+                        <ProgressBar fx:id="imaginationProgress" progress="0" styleClass="subscale-bar" HBox.hgrow="ALWAYS"/>
+                        <Label fx:id="imaginationScore" text="--/10" styleClass="subscale-score"/>
+                    </HBox>
+                </VBox>
+
+                <!-- Detailed Subscale Analysis -->
+                <VBox fx:id="detailedAnalysisSection" styleClass="detailed-section">
+                    <Label text="Detailed Subscale Analysis" styleClass="detailed-title"/>
+                    <!-- Items will be populated dynamically -->
+                </VBox>
+
+                <!-- Interpretation Box -->
+                <VBox styleClass="interpretation-box">
+                    <Label text="Interpretation" styleClass="interpretation-title"/>
+                    <Label fx:id="interpretationLabel" wrapText="true" styleClass="interpretation-text"
+                           text="Your interpretation will appear here."/>
+                </VBox>
+
+                <!-- Recommendations Box -->
+                <VBox styleClass="recommendation-box">
+                    <Label text="Recommendations" styleClass="recommendation-title"/>
+                    <Label fx:id="recommendationLabel" wrapText="true" styleClass="recommendation-text"
+                           text="Your recommendations will appear here."/>
+                </VBox>
+
+                <!-- Important Notice Box -->
+                <VBox styleClass="notice-box">
+                    <Label text="⚠️ Important Reminder" styleClass="notice-title"/>
+                    <Label wrapText="true" styleClass="notice-text"
+                           text="This screening tool is not a substitute for professional diagnosis. If you have concerns about autism spectrum differences, please consult with a qualified healthcare professional for a comprehensive evaluation. Thank you for completing the assessment."/>
+                </VBox>
+            </VBox>
+        </ScrollPane>
     </center>
+
+    <!-- Footer with navigation -->
     <bottom>
-        <HBox spacing="8" alignment="CENTER_RIGHT">
+        <HBox alignment="CENTER" spacing="16" styleClass="results-footer">
             <padding>
-                <Insets top="12" right="12" bottom="12" left="12" />
+                <Insets top="16" right="24" bottom="16" left="24"/>
             </padding>
-            <Button fx:id="homeBtn" text="Back to Home" onAction="#onHome" />
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="homeBtn" text="Back to Home" onAction="#onHome" styleClass="btn-home"/>
         </HBox>
     </bottom>
 </BorderPane>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.group1.asda.ui.questionnaire.QuestionnaireIntroController"
+            styleClass="intro-root"
+            onKeyPressed="#onKeyPressed">
+
+    <!-- Top gradient header -->
+    <top>
+        <StackPane styleClass="intro-header">
+            <VBox alignment="CENTER" spacing="8">
+                <StackPane styleClass="pause-icon-container">
+                    <Circle radius="24" styleClass="pause-icon-circle"/>
+                    <HBox alignment="CENTER" spacing="4">
+                        <Region styleClass="pause-bar"/>
+                        <Region styleClass="pause-bar"/>
+                    </HBox>
+                </StackPane>
+                <Label text="Autism Spectrum Disorder Assessment" styleClass="intro-title"/>
+                <Label text="Before We Begin" styleClass="intro-subtitle"/>
+            </VBox>
+        </StackPane>
+    </top>
+
+    <!-- Scrollable content area -->
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="intro-scroll">
+            <VBox fx:id="contentVBox" spacing="20" styleClass="intro-content">
+                <padding>
+                    <Insets top="28" right="28" bottom="28" left="28"/>
+                </padding>
+
+                <Label wrapText="true" styleClass="lead-text"
+                       text="Welcome to the Autism Spectrum Disorder Assessment"/>
+
+                <Label wrapText="true" styleClass="disclaimer-text"
+                       text="IMPORTANT DISCLAIMER: This assessment is designed for screening purposes only and is not a diagnostic tool. Results should be interpreted by a qualified healthcare professional. If you have concerns about autism spectrum disorder, please consult with a licensed psychologist or psychiatrist for a comprehensive evaluation."/>
+
+                <!-- 50 Questions Card -->
+                <VBox styleClass="card card-purple">
+                    <Label text="50 Questions" styleClass="card-title"/>
+                    <Label wrapText="true" styleClass="card-body"
+                           text="You will be shown one question at a time. Each question asks about behaviors and preferences that may be associated with autism spectrum traits."/>
+                </VBox>
+
+                <!-- Take Your Time Card -->
+                <VBox styleClass="card card-blue">
+                    <Label text="Take Your Time" styleClass="card-title"/>
+                    <Label wrapText="true" styleClass="card-body"
+                           text="This assessment consists of 50 questions and typically takes 10-15 minutes to complete. There are no right or wrong answers - please answer honestly based on your own experiences."/>
+                </VBox>
+
+                <!-- How To Answer Card -->
+                <VBox styleClass="card card-purple">
+                    <Label text="How To Answer" styleClass="card-title"/>
+                    <Label wrapText="true" styleClass="card-body"
+                           text="For each question, select one of the following options: Definitely Agree, Slightly Agree, Slightly Disagree, or Definitely Disagree. Choose the response that best describes how you typically feel or behave."/>
+                </VBox>
+
+                <!-- Scoring Card -->
+                <VBox styleClass="card card-blue">
+                    <Label text="Scoring" styleClass="card-title"/>
+                    <Label wrapText="true" styleClass="card-body"
+                           text="Your responses will be scored to provide an overall result. Higher scores may indicate more traits associated with autism spectrum, but this is not a diagnosis. A score of 32 or higher suggests further professional evaluation may be beneficial."/>
+                </VBox>
+
+                <!-- Privacy Box -->
+                <HBox styleClass="privacy-box" alignment="CENTER_LEFT" spacing="8">
+                    <VBox spacing="4">
+                        <Label text="🔒 Your Privacy" styleClass="privacy-title"/>
+                        <Label wrapText="true" styleClass="privacy-text"
+                               text="Your answers are private and stored only on your device. No data is transmitted to external servers. You can exit at any time without saving."/>
+                    </VBox>
+                </HBox>
+
+            </VBox>
+        </ScrollPane>
+    </center>
+
+    <!-- Footer with navigation -->
+    <bottom>
+        <HBox alignment="CENTER" spacing="16" styleClass="intro-footer">
+            <padding>
+                <Insets top="16" right="24" bottom="16" left="24"/>
+            </padding>
+            <Button fx:id="backButton" text="← Back" onAction="#onBack" styleClass="btn-intro-back"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="beginButton" text="Begin Questionnaire" onAction="#onBegin" styleClass="btn-intro-begin"/>
+        </HBox>
+    </bottom>
+</BorderPane>

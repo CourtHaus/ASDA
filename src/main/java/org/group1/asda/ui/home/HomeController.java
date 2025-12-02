@@ -23,8 +23,8 @@ public class HomeController {
 
     @FXML
     public void onStart(ActionEvent e) {
-        // Route to disclaimer/acknowledgement screen before starting questions
-        Router.getInstance().goTo("disclaimer");
+        // Route to questionnaire intro screen before starting questions
+        Router.getInstance().goTo("questionnaire-intro");
     }
 
     @FXML

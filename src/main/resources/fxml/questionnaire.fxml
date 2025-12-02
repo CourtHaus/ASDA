@@ -24,18 +24,20 @@
 
     <!-- Main question section -->
     <center>
-        <VBox styleClass="question-section" spacing="20" alignment="TOP_LEFT">
+        <VBox styleClass="question-section" spacing="20" alignment="TOP_CENTER">
             <padding>
                 <Insets top="60" right="80" bottom="60" left="80" />
             </padding>
 
             <!-- Question label and text -->
-            <Label fx:id="questionNumberLabel" text="Question 1:" styleClass="question-label" />
-            <Label fx:id="questionLabel" wrapText="true" styleClass="question-text"
-                   text="S/he prefers to do things with others rather than on her/his own." />
+            <VBox alignment="TOP_LEFT" maxWidth="720">
+                <Label fx:id="questionNumberLabel" text="Question 1:" styleClass="question-label" />
+                <Label fx:id="questionLabel" wrapText="true" styleClass="question-text"
+                       text="S/he prefers to do things with others rather than on her/his own." />
+            </VBox>
 
-            <!-- Answer options -->
-            <VBox spacing="20" styleClass="options-container">
+            <!-- Answer options - all options have equal width -->
+            <VBox spacing="18" styleClass="options-container" alignment="CENTER" fillWidth="true">
                 <RadioButton fx:id="opt1" text="Definitely Agree" styleClass="option-button" />
                 <RadioButton fx:id="opt2" text="Slightly Agree" styleClass="option-button" />
                 <RadioButton fx:id="opt3" text="Slightly Disagree" styleClass="option-button" />

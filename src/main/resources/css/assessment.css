@@ -44,12 +44,13 @@
     -fx-line-spacing: 0.5em;
 }
 
-/* Options Container */
+/* Options Container - centers options */
 .options-container {
     -fx-padding: 20 0 0 0;
+    -fx-alignment: center;
 }
 
-/* Radio Button Styling */
+/* Radio Button Styling - Equal width regardless of text length */
 .option-button {
     -fx-background-color: #f0f4f8;
     -fx-background-radius: 12;
@@ -60,6 +61,14 @@
     -fx-border-color: transparent;
     -fx-border-width: 2;
     -fx-border-radius: 12;
+    /* Equal width constraints - all options fill the container width */
+    -fx-min-width: 520px;
+    -fx-pref-width: 720px;
+    -fx-max-width: 720px;
+    /* Ensure content direction allows radio indicator on right */
+    -fx-content-display: right;
+    -fx-alignment: center-left;
+    -fx-graphic-text-gap: 16;
 }
 
 .option-button:hover {
@@ -68,32 +77,41 @@
 }
 
 .option-button:selected {
-    -fx-background-color: #b4a8d1;
-    -fx-border-color: #b4a8d1;
+    -fx-background-color: linear-gradient(to right, rgba(190, 202, 217, 0.7), rgba(200, 210, 230, 0.7));
+    -fx-border-color: rgba(150, 150, 150, 0.45);
     -fx-text-fill: #4a5568;
 }
 
-/* Custom radio button indicator */
-.option-button .radio {
-    -fx-background-color: transparent;
-    -fx-border-color: #718096;
+/* Custom radio button indicator - positioned on right */
+.option-button > .radio {
+    -fx-background-color: white;
+    -fx-border-color: #a0a0a0;
     -fx-border-width: 2;
-    -fx-border-radius: 12;
-    -fx-padding: 10;
+    -fx-border-radius: 50;
+    -fx-background-radius: 50;
+    -fx-padding: 6;
+    -fx-min-width: 22px;
+    -fx-min-height: 22px;
+    -fx-max-width: 22px;
+    -fx-max-height: 22px;
 }
 
-.option-button:selected .radio {
-    -fx-background-color: #6b5b8a;
-    -fx-border-color: #6b5b8a;
-    -fx-background-insets: 3;
+.option-button:selected > .radio {
+    -fx-background-color: #7b6ba5;
+    -fx-border-color: #7b6ba5;
 }
 
-.option-button .dot {
+.option-button > .radio > .dot {
     -fx-background-color: transparent;
+    -fx-background-radius: 50;
+    -fx-min-width: 10px;
+    -fx-min-height: 10px;
+    -fx-max-width: 10px;
+    -fx-max-height: 10px;
 }
 
-.option-button:selected .dot {
-    -fx-background-color: #6b5b8a;
+.option-button:selected > .radio > .dot {
+    -fx-background-color: white;
 }
 
 /* Footer Section */
@@ -182,14 +200,4 @@
 
 .question-section {
     -fx-padding: 60 80 60 80;
-}
-
-/* Override default JavaFX radio button styling */
-.option-button > .radio {
-    -fx-background-radius: 12;
-    -fx-border-radius: 12;
-}
-
-.option-button > .radio > .dot {
-    -fx-background-radius: 12;
 }

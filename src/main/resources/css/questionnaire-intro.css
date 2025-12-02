@@ -1,0 +1,203 @@
+/* Questionnaire Intro Screen Styles */
+
+/* Root container */
+.intro-root {
+    -fx-background-color: linear-gradient(to bottom, #f6f8fb, #ffffff);
+}
+
+/* Header with gradient */
+.intro-header {
+    -fx-background-color: linear-gradient(to right, #d8c2ef, #8fb7d8);
+    -fx-background-radius: 0 0 20 20;
+    -fx-padding: 40 24 32 24;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 12, 0, 0, 6);
+}
+
+/* Pause icon container */
+.pause-icon-container {
+    -fx-pref-width: 56;
+    -fx-pref-height: 56;
+    -fx-min-width: 56;
+    -fx-min-height: 56;
+    -fx-max-width: 56;
+    -fx-max-height: 56;
+}
+
+.pause-icon-circle {
+    -fx-fill: rgba(255, 255, 255, 0.25);
+}
+
+.pause-bar {
+    -fx-background-color: white;
+    -fx-background-radius: 2;
+    -fx-min-width: 6;
+    -fx-min-height: 20;
+    -fx-max-width: 6;
+    -fx-max-height: 20;
+}
+
+/* Header text */
+.intro-title {
+    -fx-text-fill: white;
+    -fx-font-size: 26px;
+    -fx-font-weight: 500;
+}
+
+.intro-subtitle {
+    -fx-text-fill: rgba(255, 255, 255, 0.92);
+    -fx-font-size: 15px;
+    -fx-font-weight: 400;
+}
+
+/* Scroll area */
+.intro-scroll {
+    -fx-background: white;
+    -fx-background-color: white;
+}
+
+.intro-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.intro-scroll .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-padding: 2;
+}
+
+.intro-scroll .scroll-bar:vertical .track {
+    -fx-background-color: #f0f0f0;
+    -fx-background-radius: 4;
+}
+
+.intro-scroll .scroll-bar:vertical .thumb {
+    -fx-background-color: #c0c0c0;
+    -fx-background-radius: 4;
+}
+
+.intro-scroll .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #a0a0a0;
+}
+
+/* Content area */
+.intro-content {
+    -fx-background-color: white;
+    -fx-max-width: 820;
+}
+
+/* Lead text */
+.lead-text {
+    -fx-font-size: 18px;
+    -fx-font-weight: 500;
+    -fx-text-fill: #333333;
+    -fx-text-alignment: center;
+}
+
+/* Disclaimer text */
+.disclaimer-text {
+    -fx-font-size: 13px;
+    -fx-text-fill: #666666;
+    -fx-line-spacing: 3;
+}
+
+/* Card styles */
+.card {
+    -fx-background-radius: 14;
+    -fx-padding: 18 20 18 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.04), 8, 0, 0, 4);
+    -fx-spacing: 8;
+}
+
+.card-purple {
+    -fx-background-color: rgba(230, 224, 243, 0.92);
+}
+
+.card-blue {
+    -fx-background-color: rgba(226, 236, 240, 0.95);
+}
+
+.card-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #333333;
+}
+
+.card-body {
+    -fx-text-fill: #555555;
+    -fx-font-size: 13px;
+    -fx-line-spacing: 2;
+}
+
+/* Privacy box */
+.privacy-box {
+    -fx-background-color: #fff4d9;
+    -fx-border-color: #e25a3a;
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 14 16 14 16;
+}
+
+.privacy-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #8b4513;
+}
+
+.privacy-text {
+    -fx-text-fill: #6b4e1f;
+    -fx-font-size: 12px;
+}
+
+/* Footer */
+.intro-footer {
+    -fx-background-color: rgba(245, 247, 250, 0.98);
+    -fx-background-radius: 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.04), 6, 0, 0, -2);
+    -fx-border-color: #e8ecef;
+    -fx-border-width: 1 0 0 0;
+}
+
+/* Back button - pill style */
+.btn-intro-back {
+    -fx-background-color: white;
+    -fx-border-color: rgba(0, 0, 0, 0.1);
+    -fx-border-width: 1;
+    -fx-text-fill: #444444;
+    -fx-font-size: 14px;
+    -fx-font-weight: 500;
+    -fx-background-radius: 22;
+    -fx-border-radius: 22;
+    -fx-padding: 10 22 10 22;
+    -fx-cursor: hand;
+}
+
+.btn-intro-back:hover {
+    -fx-background-color: #f5f5f5;
+    -fx-border-color: rgba(0, 0, 0, 0.15);
+}
+
+.btn-intro-back:focused {
+    -fx-border-color: #8fb7d8;
+    -fx-border-width: 2;
+}
+
+/* Begin button - gradient pill style */
+.btn-intro-begin {
+    -fx-background-color: linear-gradient(to right, #bda7e6, #8fb7d8);
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-background-radius: 22;
+    -fx-padding: 10 28 10 28;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 6, 0, 0, 3);
+}
+
+.btn-intro-begin:hover {
+    -fx-background-color: linear-gradient(to right, #c9b5ed, #9bc3e2);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 8, 0, 0, 4);
+}
+
+.btn-intro-begin:focused {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4);
+}

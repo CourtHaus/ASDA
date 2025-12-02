@@ -29,11 +29,13 @@ public class Router {
         URL theme = getClass().getResource("/css/theme-light.css");
         URL assessment = getClass().getResource("/css/assessment.css");
         URL loading = getClass().getResource("/css/loading.css");
+        URL disclosure = getClass().getResource("/css/disclosure.css");
 
         if (base != null) scene.getStylesheets().add(base.toExternalForm());
         if (theme != null) scene.getStylesheets().add(theme.toExternalForm());
         if (assessment != null) scene.getStylesheets().add(assessment.toExternalForm());
         if (loading != null) scene.getStylesheets().add(loading.toExternalForm());
+        if (disclosure != null) scene.getStylesheets().add(disclosure.toExternalForm());
 
         stage.setScene(scene);
     }

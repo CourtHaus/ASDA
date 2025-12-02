@@ -1,40 +1,148 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
 <BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="org.group1.asda.ui.disclaimer.DisclaimerController">
+            fx:controller="org.group1.asda.ui.disclaimer.DisclaimerController"
+            styleClass="disclosure-root">
     <top>
-        <HBox spacing="8" styleClass="toolbar">
-            <Label text="Before You Begin" styleClass="title" />
-        </HBox>
+        <VBox spacing="12" styleClass="disclosure-header">
+            <HBox spacing="12" alignment="CENTER_LEFT">
+                <StackPane prefWidth="64" prefHeight="64" styleClass="alert-icon">
+                    <Circle radius="32" />
+                    <Label text="!" />
+                </StackPane>
+                <VBox spacing="4">
+                    <Label text="Welcome to Gameplay" styleClass="disclosure-title" />
+                    <Label text="Please Read This Important Message" styleClass="disclosure-subtitle" />
+                </VBox>
+            </HBox>
+            <Label text="Game Play is a web-based screening tool designed to help identify potential signs of autism spectrum disorder, attention-deficit/hyperactivity disorder (ADHD), and autism (ADHD). It is informed by observational screening guidelines and questionnaires. This app is intended for educational and screening purposes only." wrapText="true" styleClass="disclosure-intro" />
+        </VBox>
     </top>
     <center>
-        <VBox spacing="16" alignment="TOP_LEFT" styleClass="card" maxWidth="Infinity">
-            <Label fx:id="titleLabel" wrapText="true" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
-            <ScrollPane fitToWidth="true" prefViewportHeight="400">
-                <content>
-                    <VBox spacing="10">
-                        <Label text="INSTRUCTIONS:" style="-fx-font-weight: bold;" />
-                        <Label wrapText="true" text="• Please answer each question honestly based on your typical experiences
-• Select the response option that best describes you
-• Use the Back and Next buttons to navigate between questions
-• All questions are required to complete the assessment" />
-                        <Separator />
-                        <Label fx:id="bodyLabel" wrapText="true" />
+        <ScrollPane fitToWidth="true" styleClass="disclosure-scroll">
+            <content>
+                <VBox spacing="16" styleClass="disclosure-content">
+                    <VBox spacing="8" styleClass="info-card">
+                        <Label text="About Game Play" styleClass="section-title" />
+                        <TextFlow>
+                            <Text text="Game Play is a web-based screening tool designed to help identify potential signs of autism spectrum disorder, attention-deficit/hyperactivity disorder (ADHD), and autism (ADHD). The app is informed by observational screening guidelines and questionnaires. This app is intended for educational and screening purposes only." />
+                        </TextFlow>
+                        <HBox spacing="12" alignment="CENTER_LEFT" styleClass="notice-card">
+                            <StackPane prefWidth="48" prefHeight="48" styleClass="notice-icon">
+                                <Circle radius="24" />
+                                <Label text="!" />
+                            </StackPane>
+                            <VBox spacing="4">
+                                <Label text="Important Notice" styleClass="notice-title" />
+                                <Label wrapText="true"
+                                       text="This is NOT a diagnostic tool. Results from this screening should not be used to diagnose autism or any other condition. If you have concerns about the results, please consult with a qualified healthcare professional or licensed psychologist." />
+                            </VBox>
+                        </HBox>
                     </VBox>
-                </content>
-            </ScrollPane>
-        </VBox>
+
+                    <VBox spacing="8" styleClass="info-card">
+                        <Label text="Purpose of Data Collection" styleClass="section-title" />
+                        <TextFlow>
+                            <Text text="The app collects responses to games, and some information, including but not limited to personal identifiers and health-related data, for the purpose of identifying potential behavioral markers consistent with autism and ADHD. This data is used to provide a preliminary assessment of behavioral patterns and is not a medical diagnosis." />
+                        </TextFlow>
+                    </VBox>
+
+                    <VBox spacing="8" styleClass="info-card">
+                        <Label text="Use and Disclosure of Protected Health Information" styleClass="section-title" />
+                        <Label text="Your data will be handled in compliance with relevant privacy laws and standards. Personally identifiable information and health data will be collected in accordance with HIPAA, and stored securely. The app may use this data to provide insights and recommendations based on your responses." wrapText="true" />
+                        <GridPane hgap="12" vgap="6">
+                            <columnConstraints>
+                                <ColumnConstraints percentWidth="6" />
+                                <ColumnConstraints percentWidth="94" />
+                            </columnConstraints>
+                            <RowConstraints vgrow="SOMETIMES" />
+                            <Label text="•" GridPane.rowIndex="0" />
+                            <Label text="Use: Your data will be stored and accessed only by authorized individuals for the purpose of providing a screening assessment and insights." wrapText="true" GridPane.columnIndex="1" />
+                            <Label text="•" GridPane.rowIndex="1" />
+                            <Label text="Disclosure: Your data will not be shared with third parties without your explicit consent, except as required by law." wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        </GridPane>
+                    </VBox>
+
+                    <VBox spacing="8" styleClass="info-card">
+                        <Label text="Security" styleClass="section-title" />
+                        <TextFlow>
+                            <Text text="We implement administrative, technical, and physical safeguards designed to protect personal and health data from unauthorized access, disclosure, alteration, or destruction. This includes encryption, access controls, and monitoring to ensure data integrity and security." />
+                        </TextFlow>
+                    </VBox>
+
+                    <VBox spacing="8" styleClass="info-card">
+                        <Label text="User Rights" styleClass="section-title" />
+                        <GridPane hgap="12" vgap="6">
+                            <columnConstraints>
+                                <ColumnConstraints percentWidth="6" />
+                                <ColumnConstraints percentWidth="94" />
+                            </columnConstraints>
+                            <Label text="•" GridPane.rowIndex="0" />
+                            <Label text="Access: You have the right to access your data and request corrections if the data is inaccurate or incomplete." wrapText="true" GridPane.columnIndex="1" />
+                            <Label text="•" GridPane.rowIndex="1" />
+                            <Label text="Deletion: You may request deletion of your data, subject to applicable legal requirements." wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        </GridPane>
+                    </VBox>
+
+                    <VBox spacing="8" styleClass="info-card">
+                        <Label text="Breach Notification" styleClass="section-title" />
+                        <TextFlow>
+                            <Text text="In the unlikely event of a data breach involving your personal information, we will notify you as required by law, including the types of information that may have been exposed, steps taken to mitigate the breach, and any actions you should take." />
+                        </TextFlow>
+                    </VBox>
+
+                    <VBox spacing="8" styleClass="info-card">
+                        <Label text="Use of Third-Party Services" styleClass="section-title" />
+                        <TextFlow>
+                            <Text text="We may engage third-party service providers to support the functionality of this app, including analytics, hosting, and data storage. These third parties are contractually obligated to comply with privacy and security requirements consistent with HIPAA and other applicable laws." />
+                        </TextFlow>
+                        <GridPane hgap="8" vgap="6" styleClass="data-table">
+                            <columnConstraints>
+                                <ColumnConstraints percentWidth="35" />
+                                <ColumnConstraints percentWidth="25" />
+                                <ColumnConstraints percentWidth="40" />
+                            </columnConstraints>
+                            <Label text="Data Type" styleClass="table-header" />
+                            <Label text="Retention Period" styleClass="table-header" GridPane.columnIndex="1" />
+                            <Label text="Governing or Recommended" styleClass="table-header" GridPane.columnIndex="2" />
+
+                            <Label text="Assessment responses" GridPane.rowIndex="1" />
+                            <Label text="1 year after each session" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                            <Label text="HIPAA" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+
+                            <Label text="Session analytics logs" GridPane.rowIndex="2" />
+                            <Label text="1 year" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                            <Label text="NIST SP 800-88" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+
+                            <Label text="Audit/logs trace" GridPane.rowIndex="3" />
+                            <Label text="7 years" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                            <Label text="HIPAA and SOC 2" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        </GridPane>
+                    </VBox>
+
+                    <VBox spacing="8" styleClass="info-card">
+                        <Label text="User Consent" styleClass="section-title" />
+                        <TextFlow>
+                            <Text text="By selecting \"I Accept,\" you consent to the collection, use, and disclosure of your data as described above. You also acknowledge that this app is not intended to provide medical advice or diagnose any condition. If you do not agree, select \"I Decline\" and exit the app." />
+                        </TextFlow>
+                    </VBox>
+                </VBox>
+            </content>
+        </ScrollPane>
     </center>
     <bottom>
-        <HBox spacing="8" alignment="CENTER_RIGHT">
+        <HBox alignment="CENTER_RIGHT" spacing="12" styleClass="disclosure-footer">
             <padding>
-                <Insets top="12" right="12" bottom="12" left="12" />
+                <Insets top="12" right="16" bottom="16" left="16" />
             </padding>
-            <Button fx:id="cancelBtn" text="Cancel" onAction="#onCancel" />
-            <Button fx:id="continueBtn" text="I Understand, Continue" onAction="#onContinue" defaultButton="true" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button text="I Decline" onAction="#onCancel" styleClass="secondary-btn" />
+            <Button text="I Accept" onAction="#onContinue" defaultButton="true" styleClass="primary-btn" />
         </HBox>
     </bottom>
 </BorderPane>

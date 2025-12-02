@@ -29,11 +29,13 @@ public class Router {
         URL theme = getClass().getResource("/css/theme-light.css");
         URL assessment = getClass().getResource("/css/assessment.css");
         URL loading = getClass().getResource("/css/loading.css");
+        URL disclosure = getClass().getResource("/css/disclosure.css");
 
         if (base != null) scene.getStylesheets().add(base.toExternalForm());
         if (theme != null) scene.getStylesheets().add(theme.toExternalForm());
         if (assessment != null) scene.getStylesheets().add(assessment.toExternalForm());
         if (loading != null) scene.getStylesheets().add(loading.toExternalForm());
+        if (disclosure != null) scene.getStylesheets().add(disclosure.toExternalForm());
 
         stage.setScene(scene);
     }
@@ -43,6 +45,7 @@ public class Router {
             case "home" -> load("/fxml/home.fxml");
             case "loading" -> load("/fxml/loading.fxml");
             case "disclaimer" -> load("/fxml/disclaimer.fxml");
+            case "disclosure" -> load("/fxml/disclosure.fxml");
             case "questionnaire" -> load("/fxml/questionnaire.fxml");
             case "results" -> load("/fxml/results.fxml");
             case "matching-game" -> load("/fxml/matching-game.fxml");
@@ -65,6 +68,7 @@ public class Router {
             case "home" -> "/fxml/home.fxml";
             case "loading" -> "/fxml/loading.fxml";
             case "disclaimer" -> "/fxml/disclaimer.fxml";
+            case "disclosure" -> "/fxml/disclosure.fxml";
             case "questionnaire" -> "/fxml/questionnaire.fxml";
             case "results" -> "/fxml/results.fxml";
             case "matching-game" -> "/fxml/matching-game.fxml";

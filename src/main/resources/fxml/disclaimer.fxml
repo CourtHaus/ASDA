@@ -7,7 +7,8 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="org.group1.asda.ui.disclaimer.DisclaimerController"
-            styleClass="disclosure-root">
+            styleClass="disclosure-root"
+            onKeyPressed="#onKeyPressed">
     <top>
         <VBox spacing="12" styleClass="disclosure-header">
             <HBox spacing="12" alignment="CENTER_LEFT">

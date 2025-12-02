@@ -28,17 +28,18 @@ public class AttentionGameTutorialController implements Initializable {
     @FXML private VBox pageWelcome;
     @FXML private VBox pageShapes;
     @FXML private VBox pageColors;
-    @FXML private VBox pageMatches;
+    @FXML private javafx.scene.control.ScrollPane pageMatches;
     @FXML private VBox pagePractice;
     @FXML private VBox pageAllSet;
 
-    // Container holding the pages (this corresponds to the VBox inside ScrollPane in the FXML)
-    @FXML private VBox contentStack;
+    // Container holding the pages (StackPane for single-page view)
+    @FXML private javafx.scene.layout.StackPane pageContainer;
 
     // Footer controls
     @FXML private Button backButton;
     @FXML private Button btnPrev;
     @FXML private Button btnNext;
+    @FXML private Button nextButton;
     @FXML private Button beginButton;
     @FXML private Button btnSkip;
 
@@ -49,7 +50,7 @@ public class AttentionGameTutorialController implements Initializable {
     @FXML private HBox dots;
 
     // Internal state
-    private final List<VBox> pages = new ArrayList<>();
+    private final List<Node> pages = new ArrayList<>();
     private final List<Circle> indicatorDots = new ArrayList<>();
     private int currentPageIndex = 0;
 
@@ -83,17 +84,18 @@ public class AttentionGameTutorialController implements Initializable {
         btnPrev.setOnAction(e -> showPreviousPage());
         backButton.setOnAction(e -> onBack());
         btnNext.setOnAction(e -> showNextPage());
+        if (nextButton != null) nextButton.setOnAction(e -> showNextPage());
         beginButton.setOnAction(e -> onBegin());
         btnSkip.setOnAction(e -> onSkip());
         btnPracticeSpace.setOnAction(e -> onPracticeSpaceClicked());
 
         // Keyboard focus handling: if scene becomes available, request focus on the container so onKeyPressed works
-        if (contentStack != null) {
-            contentStack.sceneProperty().addListener((obs, oldScene, newScene) -> {
+        if (pageContainer != null) {
+            pageContainer.sceneProperty().addListener((obs, oldScene, newScene) -> {
                 if (newScene != null) {
                     // set a short delay then request focus; helps when dialog is shown
                     PauseTransition pt = new PauseTransition(Duration.millis(120));
-                    pt.setOnFinished(ev -> contentStack.requestFocus());
+                    pt.setOnFinished(ev -> pageContainer.requestFocus());
                     pt.play();
                 }
             });
@@ -161,7 +163,7 @@ public class AttentionGameTutorialController implements Initializable {
 
         // set visibility for all pages
         for (int i = 0; i < pages.size(); i++) {
-            VBox p = pages.get(i);
+            Node p = pages.get(i);
             if (p != null) {
                 p.setVisible(i == index);
                 p.setManaged(i == index);
@@ -178,8 +180,16 @@ public class AttentionGameTutorialController implements Initializable {
         // Back button shown for all but first page (example)
         backButton.setDisable(index == 0);
 
-        // Begin/Start button should only be enabled on last page
-        beginButton.setDisable(index != pages.size() - 1);
+        // Toggle between Next and Start Playing buttons
+        boolean isLastPage = (index == pages.size() - 1);
+        if (nextButton != null) {
+            nextButton.setVisible(!isLastPage);
+            nextButton.setManaged(!isLastPage);
+        }
+        if (beginButton != null) {
+            beginButton.setVisible(isLastPage);
+            beginButton.setManaged(isLastPage);
+        }
 
         // Optionally focus the practice button if on practice page
         if (index == PAGE_PRACTICE && btnPracticeSpace != null) {
@@ -225,15 +235,24 @@ public class AttentionGameTutorialController implements Initializable {
 
     private void disableAllControls() {
         try {
-            for (Node n : contentStack.getChildren()) {
-                n.setDisable(true);
+            if (pageContainer != null) {
+                for (Node n : pageContainer.getChildren()) {
+                    n.setDisable(true);
+                }
             }
         } catch (Exception ignored) {}
         backButton.setDisable(true);
         btnPrev.setDisable(true);
         btnNext.setDisable(true);
+        if (nextButton != null) nextButton.setDisable(true);
         beginButton.setDisable(true);
         btnSkip.setDisable(true);
+    }
+
+    // Add onNext handler
+    @FXML
+    public void onNext() {
+        showNextPage();
     }
 
     // Skip button - user wants to leave tutorial

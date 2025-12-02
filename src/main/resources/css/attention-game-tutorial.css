@@ -23,6 +23,14 @@
     -fx-font-weight: 500;
 }
 
+/* Page title (main heading on each page) */
+.attention-page-title {
+    -fx-font-size: 36px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #2d2d2d;
+    -fx-text-alignment: center;
+}
+
 /* Main white content area */
 .attention-tutorial-content {
     -fx-background-color: white;
@@ -66,6 +74,20 @@
     -fx-background-color: #eaf3ff;
 }
 
+.attention-card.attention-card-purple {
+    -fx-background-color: #f8f9ff;
+    -fx-border-color: #c5b3e6;
+    -fx-border-width: 2;
+    -fx-border-radius: 12;
+}
+
+.attention-card.attention-card-green {
+    -fx-background-color: #f0fdf4;
+    -fx-border-color: #7fae95;
+    -fx-border-width: 3;
+    -fx-border-radius: 12;
+}
+
 .attention-card-title {
     -fx-font-size: 16px;
     -fx-font-weight: 600;
@@ -94,31 +116,62 @@
 /* Back button - pill style */
 .btn-attention-back {
     -fx-background-color: white;
-    -fx-border-color: rgba(0, 0, 0, 0.08);
-    -fx-border-width: 1;
-    -fx-text-fill: #333333;
-    -fx-font-size: 14px;
+    -fx-border-color: rgba(0, 0, 0, 0.12);
+    -fx-border-width: 1.5;
+    -fx-text-fill: #4a4a4a;
+    -fx-font-size: 15px;
     -fx-font-weight: 500;
-    -fx-background-radius: 20;
-    -fx-border-radius: 20;
-    -fx-padding: 8 18;
+    -fx-background-radius: 22;
+    -fx-border-radius: 22;
+    -fx-padding: 10 24;
     -fx-cursor: HAND;
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.06) , 4, 0.0 , 0 , 2 );
+}
+
+.btn-attention-back:hover {
+    -fx-background-color: #f8f8f8;
+    -fx-border-color: rgba(0, 0, 0, 0.18);
+}
+
+/* Skip button - similar to back but in header */
+.btn-attention-skip {
+    -fx-background-color: rgba(255, 255, 255, 0.25);
+    -fx-border-color: rgba(255, 255, 255, 0.4);
+    -fx-border-width: 1.5;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-weight: 500;
+    -fx-background-radius: 22;
+    -fx-border-radius: 22;
+    -fx-padding: 10 24;
+    -fx-cursor: HAND;
+}
+
+.btn-attention-skip:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.35);
+    -fx-border-color: rgba(255, 255, 255, 0.6);
 }
 
 /* Next / Start button - added and styled as teal pill */
 .btn-attention-next, .btn-attention-begin {
     -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #a8e6cf 0%, #88d8c0 100%);
     -fx-text-fill: white;
-    -fx-font-size: 14px;
+    -fx-font-size: 15px;
     -fx-font-weight: 600;
-    -fx-background-radius: 20;
-    -fx-padding: 8 22;
+    -fx-background-radius: 22;
+    -fx-padding: 10 26;
     -fx-cursor: HAND;
-    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.12) , 6, 0.0 , 0 , 3 );
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.15) , 8, 0.0 , 0 , 3 );
+}
+
+.btn-attention-next:hover, .btn-attention-begin:hover {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #98d6bf 0%, #78c8b0 100%);
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.2) , 10, 0.0 , 0 , 4 );
 }
 
 .btn-attention-next:disabled, .btn-attention-begin:disabled {
-    -fx-opacity: 0.55;
+    -fx-opacity: 0.5;
+    -fx-cursor: default;
 }
 
 /* Pagination dots container */
@@ -168,4 +221,81 @@
 /* Small helpers */
 .centered-content {
     -fx-alignment: center;
+}
+
+/* Shape labels */
+.shape-label {
+    -fx-font-size: 16px;
+    -fx-font-weight: 500;
+    -fx-text-fill: #3b3b3b;
+}
+
+/* Match instruction */
+.match-instruction {
+    -fx-font-size: 16px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #2d6a4f;
+}
+
+/* Match explanation */
+.match-explanation {
+    -fx-font-size: 14px;
+    -fx-font-style: italic;
+    -fx-text-fill: #52796f;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+}
+
+/* Practice instruction */
+.practice-instruction {
+    -fx-font-size: 16px;
+    -fx-font-weight: 500;
+    -fx-text-fill: #3b3b3b;
+}
+
+/* Practice space button */
+.btn-practice-space {
+    -fx-background-color: #e8f0fe;
+    -fx-border-color: #8da0b8;
+    -fx-border-width: 2;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-font-size: 32px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #4a5568;
+    -fx-min-width: 500px;
+    -fx-min-height: 90px;
+    -fx-cursor: HAND;
+}
+
+.btn-practice-space:hover {
+    -fx-background-color: #dae6f8;
+}
+
+/* Pagination arrow buttons */
+.btn-pagination-arrow {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: #9e9e9e;
+    -fx-font-size: 16px;
+    -fx-cursor: HAND;
+    -fx-padding: 4 8;
+}
+
+.btn-pagination-arrow:hover {
+    -fx-text-fill: #6b6b6b;
+}
+
+.btn-pagination-arrow:disabled {
+    -fx-opacity: 0.3;
+}
+
+/* Scrollable page styling */
+.attention-scroll-page {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.attention-scroll-page .viewport {
+    -fx-background-color: transparent;
 }

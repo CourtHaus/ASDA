@@ -12,6 +12,8 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 
 <BorderPane xmlns="http://javafx.com/javafx/17"
             xmlns:fx="http://javafx.com/fxml/1"
@@ -34,122 +36,161 @@
 
             <Region HBox.hgrow="ALWAYS"/>
 
-            <Button text="✕ Skip" fx:id="btnSkip" styleClass="btn-attention-skip btn-attention-back"/>
+            <Button text="✕ Skip" fx:id="btnSkip" styleClass="btn-attention-skip"/>
         </HBox>
     </top>
 
-    <!-- CENTER: Scrollable tutorial pages -->
+    <!-- CENTER: Single page view with StackPane -->
     <center>
-        <VBox alignment="TOP_CENTER" spacing="16">
-            <ScrollPane fitToWidth="true" fitToHeight="true" styleClass="attention-tutorial-scroll" prefHeight="480" prefWidth="940">
-                <content>
-                    <VBox spacing="24" alignment="TOP_CENTER" styleClass="attention-tutorial-content" maxWidth="820">
+        <VBox alignment="CENTER" spacing="0" styleClass="attention-tutorial-content">
+            <padding>
+                <Insets top="40" right="60" bottom="40" left="60"/>
+            </padding>
+
+            <!-- StackPane to show one page at a time -->
+            <StackPane fx:id="pageContainer" prefHeight="400">
+                <!-- Page 1: Welcome -->
+                <VBox spacing="20" alignment="CENTER" fx:id="pageWelcome" maxWidth="800">
+                    <Label text="Welcome To Attention Game!" styleClass="attention-page-title" />
+                    <Label wrapText="true" text="Get ready to test your focus! You will watch as shapes appear and find when they match. This helps us understand how well you stay focused and recognize patterns." styleClass="attention-lead-text" maxWidth="700" />
+                </VBox>
+
+                <!-- Page 2: The Shapes -->
+                <VBox spacing="24" alignment="CENTER" fx:id="pageShapes" maxWidth="800">
+                    <Label text="The Shapes" styleClass="attention-page-title" />
+                    <Label wrapText="true" text="You will see three different shapes: Circle, Square, and Triangle. Each one will appear in the center of the screen, one at a time." styleClass="attention-lead-text" maxWidth="700" />
+                    <HBox spacing="40" alignment="CENTER" styleClass="attention-card attention-card-purple">
                         <padding>
-                            <Insets top="24" right="24" bottom="24" left="24"/>
+                            <Insets top="32" right="48" bottom="32" left="48"/>
                         </padding>
-                        <!-- Page 1: Welcome -->
-                        <VBox spacing="12" alignment="TOP_CENTER" fx:id="pageWelcome">
-                            <Label text="Welcome To Attention Game!" styleClass="attention-tutorial-title" />
-                            <Label wrapText="true" text="Get ready to test your focus! You will watch as shapes appear and find when they match. This helps us understand how well you stay focused and recognize patterns." styleClass="attention-lead-text" maxWidth="780" />
+                        <VBox alignment="CENTER" spacing="12">
+                            <ImageView fitWidth="100" fitHeight="100" preserveRatio="true">
+                                <image>
+                                    <Image url="@../images/loading/Ellipse 9-2.png"/>
+                                </image>
+                            </ImageView>
+                            <Label text="Circle" styleClass="shape-label"/>
                         </VBox>
+                        <VBox alignment="CENTER" spacing="12">
+                            <ImageView fitWidth="100" fitHeight="100" preserveRatio="true">
+                                <image>
+                                    <Image url="@../images/loading/Rectangle 25.png"/>
+                                </image>
+                            </ImageView>
+                            <Label text="Square" styleClass="shape-label"/>
+                        </VBox>
+                        <VBox alignment="CENTER" spacing="12">
+                            <ImageView fitWidth="100" fitHeight="100" preserveRatio="true">
+                                <image>
+                                    <Image url="@../images/loading/Polygon 8.png"/>
+                                </image>
+                            </ImageView>
+                            <Label text="Triangle" styleClass="shape-label"/>
+                        </VBox>
+                    </HBox>
+                </VBox>
 
-                        <!-- Page 2: The Shapes -->
-                        <VBox spacing="18" alignment="TOP_CENTER" fx:id="pageShapes">
-                            <Label text="The Shapes" styleClass="attention-tutorial-title" />
-                            <Label wrapText="true" text="You will see three different shapes: Circle, Square, and Triangle. Each one will appear in the center of the screen, one at a time." styleClass="attention-lead-text" maxWidth="780" />
-                            <HBox spacing="36" alignment="CENTER" styleClass="attention-card attention-card-blue">
-                                <padding>
-                                    <Insets top="20" right="20" bottom="20" left="20"/>
-                                </padding>
+                <!-- Page 3: The Colors -->
+                <VBox spacing="24" alignment="CENTER" fx:id="pageColors" maxWidth="800">
+                    <Label text="The Colors" styleClass="attention-page-title" />
+                    <Label wrapText="true" text="Each shape will either be Blue or Red. Pay close attention because both the shape AND the color matter!" styleClass="attention-lead-text" maxWidth="700" />
+                    <HBox alignment="CENTER" styleClass="attention-card attention-card-purple" spacing="60">
+                        <padding>
+                            <Insets top="36" right="60" bottom="36" left="60"/>
+                        </padding>
+                        <VBox alignment="CENTER" spacing="16">
+                            <ImageView fitWidth="110" fitHeight="110" preserveRatio="true">
+                                <image>
+                                    <Image url="@../images/loading/Ellipse 9.png"/>
+                                </image>
+                            </ImageView>
+                            <Label text="Blue" style="-fx-text-fill: #7896b3; -fx-font-size: 32px; -fx-font-weight: 600;"/>
+                        </VBox>
+                        <VBox alignment="CENTER" spacing="16">
+                            <ImageView fitWidth="110" fitHeight="110" preserveRatio="true">
+                                <image>
+                                    <Image url="@../images/loading/Ellipse 10.png"/>
+                                </image>
+                            </ImageView>
+                            <Label text="Red" style="-fx-text-fill: #ff7272; -fx-font-size: 32px; -fx-font-weight: 600;"/>
+                        </VBox>
+                    </HBox>
+                </VBox>
+
+                <!-- Page 4: Finding Matches -->
+                <ScrollPane fitToWidth="true" fitToHeight="true" styleClass="attention-scroll-page" fx:id="pageMatches">
+                    <VBox spacing="24" alignment="TOP_CENTER" maxWidth="750" minWidth="750">
+                        <padding>
+                            <Insets top="0" right="30" bottom="0" left="30"/>
+                        </padding>
+                        <Label text="Finding Matches" styleClass="attention-page-title" wrapText="true" alignment="CENTER" />
+                        <Label wrapText="true" alignment="CENTER" text="When you see the SAME shape with the SAME color appear twice in a row, that's a match! Press the SPACE bar when you spot one." styleClass="attention-lead-text" maxWidth="650" />
+                        <VBox alignment="CENTER" spacing="16" styleClass="attention-card attention-card-green" maxWidth="650">
+                            <padding>
+                                <Insets top="24" right="40" bottom="24" left="40"/>
+                            </padding>
+                            <Label text="✓ This is a MATCH - Press the SPACE bar!" styleClass="match-instruction" alignment="CENTER"/>
+                            <HBox spacing="40" alignment="CENTER">
                                 <VBox alignment="CENTER" spacing="8">
-                                    <Circle radius="40" fill="#8da0b8"/>
-                                    <Label text="Circle"/>
+                                    <ImageView fitWidth="130" fitHeight="130" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../images/loading/Ellipse 9.png"/>
+                                        </image>
+                                    </ImageView>
+                                    <Label text="First shape" styleClass="shape-label"/>
                                 </VBox>
+                                <Label text="→" style="-fx-font-size: 32px; -fx-text-fill: #7fae95; -fx-font-weight: bold;" />
                                 <VBox alignment="CENTER" spacing="8">
-                                    <Rectangle width="80" height="80" arcWidth="20" arcHeight="20" fill="#8da0b8"/>
-                                    <Label text="Square"/>
-                                </VBox>
-                                <VBox alignment="CENTER" spacing="8">
-                                    <Polygon points="40,0,0,80,80,80" scaleX="1" scaleY="1" fill="#8da0b8"/>
-                                    <Label text="Triangle"/>
+                                    <ImageView fitWidth="130" fitHeight="130" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../images/loading/Ellipse 9.png"/>
+                                        </image>
+                                    </ImageView>
+                                    <Label text="Second shape" styleClass="shape-label"/>
                                 </VBox>
                             </HBox>
+                            <Label wrapText="true" alignment="CENTER" text="Same shape (Circle) + Same color (Blue) = MATCH!" styleClass="match-explanation" maxWidth="550"/>
                         </VBox>
-
-                        <!-- Page 3: The Colors -->
-                        <VBox spacing="18" alignment="TOP_CENTER" fx:id="pageColors">
-                            <Label text="The Colors" styleClass="attention-tutorial-title" />
-                            <Label wrapText="true" text="Each shape will either be Blue or Red. Pay close attention because both the shape AND the color matter!" styleClass="attention-lead-text" maxWidth="780" />
-                            <HBox alignment="CENTER" styleClass="attention-card attention-card-teal" spacing="48">
-                                <padding>
-                                    <Insets top="28" right="28" bottom="28" left="28"/>
-                                </padding>
-                                <VBox alignment="CENTER" spacing="12">
-                                    <Circle radius="36" fill="#92a9c9"/>
-                                    <Label text="Blue" style="-fx-text-fill: #92a9c9; -fx-font-size: 30px;"/>
-                                </VBox>
-                                <VBox alignment="CENTER" spacing="12">
-                                    <Circle radius="36" fill="#ff6b6b"/>
-                                    <Label text="Red" style="-fx-text-fill: #ff6b6b; -fx-font-size: 30px;"/>
-                                </VBox>
-                            </HBox>
-                        </VBox>
-
-                        <!-- Page 4: Finding Matches -->
-                        <VBox spacing="18" alignment="TOP_CENTER" fx:id="pageMatches">
-                            <Label text="Finding Matches" styleClass="attention-tutorial-title" />
-                            <Label wrapText="true" text="When you see the SAME shape with the SAME color appear twice in a row, that's a match! Press the SPACE bar when you spot one." styleClass="attention-lead-text" maxWidth="780" />
-                            <VBox alignment="CENTER" spacing="12" styleClass="attention-card">
-                                <padding>
-                                    <Insets top="22" right="22" bottom="22" left="22"/>
-                                </padding>
-                                <Label text="This is a MATCH - Press the SPACE bar!" />
-                                <HBox spacing="48" alignment="CENTER">
-                                    <padding>
-                                        <Insets top="20" right="20" bottom="20" left="20"/>
-                                    </padding>
-                                    <VBox alignment="CENTER" spacing="6">
-                                        <Circle radius="40" fill="#8da0b8"/>
-                                        <Label text="First shape"/>
-                                    </VBox>
-                                    <Label text="→" style="-fx-font-size: 24px; -fx-text-fill: #7fae95;" />
-                                    <VBox alignment="CENTER" spacing="6">
-                                        <Circle radius="40" fill="#8da0b8"/>
-                                        <Label text="Second shape"/>
-                                    </VBox>
-                                </HBox>
-                            </VBox>
-                        </VBox>
-
-                        <!-- Page 5: Try the Space Bar -->
-                        <VBox spacing="18" alignment="TOP_CENTER" fx:id="pagePractice">
-                            <Label text="Try the Space Bar" styleClass="attention-tutorial-title" />
-                            <Label wrapText="true" text="Practice pressing the space bar now! During the game, you'll press it quickly when you see a match." styleClass="attention-lead-text" maxWidth="780" />
-                            <VBox alignment="CENTER" spacing="12" styleClass="attention-card">
-                                <padding>
-                                    <Insets top="16" right="16" bottom="16" left="16"/>
-                                </padding>
-                                <Label text="Click the Space Bar to practice!" />
-                                <Button text="SPACE" fx:id="btnPracticeSpace" style="-fx-font-size: 28px; -fx-min-width: 420px; -fx-min-height: 80px;" />
-                            </VBox>
-                        </VBox>
-
-                        <!-- Page 6: All Set -->
-                        <VBox spacing="18" alignment="TOP_CENTER" fx:id="pageAllSet">
-                            <Label text="You're All Set!" styleClass="attention-tutorial-title" />
-                            <Label wrapText="true" text="Remember: Watch for the same shape AND same color appearing twice in a row. Take your time, have fun, and don't worry about mistakes!" styleClass="attention-lead-text" maxWidth="780" />
-                        </VBox>
-
-                        <Region prefHeight="8"/>
                     </VBox>
-                </content>
-            </ScrollPane>
+                </ScrollPane>
 
-            <!-- Pagination dots (visual only - controller can update) -->
-            <HBox alignment="CENTER" spacing="10" prefHeight="24">
-                <Region prefWidth="120"/>
+                <!-- Page 5: Try the Space Bar -->
+                <VBox spacing="24" alignment="CENTER" fx:id="pagePractice" maxWidth="800">
+                    <Label text="Try the Space Bar" styleClass="attention-page-title" />
+                    <Label wrapText="true" text="Practice pressing the space bar now! During the game, you'll press it quickly when you see a match." styleClass="attention-lead-text" maxWidth="700" />
+                    <VBox alignment="CENTER" spacing="16" styleClass="attention-card attention-card-purple">
+                        <padding>
+                            <Insets top="32" right="40" bottom="32" left="40"/>
+                        </padding>
+                        <Label text="Click the Space Bar to practice!" styleClass="practice-instruction"/>
+                        <Button text="SPACE" fx:id="btnPracticeSpace" styleClass="btn-practice-space" />
+                    </VBox>
+                </VBox>
+
+                <!-- Page 6: All Set -->
+                <VBox spacing="20" alignment="CENTER" fx:id="pageAllSet" maxWidth="800">
+                    <Label text="You're All Set!" styleClass="attention-page-title" />
+                    <Label wrapText="true" text="Remember: Watch for the same shape AND same color appearing twice in a row. Take your time, have fun, and don't worry about mistakes!" styleClass="attention-lead-text" maxWidth="700" />
+                </VBox>
+            </StackPane>
+        </VBox>
+    </center>
+
+    <!-- FOOTER -->
+    <bottom>
+        <HBox styleClass="attention-tutorial-footer" alignment="CENTER" spacing="12">
+            <padding>
+                <Insets top="20" right="32" bottom="20" left="32"/>
+            </padding>
+
+            <Button text="← Back" fx:id="backButton" onAction="#onBack" styleClass="btn-attention-back"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <!-- Pagination dots with navigation arrows -->
+            <HBox alignment="CENTER" spacing="12">
+                <Button text="◀" fx:id="btnPrev" styleClass="btn-pagination-arrow"/>
                 <HBox spacing="8" alignment="CENTER" fx:id="dots">
-                    <!-- Dots are simple circles; controller can toggle styleClass on them -->
                     <Circle radius="6" style="-fx-fill: #c2bfc2;"/>
                     <Circle radius="6" style="-fx-fill: #c2bfc2;"/>
                     <Circle radius="6" style="-fx-fill: #c2bfc2;"/>
@@ -157,33 +198,13 @@
                     <Circle radius="6" style="-fx-fill: #c2bfc2;"/>
                     <Circle radius="6" style="-fx-fill: #c2bfc2;"/>
                 </HBox>
-                <Region prefWidth="120"/>
-            </HBox>
-        </VBox>
-    </center>
-
-    <!-- FOOTER -->
-    <bottom>
-        <HBox styleClass="attention-tutorial-footer" alignment="CENTER_LEFT" spacing="12">
-            <padding>
-                <Insets top="16" right="16" bottom="16" left="16"/>
-            </padding>
-            <HBox.margin>
-                <Insets left="24" right="24" top="8" bottom="12"/>
-            </HBox.margin>
-
-            <Button text="← Back" fx:id="backButton" onAction="#onBack" styleClass="btn-attention-back"/>
-
-            <Region HBox.hgrow="ALWAYS"/>
-
-            <HBox alignment="CENTER" spacing="8">
-                <Button text="◀" fx:id="btnPrev" styleClass="btn-attention-back"/>
-                <Button text="▶" fx:id="btnNext" styleClass="btn-attention-begin"/>
+                <Button text="▶" fx:id="btnNext" styleClass="btn-pagination-arrow"/>
             </HBox>
 
             <Region HBox.hgrow="ALWAYS"/>
 
-            <Button text="Start Playing" fx:id="beginButton" onAction="#onBegin" styleClass="btn-attention-begin" />
+            <Button text="Next →" fx:id="nextButton" onAction="#onNext" styleClass="btn-attention-next btn-attention-begin" />
+            <Button text="Start Playing" fx:id="beginButton" onAction="#onBegin" styleClass="btn-attention-begin" visible="false" managed="false" />
         </HBox>
     </bottom>
 </BorderPane>

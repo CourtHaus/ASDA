@@ -44,13 +44,10 @@
     -fx-line-spacing: 0.5em;
 }
 
-/* Options Container - centers options and constrains width */
+/* Options Container - centers options */
 .options-container {
     -fx-padding: 20 0 0 0;
     -fx-alignment: center;
-    -fx-min-width: 520px;
-    -fx-pref-width: 720px;
-    -fx-max-width: 720px;
 }
 
 /* Radio Button Styling - Equal width regardless of text length */

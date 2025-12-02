@@ -10,6 +10,22 @@ public final class Database {
 
     private Database() {}
 
+    private static volatile boolean DRIVER_LOADED = false;
+
+    private static void ensureDriverLoaded() {
+        if (DRIVER_LOADED) return;
+        synchronized (Database.class) {
+            if (DRIVER_LOADED) return;
+            try {
+                // Explicitly load SQLite JDBC driver (helps in some runtime/plugin setups)
+                Class.forName("org.sqlite.JDBC");
+                DRIVER_LOADED = true;
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException("SQLite JDBC driver not found on classpath. Add org.xerial:sqlite-jdbc.", e);
+            }
+        }
+    }
+
     private static String dbUrl() {
         return System.getProperty("asda.db.url", DB_URL_DEFAULT);
     }
@@ -19,6 +35,7 @@ public final class Database {
     }
 
     public static void init(Consumer<Double> progress) {
+        ensureDriverLoaded();
         try (Connection conn = DriverManager.getConnection(dbUrl())) {
             if (conn == null) return;
             if (progress != null) progress.accept(0.05);
@@ -136,6 +153,7 @@ public final class Database {
     }
 
     public static Connection getConnection() throws SQLException {
+        ensureDriverLoaded();
         return DriverManager.getConnection(dbUrl());
     }
 }

@@ -35,7 +35,7 @@
                 </padding>
 
                 <Label wrapText="true" styleClass="lead-text"
-                       text="Welcome to the Adolescent Autism Spectrum Quotient (AQ)"/>
+                       text="Welcome to the Autism Spectrum Disorder Assessment"/>
 
                 <Label wrapText="true" styleClass="disclaimer-text"
                        text="IMPORTANT DISCLAIMER: This assessment is designed for screening purposes only and is not a diagnostic tool. Results should be interpreted by a qualified healthcare professional. If you have concerns about autism spectrum disorder, please consult with a licensed psychologist or psychiatrist for a comprehensive evaluation."/>
@@ -51,7 +51,7 @@
                 <VBox styleClass="card card-blue">
                     <Label text="Take Your Time" styleClass="card-title"/>
                     <Label wrapText="true" styleClass="card-body"
-                           text="This assessment consists of 50 questions and typically takes 10-15 minutes to complete. There are no right or wrong answers — please answer honestly based on your own experiences."/>
+                           text="This assessment consists of 50 questions and typically takes 10-15 minutes to complete. There are no right or wrong answers - please answer honestly based on your own experiences."/>
                 </VBox>
 
                 <!-- How To Answer Card -->

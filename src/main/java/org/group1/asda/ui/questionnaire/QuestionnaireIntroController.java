@@ -21,9 +21,7 @@ public class QuestionnaireIntroController {
     @FXML
     public void initialize() {
         // Focus the begin button by default for accessibility
-        if (beginButton != null) {
-            beginButton.requestFocus();
-        }
+        beginButton.requestFocus();
     }
 
     @FXML

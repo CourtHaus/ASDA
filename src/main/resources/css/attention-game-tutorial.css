@@ -1,0 +1,198 @@
+/* Attention Game Tutorial Screen Styles */
+
+/* Root container */
+.attention-tutorial-root {
+    -fx-background-color: linear-gradient(to bottom, #f6f8fb, #ffffff);
+}
+
+/* Header with gradient - teal/cyan theme */
+.attention-tutorial-header {
+    -fx-background-color: linear-gradient(to right, #a8e6cf, #88d8c0);
+    -fx-background-radius: 0 0 20 20;
+    -fx-padding: 40 24 32 24;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 12, 0, 0, 6);
+}
+
+/* Attention icon container */
+.attention-icon-container {
+    -fx-pref-width: 56;
+    -fx-pref-height: 56;
+    -fx-min-width: 56;
+    -fx-min-height: 56;
+    -fx-max-width: 56;
+    -fx-max-height: 56;
+}
+
+.attention-icon-circle {
+    -fx-fill: rgba(255, 255, 255, 0.25);
+}
+
+.attention-icon-emoji {
+    -fx-font-size: 24px;
+}
+
+/* Header text */
+.attention-tutorial-title {
+    -fx-text-fill: white;
+    -fx-font-size: 26px;
+    -fx-font-weight: 500;
+}
+
+.attention-tutorial-subtitle {
+    -fx-text-fill: rgba(255, 255, 255, 0.92);
+    -fx-font-size: 15px;
+    -fx-font-weight: 400;
+}
+
+/* Scroll area */
+.attention-tutorial-scroll {
+    -fx-background: white;
+    -fx-background-color: white;
+}
+
+.attention-tutorial-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.attention-tutorial-scroll .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-padding: 2;
+}
+
+.attention-tutorial-scroll .scroll-bar:vertical .track {
+    -fx-background-color: #f0f0f0;
+    -fx-background-radius: 4;
+}
+
+.attention-tutorial-scroll .scroll-bar:vertical .thumb {
+    -fx-background-color: #c0c0c0;
+    -fx-background-radius: 4;
+}
+
+.attention-tutorial-scroll .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #a0a0a0;
+}
+
+/* Content area */
+.attention-tutorial-content {
+    -fx-background-color: white;
+    -fx-max-width: 820;
+}
+
+/* Lead text */
+.attention-lead-text {
+    -fx-font-size: 18px;
+    -fx-font-weight: 500;
+    -fx-text-fill: #333333;
+    -fx-text-alignment: center;
+}
+
+/* Disclaimer text */
+.attention-disclaimer-text {
+    -fx-font-size: 13px;
+    -fx-text-fill: #666666;
+    -fx-line-spacing: 3;
+}
+
+/* Card styles */
+.attention-card {
+    -fx-background-radius: 14;
+    -fx-padding: 18 20 18 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.04), 8, 0, 0, 4);
+    -fx-spacing: 8;
+}
+
+.attention-card.attention-card-teal {
+    -fx-background-color: #e0f7f0; /* soft teal */
+}
+
+.attention-card.attention-card-blue {
+    -fx-background-color: #e0f4ff; /* pale blue */
+}
+
+.attention-card-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #333333;
+}
+
+.attention-card-body {
+    -fx-text-fill: #555555;
+    -fx-font-size: 13px;
+    -fx-line-spacing: 2;
+}
+
+/* Privacy box */
+.attention-privacy-box {
+    -fx-background-color: #fff4d9;
+    -fx-border-color: #e25a3a;
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 14 16 14 16;
+}
+
+.attention-privacy-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #8b4513;
+}
+
+.attention-privacy-text {
+    -fx-text-fill: #6b4e1f;
+    -fx-font-size: 12px;
+}
+
+/* Footer */
+.attention-tutorial-footer {
+    -fx-background-color: rgba(245, 247, 250, 0.98);
+    -fx-background-radius: 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.04), 6, 0, 0, -2);
+    -fx-border-color: #e8ecef;
+    -fx-border-width: 1 0 0 0;
+}
+
+/* Back button - pill style */
+.btn-attention-back {
+    -fx-background-color: white;
+    -fx-border-color: rgba(0, 0, 0, 0.1);
+    -fx-border-width: 1;
+    -fx-text-fill: #444444;
+    -fx-font-size: 14px;
+    -fx-font-weight: 500;
+    -fx-background-radius: 22;
+    -fx-border-radius: 22;
+    -fx-padding: 10 22 10 22;
+    -fx-cursor: hand;
+}
+
+.btn-attention-back:hover {
+    -fx-background-color: #f5f5f5;
+    -fx-border-color: rgba(0, 0, 0, 0.15);
+}
+
+.btn-attention-back:focused {
+    -fx-border-color: #88d8c0;
+    -fx-border-width: 2;
+}
+
+/* Begin button - gradient pill style */
+.btn-attention-begin {
+    -fx-background-color: linear-gradient(to right, #a8e6cf, #88d8c0);
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-background-radius: 22;
+    -fx-padding: 10 28 10 28;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 6, 0, 0, 3);
+}
+
+.btn-attention-begin:hover {
+    -fx-background-color: linear-gradient(to right, #b8f0d9, #98e2ca);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 8, 0, 0, 4);
+}
+
+.btn-attention-begin:focused {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4);
+}

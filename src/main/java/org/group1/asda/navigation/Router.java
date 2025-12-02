@@ -32,6 +32,8 @@ public class Router {
         URL disclosure = getClass().getResource("/css/disclosure.css");
         URL questionnaireIntro = getClass().getResource("/css/questionnaire-intro.css");
         URL results = getClass().getResource("/css/results.css");
+        URL attentionGameTutorial = getClass().getResource("/css/attention-game-tutorial.css");
+        URL attentionGame = getClass().getResource("/css/attention-game.css");
 
         if (base != null) scene.getStylesheets().add(base.toExternalForm());
         if (theme != null) scene.getStylesheets().add(theme.toExternalForm());
@@ -40,6 +42,8 @@ public class Router {
         if (disclosure != null) scene.getStylesheets().add(disclosure.toExternalForm());
         if (questionnaireIntro != null) scene.getStylesheets().add(questionnaireIntro.toExternalForm());
         if (results != null) scene.getStylesheets().add(results.toExternalForm());
+        if (attentionGameTutorial != null) scene.getStylesheets().add(attentionGameTutorial.toExternalForm());
+        if (attentionGame != null) scene.getStylesheets().add(attentionGame.toExternalForm());
 
         stage.setScene(scene);
     }
@@ -53,6 +57,7 @@ public class Router {
             case "questionnaire" -> load("/fxml/questionnaire.fxml");
             case "results" -> load("/fxml/results.fxml");
             case "matching-game" -> load("/fxml/matching-game.fxml");
+            case "attention-game-tutorial" -> load("/fxml/attention-game-tutorial.fxml");
             case "attention-game" -> load("/fxml/attention-game.fxml");
             default -> new Label("Unknown screen: " + screen);
         };
@@ -76,6 +81,7 @@ public class Router {
             case "questionnaire" -> "/fxml/questionnaire.fxml";
             case "results" -> "/fxml/results.fxml";
             case "matching-game" -> "/fxml/matching-game.fxml";
+            case "attention-game-tutorial" -> "/fxml/attention-game-tutorial.fxml";
             case "attention-game" -> "/fxml/attention-game.fxml";
             default -> null;
         };

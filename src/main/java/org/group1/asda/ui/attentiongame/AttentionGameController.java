@@ -5,13 +5,11 @@ import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 import org.group1.asda.domain.AttentionGameState;
@@ -23,9 +21,6 @@ import java.util.Random;
 
 public class AttentionGameController {
     @FXML private BorderPane rootPane;
-    @FXML private VBox introPanel;
-    @FXML private Button startButton;
-    @FXML private VBox gamePanel;
     @FXML private Label headerLabel;
     @FXML private Canvas stimulusCanvas;
     @FXML private Label statsLabel;
@@ -53,26 +48,12 @@ public class AttentionGameController {
 
     @FXML
     public void initialize() {
-        // Show intro panel by default
-        introPanel.setVisible(true);
-        introPanel.setManaged(true);
-        gamePanel.setVisible(false);
-        gamePanel.setManaged(false);
-
         // Setup keyboard handler
         rootPane.setOnKeyPressed(this::onKeyPressed);
         rootPane.setFocusTraversable(true);
         rootPane.requestFocus();
-    }
 
-    @FXML
-    public void onStartGame() {
-        // Hide intro, show game
-        introPanel.setVisible(false);
-        introPanel.setManaged(false);
-        gamePanel.setVisible(true);
-        gamePanel.setManaged(true);
-        rootPane.requestFocus();
+        // Start the game immediately since tutorial is now separate
         startGame();
     }
 

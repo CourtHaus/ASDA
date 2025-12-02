@@ -35,7 +35,7 @@ public class HomeController {
 
     @FXML
     public void onStartAttentionGame(ActionEvent e) {
-        // Route to attention game
-        Router.getInstance().goTo("attention-game");
+        // Route to attention game tutorial before starting the game
+        Router.getInstance().goTo("attention-game-tutorial");
     }
 }

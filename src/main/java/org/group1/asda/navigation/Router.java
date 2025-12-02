@@ -48,8 +48,7 @@ public class Router {
         Parent view = switch (screen) {
             case "home" -> load("/fxml/home.fxml");
             case "loading" -> load("/fxml/loading.fxml");
-            case "disclaimer" -> load("/fxml/disclaimer.fxml");
-            case "disclosure" -> load("/fxml/disclosure.fxml");
+            case "disclaimer" -> load("/fxml/disclosure.fxml");
             case "questionnaire-intro" -> load("/fxml/questionnaire-intro.fxml");
             case "questionnaire" -> load("/fxml/questionnaire.fxml");
             case "results" -> load("/fxml/results.fxml");
@@ -72,8 +71,7 @@ public class Router {
         String path = switch (screen) {
             case "home" -> "/fxml/home.fxml";
             case "loading" -> "/fxml/loading.fxml";
-            case "disclaimer" -> "/fxml/disclaimer.fxml";
-            case "disclosure" -> "/fxml/disclosure.fxml";
+            case "disclaimer" -> "/fxml/disclosure.fxml";
             case "questionnaire-intro" -> "/fxml/questionnaire-intro.fxml";
             case "questionnaire" -> "/fxml/questionnaire.fxml";
             case "results" -> "/fxml/results.fxml";

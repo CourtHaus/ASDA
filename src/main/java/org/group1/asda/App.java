@@ -10,7 +10,6 @@ import org.group1.asda.assessment.AssessmentCli;
 import org.group1.asda.navigation.Router;
 import org.group1.asda.persistence.Database;
 import org.group1.asda.ui.loading.LoadingController;
-import org.group1.asda.ui.disclosure.DisclosureController;
 
 import java.io.InputStream;
 import java.util.Arrays;
@@ -59,14 +58,10 @@ public class App extends Application {
                     long remainingMs = Math.max(0L, minDurationMs - elapsedMs);
                     if (remainingMs > 0L) {
                         PauseTransition pause = new PauseTransition(Duration.millis(remainingMs));
-                        pause.setOnFinished(ev -> {
-                            String next = DisclosureController.hasUserConsented() ? "home" : "disclosure";
-                            router.goTo(next);
-                        });
+                        pause.setOnFinished(ev -> router.goTo("disclaimer"));
                         pause.play();
                     } else {
-                        String next = DisclosureController.hasUserConsented() ? "home" : "disclosure";
-                        router.goTo(next);
+                        router.goTo("disclaimer");
                     }
                 });
             }

@@ -61,7 +61,10 @@
                                 <ColumnConstraints percentWidth="6" />
                                 <ColumnConstraints percentWidth="94" />
                             </columnConstraints>
-                            <RowConstraints vgrow="SOMETIMES" />
+                            <rowConstraints>
+                                <RowConstraints vgrow="SOMETIMES" />
+                                <RowConstraints vgrow="SOMETIMES" />
+                            </rowConstraints>
                             <Label text="•" GridPane.rowIndex="0" />
                             <Label text="Use: Your data will be stored and accessed only by authorized individuals for the purpose of providing a screening assessment and insights." wrapText="true" GridPane.columnIndex="1" />
                             <Label text="•" GridPane.rowIndex="1" />
@@ -129,7 +132,7 @@
                     <VBox spacing="8" styleClass="info-card">
                         <Label text="User Consent" styleClass="section-title" />
                         <TextFlow>
-                            <Text text="By selecting \"I Accept,\" you consent to the collection, use, and disclosure of your data as described above. You also acknowledge that this app is not intended to provide medical advice or diagnose any condition. If you do not agree, select \"I Decline\" and exit the app." />
+                            <Text text='By selecting "I Accept," you consent to the collection, use, and disclosure of your data as described above. You also acknowledge that this app is not intended to provide medical advice or diagnose any condition. If you do not agree, select "I Decline" and exit the app.' />
                         </TextFlow>
                     </VBox>
                 </VBox>

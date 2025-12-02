@@ -9,7 +9,8 @@ public class DisclaimerController {
 
     @FXML
     public void onContinue() {
-        Router.getInstance().goTo("questionnaire");
+        // Navigate to home after accepting the disclosure
+        Router.getInstance().goTo("home");
     }
 
     @FXML

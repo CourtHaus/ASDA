@@ -31,6 +31,7 @@ public class Router {
         URL loading = getClass().getResource("/css/loading.css");
         URL disclosure = getClass().getResource("/css/disclosure.css");
         URL questionnaireIntro = getClass().getResource("/css/questionnaire-intro.css");
+        URL results = getClass().getResource("/css/results.css");
 
         if (base != null) scene.getStylesheets().add(base.toExternalForm());
         if (theme != null) scene.getStylesheets().add(theme.toExternalForm());
@@ -38,6 +39,7 @@ public class Router {
         if (loading != null) scene.getStylesheets().add(loading.toExternalForm());
         if (disclosure != null) scene.getStylesheets().add(disclosure.toExternalForm());
         if (questionnaireIntro != null) scene.getStylesheets().add(questionnaireIntro.toExternalForm());
+        if (results != null) scene.getStylesheets().add(results.toExternalForm());
 
         stage.setScene(scene);
     }

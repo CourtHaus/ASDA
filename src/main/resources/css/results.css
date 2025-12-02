@@ -1,0 +1,346 @@
+/* Results Page Styles - Matches Figma Design */
+
+/* Root container */
+.results-root {
+    -fx-background-color: linear-gradient(to bottom, #f6f8fb, #ffffff);
+}
+
+/* Header with gradient */
+.results-header {
+    -fx-background-color: linear-gradient(to right, #d8c2ef, #8fb7d8);
+    -fx-background-radius: 0 0 20 20;
+    -fx-padding: 32 24 28 24;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 12, 0, 0, 6);
+}
+
+.results-header-title {
+    -fx-text-fill: white;
+    -fx-font-size: 28px;
+    -fx-font-weight: 500;
+}
+
+.results-header-subtitle {
+    -fx-text-fill: rgba(255, 255, 255, 0.92);
+    -fx-font-size: 14px;
+    -fx-font-weight: 400;
+}
+
+/* Scroll area */
+.results-scroll {
+    -fx-background: white;
+    -fx-background-color: white;
+}
+
+.results-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.results-scroll .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-padding: 2;
+}
+
+.results-scroll .scroll-bar:vertical .track {
+    -fx-background-color: #f0f0f0;
+    -fx-background-radius: 4;
+}
+
+.results-scroll .scroll-bar:vertical .thumb {
+    -fx-background-color: #c0c0c0;
+    -fx-background-radius: 4;
+}
+
+.results-scroll .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #a0a0a0;
+}
+
+/* Content area */
+.results-content {
+    -fx-background-color: white;
+    -fx-max-width: 860;
+}
+
+/* Summary Container - Main box with border */
+.summary-container {
+    -fx-border-color: rgba(87, 136, 170, 0.45);
+    -fx-border-radius: 14;
+    -fx-border-width: 2;
+    -fx-background-radius: 14;
+    -fx-background-color: rgba(245, 247, 249, 0.9);
+    -fx-padding: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.04), 8, 0, 0, 4);
+}
+
+.summary-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #2f5872;
+    -fx-padding: 0 0 12 0;
+}
+
+/* Summary Cards (Total Score / Trait Level) */
+.summary-cards-container {
+    -fx-spacing: 20;
+}
+
+.summary-card {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-padding: 24;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.04), 6, 0, 0, 3);
+    -fx-min-width: 200;
+    -fx-pref-width: 280;
+}
+
+.card-subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: #718096;
+    -fx-font-weight: 400;
+}
+
+.card-score {
+    -fx-font-size: 36px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #2f5872;
+}
+
+.card-trait {
+    -fx-font-size: 28px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #5a8a5e;
+}
+
+.card-trait-high {
+    -fx-text-fill: #c74a3c;
+}
+
+.card-trait-moderate {
+    -fx-text-fill: #d4a34a;
+}
+
+.card-trait-low {
+    -fx-text-fill: #5a8a5e;
+}
+
+/* Reference Info Box */
+.reference-box {
+    -fx-background-color: #e9f0f4;
+    -fx-background-radius: 14;
+    -fx-padding: 18 20 18 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.03), 6, 0, 0, 3);
+}
+
+.section-heading {
+    -fx-font-size: 16px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #333333;
+    -fx-padding: 0 0 10 0;
+}
+
+.reference-item {
+    -fx-text-fill: #4a5568;
+    -fx-font-size: 13px;
+    -fx-padding: 3 0 3 8;
+}
+
+/* Subscales Section */
+.subscales-section {
+    -fx-spacing: 12;
+}
+
+.subscales-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #333333;
+    -fx-padding: 4 0 8 0;
+}
+
+/* Subscale Row */
+.subscale-row {
+    -fx-background-color: rgba(240, 244, 246, 0.9);
+    -fx-background-radius: 12;
+    -fx-padding: 14 18;
+    -fx-alignment: center-left;
+    -fx-spacing: 12;
+}
+
+.subscale-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: 500;
+    -fx-text-fill: #4a5568;
+    -fx-min-width: 140;
+    -fx-pref-width: 140;
+}
+
+.subscale-bar {
+    -fx-accent: #9ab6cf;
+    -fx-pref-height: 18;
+    -fx-min-height: 18;
+    -fx-max-height: 18;
+}
+
+.subscale-bar .track {
+    -fx-background-color: rgba(200, 210, 220, 0.5);
+    -fx-background-radius: 9;
+}
+
+.subscale-bar .bar {
+    -fx-background-color: #9ab6cf;
+    -fx-background-radius: 9;
+    -fx-background-insets: 0;
+}
+
+.subscale-score {
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #4a5568;
+    -fx-min-width: 50;
+    -fx-alignment: center-right;
+}
+
+/* Subscale colors */
+.subscale-bar-social .bar {
+    -fx-background-color: #7FA8C2;
+}
+
+.subscale-bar-attention-switching .bar {
+    -fx-background-color: #A3C7A3;
+}
+
+.subscale-bar-attention-detail .bar {
+    -fx-background-color: #C4A3C4;
+}
+
+.subscale-bar-communication .bar {
+    -fx-background-color: #C7B299;
+}
+
+.subscale-bar-imagination .bar {
+    -fx-background-color: #99B8C7;
+}
+
+/* Detailed Analysis Section */
+.detailed-section {
+    -fx-spacing: 12;
+}
+
+.detailed-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #333333;
+    -fx-padding: 4 0 6 0;
+}
+
+.detailed-item {
+    -fx-background-color: rgba(248, 250, 252, 0.9);
+    -fx-background-radius: 10;
+    -fx-padding: 12 16;
+    -fx-spacing: 6;
+}
+
+.detailed-item-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #4a5568;
+}
+
+.detailed-item-text {
+    -fx-font-size: 13px;
+    -fx-text-fill: #666666;
+    -fx-wrap-text: true;
+}
+
+/* Interpretation Box */
+.interpretation-box {
+    -fx-background-color: #f3ecf8;
+    -fx-background-radius: 14;
+    -fx-padding: 18 20 18 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.03), 6, 0, 0, 3);
+    -fx-spacing: 8;
+}
+
+.interpretation-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #333333;
+}
+
+.interpretation-text {
+    -fx-text-fill: #555555;
+    -fx-font-size: 13px;
+    -fx-line-spacing: 2;
+}
+
+/* Recommendation Box */
+.recommendation-box {
+    -fx-background-color: #e7f0e7;
+    -fx-background-radius: 14;
+    -fx-padding: 18 20 18 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.03), 6, 0, 0, 3);
+    -fx-spacing: 8;
+}
+
+.recommendation-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #333333;
+}
+
+.recommendation-text {
+    -fx-text-fill: #555555;
+    -fx-font-size: 13px;
+    -fx-line-spacing: 2;
+}
+
+/* Important Notice Box */
+.notice-box {
+    -fx-background-color: #fff4d9;
+    -fx-border-color: #e25a3a;
+    -fx-border-width: 2;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 14 16 14 16;
+    -fx-spacing: 6;
+}
+
+.notice-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #8b4513;
+}
+
+.notice-text {
+    -fx-text-fill: #6b4e1f;
+    -fx-font-size: 12px;
+    -fx-line-spacing: 1;
+}
+
+/* Footer */
+.results-footer {
+    -fx-background-color: rgba(245, 247, 250, 0.98);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.04), 6, 0, 0, -2);
+    -fx-border-color: #e8ecef;
+    -fx-border-width: 1 0 0 0;
+}
+
+/* Home button */
+.btn-home {
+    -fx-background-color: linear-gradient(to right, #bda7e6, #8fb7d8);
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-background-radius: 22;
+    -fx-padding: 10 28 10 28;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 6, 0, 0, 3);
+}
+
+.btn-home:hover {
+    -fx-background-color: linear-gradient(to right, #c9b5ed, #9bc3e2);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 8, 0, 0, 4);
+}
+
+.btn-home:focused {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4);
+}

@@ -107,12 +107,12 @@
     -fx-spacing: 8;
 }
 
-.card-purple {
-    -fx-background-color: rgba(230, 224, 243, 0.92);
+.card.card-purple {
+    -fx-background-color: #f3ecf8; /* pastel lilac */
 }
 
-.card-blue {
-    -fx-background-color: rgba(226, 236, 240, 0.95);
+.card.card-blue {
+    -fx-background-color: #e9f0f4; /* pale blue */
 }
 
 .card-title {

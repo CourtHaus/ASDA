@@ -40,6 +40,7 @@ public class Router {
         URL matchingGameResults = getClass().getResource("/css/matching-game-results.css");
         URL emotionalSurvey = getClass().getResource("/css/emotional-survey.css");
         URL emotionRecognition = getClass().getResource("/css/emotion-recognition.css");
+        URL emotionRecognitionResults = getClass().getResource("/css/emotion-recognition-results.css");
 
         if (base != null) scene.getStylesheets().add(base.toExternalForm());
         if (theme != null) scene.getStylesheets().add(theme.toExternalForm());
@@ -56,6 +57,7 @@ public class Router {
         if (matchingGameResults != null) scene.getStylesheets().add(matchingGameResults.toExternalForm());
         if (emotionalSurvey != null) scene.getStylesheets().add(emotionalSurvey.toExternalForm());
         if (emotionRecognition != null) scene.getStylesheets().add(emotionRecognition.toExternalForm());
+        if (emotionRecognitionResults != null) scene.getStylesheets().add(emotionRecognitionResults.toExternalForm());
 
         stage.setScene(scene);
     }
@@ -76,6 +78,7 @@ public class Router {
             case "attention-game-results" -> load("/fxml/attention-game-results.fxml");
             case "emotional-survey" -> load("/fxml/emotional-survey.fxml");
             case "emotion-recognition" -> load("/fxml/emotion-recognition.fxml");
+            case "emotion-recognition-results" -> load("/fxml/emotion-recognition-results.fxml");
             default -> new Label("Unknown screen: " + screen);
         };
         if (root.getChildren().isEmpty()) {
@@ -105,6 +108,7 @@ public class Router {
             case "attention-game-results" -> "/fxml/attention-game-results.fxml";
             case "emotional-survey" -> "/fxml/emotional-survey.fxml";
             case "emotion-recognition" -> "/fxml/emotion-recognition.fxml";
+            case "emotion-recognition-results" -> "/fxml/emotion-recognition-results.fxml";
             default -> null;
         };
         if (path == null) return null;

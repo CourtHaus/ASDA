@@ -2,6 +2,9 @@ package org.group1.asda.ui.emotionrecognition;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Region;
+import javafx.scene.layout.StackPane;
+import javafx.beans.binding.Bindings;
 import org.group1.asda.domain.emotional.FacialEmotionGameState;
 import org.group1.asda.navigation.Router;
 
@@ -11,6 +14,19 @@ public class EmotionRecognitionResultsController {
     @FXML private Label accuracyLabel;
     @FXML private Label recognitionLevelLabel;
     @FXML private Label feedbackText;
+    @FXML private Label correctPercentLabel;
+    @FXML private Label incorrectPercentLabel;
+    @FXML private Region accuracyFill;
+    @FXML private Region correctFill;
+    @FXML private Region incorrectFill;
+    @FXML private StackPane accuracyTrack;
+    @FXML private StackPane correctTrack;
+    @FXML private StackPane incorrectTrack;
+
+    private double accuracyPct = 0;
+    private double correctPct = 0;
+    private double incorrectPct = 0;
+    private boolean barsBound = false;
 
     private FacialEmotionGameState gameState;
 
@@ -29,11 +45,21 @@ public class EmotionRecognitionResultsController {
 
         int correct = gameState.getRecognitionCorrectCount();
         int total = gameState.getTotalQuestions();
-        double accuracy = gameState.getRecognitionAccuracy();
+        double accuracy = total == 0 ? 0 : gameState.getRecognitionAccuracy();
 
         correctLabel.setText(String.valueOf(correct));
-        totalLabel.setText(String.valueOf(total));
+        totalLabel.setText("of " + total + " patterns");
         accuracyLabel.setText(String.format("%.1f%%", accuracy));
+
+        correctPct = total == 0 ? 0 : (correct / (double) total);
+        incorrectPct = total == 0 ? 0 : ((total - correct) / (double) total);
+        accuracyPct = accuracy / 100.0;
+
+        correctPercentLabel.setText(String.format("%.0f%%", correctPct * 100));
+        incorrectPercentLabel.setText(String.format("%.0f%%", incorrectPct * 100));
+
+        bindBarsOnce();
+        updateBindings(); // force initial sizing in case widths already known
 
         // Set recognition level based on accuracy
         String level;
@@ -54,6 +80,42 @@ public class EmotionRecognitionResultsController {
 
         // Set feedback based on accuracy
         setFeedback(accuracy);
+    }
+
+    private void bindBarsOnce() {
+        if (barsBound) return;
+        barsBound = true;
+        bindBar(accuracyFill, accuracyTrack, () -> accuracyPct);
+        bindBar(correctFill, correctTrack, () -> correctPct);
+        bindBar(incorrectFill, incorrectTrack, () -> incorrectPct);
+    }
+
+    private void bindBar(Region bar, StackPane track, java.util.function.Supplier<Double> pctSupplier) {
+        bar.prefWidthProperty().unbind();
+        bar.minWidthProperty().unbind();
+        bar.maxWidthProperty().unbind();
+
+        var binding = Bindings.createDoubleBinding(
+            () -> {
+                double base = Math.max(track.getWidth(), track.getPrefWidth());
+                return Math.max(0, Math.min(1, pctSupplier.get())) * base;
+            },
+            track.widthProperty(),
+            track.prefWidthProperty()
+        );
+        bar.prefWidthProperty().bind(binding);
+        bar.minWidthProperty().bind(binding);
+        bar.maxWidthProperty().bind(binding);
+        // ensure visible and painted
+        bar.setVisible(true);
+        bar.setManaged(true);
+    }
+
+    private void updateBindings() {
+        // trigger evaluation after binding in case track already has width
+        accuracyTrack.requestLayout();
+        correctTrack.requestLayout();
+        incorrectTrack.requestLayout();
     }
 
     private void setFeedback(double accuracy) {

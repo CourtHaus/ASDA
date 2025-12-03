@@ -91,6 +91,10 @@ public class EmotionalGameState {
         return 3;
     }
 
+    public int[] getSurveyResponses() {
+        return Arrays.copyOf(surveyResponses, surveyResponses.length);
+    }
+
     public void setRecognitionAnswer(int index, String answer) {
         if (index >= 0 && index < recognitionAnswers.length) {
             recognitionAnswers[index] = answer;

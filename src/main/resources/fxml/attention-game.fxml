@@ -30,7 +30,7 @@
             <HBox spacing="24" alignment="CENTER_RIGHT">
                 <VBox spacing="2" alignment="TOP_RIGHT">
                     <Label text="Trials" styleClass="stat-label"/>
-                    <Label fx:id="trialsLabel" text="0/100" styleClass="stat-value"/>
+                    <Label fx:id="trialsLabel" text="0/50" styleClass="stat-value"/>
                 </VBox>
                 <VBox spacing="2" alignment="TOP_RIGHT">
                     <Label text="Correct" styleClass="stat-label"/>

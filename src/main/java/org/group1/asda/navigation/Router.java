@@ -42,6 +42,7 @@ public class Router {
         URL emotionalSurvey = getClass().getResource("/css/emotional-survey.css");
         URL emotionRecognition = getClass().getResource("/css/emotion-recognition.css");
         URL emotionRecognitionResults = getClass().getResource("/css/emotion-recognition-results.css");
+        URL emotionalSurveyResults = getClass().getResource("/css/emotional-survey-results.css");
 
         if (base != null) scene.getStylesheets().add(base.toExternalForm());
         if (theme != null) scene.getStylesheets().add(theme.toExternalForm());
@@ -60,6 +61,7 @@ public class Router {
         if (emotionalSurvey != null) scene.getStylesheets().add(emotionalSurvey.toExternalForm());
         if (emotionRecognition != null) scene.getStylesheets().add(emotionRecognition.toExternalForm());
         if (emotionRecognitionResults != null) scene.getStylesheets().add(emotionRecognitionResults.toExternalForm());
+        if (emotionalSurveyResults != null) scene.getStylesheets().add(emotionalSurveyResults.toExternalForm());
 
         stage.setScene(scene);
     }
@@ -79,6 +81,7 @@ public class Router {
             case "attention-game" -> load("/fxml/attention-game.fxml");
             case "attention-game-results" -> load("/fxml/attention-game-results.fxml");
             case "emotional-survey" -> load("/fxml/emotional-survey.fxml");
+            case "emotional-survey-results" -> load("/fxml/emotional-survey-results.fxml");
             case "emotion-recognition" -> load("/fxml/emotion-recognition.fxml");
             case "emotion-recognition-results" -> load("/fxml/emotion-recognition-results.fxml");
             default -> new Label("Unknown screen: " + screen);
@@ -109,6 +112,7 @@ public class Router {
             case "attention-game" -> "/fxml/attention-game.fxml";
             case "attention-game-results" -> "/fxml/attention-game-results.fxml";
             case "emotional-survey" -> "/fxml/emotional-survey.fxml";
+            case "emotional-survey-results" -> "/fxml/emotional-survey-results.fxml";
             case "emotion-recognition" -> "/fxml/emotion-recognition.fxml";
             case "emotion-recognition-results" -> "/fxml/emotion-recognition-results.fxml";
             default -> null;

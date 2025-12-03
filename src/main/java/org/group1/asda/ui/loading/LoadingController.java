@@ -1,49 +1,53 @@
 package org.group1.asda.ui.loading;
 
-import javafx.beans.binding.Bindings;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.SimpleDoubleProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.StackPane;
+import javafx.util.Duration;
 
 public class LoadingController {
-    @FXML private StackPane scaleContainer;   // outer StackPane
-    @FXML private Pane designCanvas;          // 1280x1024 reference pane
-    @FXML private StackPane progressTrack;    // track container
-    @FXML private Region progressFill;        // fill bar
+    @FXML private StackPane progressTrack;
+    @FXML private Region progressFill;
     @FXML private Label percentLabel;
 
-    private static final double DESIGN_W = 1280.0;
-    private static final double DESIGN_H = 1024.0;
+    private final DoubleProperty animatedProgress = new SimpleDoubleProperty(0);
+    private Timeline progressTimeline;
 
     @FXML
     private void initialize() {
-        // Proportional scaling: scale the design canvas to fit available space
-        designCanvas.scaleXProperty().bind(Bindings.createDoubleBinding(
-                () -> scaleFactor(), scaleContainer.widthProperty(), scaleContainer.heightProperty()));
-        designCanvas.scaleYProperty().bind(designCanvas.scaleXProperty());
-
-        // Keep the canvas centered by letting StackPane do its job (child remains centered)
-
-        // Initialize progress to 0
-        setProgress(0.0);
+        animatedProgress.addListener((obs, oldVal, newVal) -> updateBar(newVal.doubleValue()));
+        progressTrack.widthProperty().addListener((obs, oldVal, newVal) -> updateBar(animatedProgress.get()));
+        updateBar(0.0);
     }
 
-    private double scaleFactor() {
-        double w = scaleContainer.getWidth();
-        double h = scaleContainer.getHeight();
-        if (w <= 0 || h <= 0) return 1.0;
-        double sx = w / DESIGN_W;
-        double sy = h / DESIGN_H;
-        return Math.min(sx, sy);
-    }
-
-    /** p in [0,1] */
+    /** Animate progress toward p in [0,1] */
     public void setProgress(double p) {
-        double clamped = Math.max(0, Math.min(1, p));
-        // Track width is in design space; scale will be applied visually by parent
-        double trackWidth = progressTrack.getPrefWidth(); // 400 in FXML
+        double target = Math.max(0, Math.min(1, p));
+        double start = animatedProgress.get();
+
+        if (progressTimeline != null) {
+            progressTimeline.stop();
+        }
+
+        double delta = Math.abs(target - start);
+        double durationMs = 300 + (delta * 800); // ease small jumps but still quick
+
+        progressTimeline = new Timeline(
+            new KeyFrame(Duration.ZERO, new KeyValue(animatedProgress, start)),
+            new KeyFrame(Duration.millis(durationMs), new KeyValue(animatedProgress, target))
+        );
+        progressTimeline.play();
+    }
+
+    private void updateBar(double value) {
+        double clamped = Math.max(0, Math.min(1, value));
+        double trackWidth = progressTrack.getWidth() > 0 ? progressTrack.getWidth() : progressTrack.getPrefWidth();
         progressFill.setPrefWidth(trackWidth * clamped);
         percentLabel.setText(Math.round(clamped * 100) + "%");
     }

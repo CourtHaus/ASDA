@@ -1,23 +1,70 @@
-/* Loading screen base */
-.loading-root { -fx-background-color: #f5f7fa; }
+/* Loading screen aligned with home theme */
 
-/* Icon tiles */
-.loading-card {
-    -fx-background-radius: 25;
-    -fx-effect: dropshadow(gaussian, rgba(12,12,13,0.4), 32, 0.0, 0, 16);
-    -fx-alignment: CENTER;
+.loading-root {
+    -fx-background-color: linear-gradient(to bottom right, #ffe8d6 0%, #ffd4e5 38%, #fff4cc 70%, #ffe8d6 100%);
 }
+
+.loading-content {
+    -fx-padding: 64 32 72 32;
+}
+
+.loading-title {
+    -fx-font-size: 68px;
+    -fx-font-weight: 300;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 12, 0, 0, 4);
+}
+
+.loading-subtitle {
+    -fx-text-fill: #8da9c4;
+    -fx-font-size: 20px;
+    -fx-font-weight: 500;
+}
+
+.loading-icons {
+    -fx-padding: 12 0 4 0;
+}
+
+.loading-icon-card {
+    -fx-background-radius: 24;
+    -fx-padding: 18;
+    -fx-pref-width: 140;
+    -fx-pref-height: 140;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(gaussian, rgba(12,12,13,0.15), 26, 0.0, 0, 10);
+}
+
+.loading-card-purple { -fx-background-color: #c5b4e3; }
 .loading-card-teal   { -fx-background-color: #b0d0d3; }
 .loading-card-blue   { -fx-background-color: #8da9c4; }
-.loading-card-purple { -fx-background-color: #c5b4e3; }
-.loading-card-inner  { -fx-background-color: white; -fx-background-radius: 25; }
+.loading-card-lavender { -fx-background-color: #d8c2ef; }
+.loading-card-sky      { -fx-background-color: #a8c5dd; }
 
-/* Typography */
-.loading-headline { -fx-font-size: 128px; -fx-font-weight: 300; }
-.loading-subtitle { -fx-text-fill: #8da9c4; -fx-font-size: 32px; }
-.loading-caption  { -fx-font-size: 26px; -fx-text-fill: rgba(0,0,0,0.6); }
-.loading-percent  { -fx-font-size: 24px; -fx-text-fill: rgba(0,0,0,0.5); }
+.loading-caption {
+    -fx-font-size: 18px;
+    -fx-text-fill: rgba(0,0,0,0.65);
+    -fx-font-weight: 600;
+}
 
-/* Progress bar */
-.progress-track { -fx-background-color: #d9d9d9; -fx-background-radius: 5; }
-.progress-fill    { -fx-background-radius: 5; -fx-background-color: linear-gradient(to right, #b0d0d3 50%, #8da9c4); }
+.progress-track {
+    -fx-background-color: rgba(255, 255, 255, 0.6);
+    -fx-background-radius: 12;
+    -fx-padding: 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 14, 0.0, 0, 4);
+}
+
+.progress-fill {
+    -fx-background-radius: 12;
+    -fx-background-color: linear-gradient(to right, #c5b4e3 0%, #8da9c4 50%, #b0d0d3 100%);
+    -fx-min-width: 0;
+    -fx-max-height: 16;
+}
+
+.loading-percent {
+    -fx-font-size: 18px;
+    -fx-text-fill: rgba(0,0,0,0.55);
+    -fx-font-weight: 600;
+}
+
+.loading-root .flow-pane {
+    -fx-padding: 0 12;
+}

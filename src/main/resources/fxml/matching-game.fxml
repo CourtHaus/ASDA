@@ -41,38 +41,42 @@
                     <Label text="Accuracy" styleClass="stat-label"/>
                     <Label fx:id="accuracyLabel" text="100%" styleClass="stat-value"/>
                 </VBox>
+                <Button text="Exit" onAction="#onHome" styleClass="header-exit-btn"/>
             </HBox>
         </HBox>
     </top>
 
     <!-- Center game area -->
     <center>
-        <StackPane styleClass="matching-game-center">
-            <!-- Game content -->
-            <VBox fx:id="gameContent" alignment="CENTER" spacing="32">
-                <padding>
-                    <Insets top="32" right="32" bottom="32" left="32"/>
-                </padding>
+        <ScrollPane fitToWidth="true" fitToHeight="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED"
+                    styleClass="matching-game-scroll">
+            <StackPane styleClass="matching-game-center">
+                <!-- Game content -->
+                <VBox fx:id="gameContent" alignment="CENTER" spacing="32">
+                    <padding>
+                        <Insets top="32" right="32" bottom="32" left="32"/>
+                    </padding>
 
-                <!-- Card grid -->
-                <GridPane fx:id="grid" alignment="CENTER" hgap="12" vgap="12" styleClass="card-grid"/>
+                    <!-- Card grid -->
+                    <GridPane fx:id="grid" alignment="CENTER" hgap="12" vgap="12" styleClass="card-grid"/>
 
-                <!-- Instruction text -->
-                <Label fx:id="instructionLabel" text="Select two cards and see if they match. Try to remember what you see!"
-                       styleClass="instruction-label" wrapText="true" maxWidth="600" alignment="CENTER"/>
-            </VBox>
+                    <!-- Instruction text -->
+                    <Label fx:id="instructionLabel" text="Select two cards and see if they match. Try to remember what you see!"
+                           styleClass="instruction-label" wrapText="true" maxWidth="600" alignment="CENTER"/>
+                </VBox>
 
-            <!-- Pause overlay -->
-            <VBox fx:id="pauseOverlay" alignment="CENTER" spacing="16" visible="false" managed="false"
-                  styleClass="pause-overlay">
-                <HBox spacing="8" alignment="CENTER">
-                    <Region styleClass="pause-bar"/>
-                    <Region styleClass="pause-bar"/>
-                </HBox>
-                <Label text="Game Paused" styleClass="pause-title"/>
-                <Label text="Click Resume to continue" styleClass="pause-subtitle"/>
-            </VBox>
-        </StackPane>
+                <!-- Pause overlay -->
+                <VBox fx:id="pauseOverlay" alignment="CENTER" spacing="16" visible="false" managed="false"
+                      styleClass="pause-overlay">
+                    <HBox spacing="8" alignment="CENTER">
+                        <Region styleClass="pause-bar"/>
+                        <Region styleClass="pause-bar"/>
+                    </HBox>
+                    <Label text="Game Paused" styleClass="pause-title"/>
+                    <Label text="Click Resume to continue" styleClass="pause-subtitle"/>
+                </VBox>
+            </StackPane>
+        </ScrollPane>
     </center>
 
     <!-- Footer -->

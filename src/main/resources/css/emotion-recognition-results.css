@@ -1,18 +1,18 @@
 /* Emotion Recognition Results Screen Styles */
 
 .results-root {
-    -fx-background-color: linear-gradient(from 0% 0% to 0% 100%, #f6f8fb 0%, #ffffff 100%);
+    -fx-background-color: linear-gradient(to bottom right, #ffe8d6 0%, #ffd4e5 35%, #fff4cc 70%, #ffe8d6 100%);
 }
 
 .results-header {
     -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #9db4c0 0%, #7fa0b3 100%);
-    -fx-background-radius: 12 12 0 0;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 12, 0, 0, 6);
+    -fx-background-radius: 14 14 0 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 12, 0, 0, 6);
 }
 
 .results-title {
     -fx-text-fill: white;
-    -fx-font-size: 26px;
+    -fx-font-size: 28px;
     -fx-font-weight: 600;
 }
 
@@ -32,14 +32,9 @@
 }
 
 .results-content {
-    -fx-background-color: white;
-}
-
-.checkmark-text {
-    -fx-fill: #7fa0b3;
-    -fx-font-size: 32px;
-    -fx-text-fill: #7fa0b3;
-    -fx-font-weight: bold;
+    -fx-background-color: rgba(255,255,255,0.9);
+    -fx-background-radius: 18;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 16, 0, 0, 8);
 }
 
 .completion-title {
@@ -48,24 +43,84 @@
     -fx-text-fill: #4a4a4a;
 }
 
-.stats-box {
-    -fx-background-color: white;
-    -fx-border-color: #7fa0b3;
-    -fx-border-width: 2;
-    -fx-border-radius: 12;
-    -fx-background-radius: 12;
-}
-
-.stat-label-bold {
-    -fx-font-size: 16px;
-    -fx-font-weight: 600;
+.completion-subtitle {
     -fx-text-fill: #5a5a5a;
+    -fx-font-size: 15px;
+    -fx-font-weight: 500;
 }
 
-.stat-value-dark {
+.metric-card {
+    -fx-background-color: white;
+    -fx-background-radius: 16;
+    -fx-padding: 18;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.07), 12, 0, 0, 6);
+}
+
+.metric-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #6b7280;
+    -fx-font-weight: 600;
+}
+
+.metric-value {
+    -fx-font-size: 30px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #4b5563;
+}
+
+.metric-sub {
+    -fx-font-size: 13px;
+    -fx-text-fill: #9ca3af;
+    -fx-font-weight: 600;
+}
+
+.bar-card {
+    -fx-background-color: white;
+    -fx-background-radius: 16;
+    -fx-padding: 18 18 22 18;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.07), 12, 0, 0, 6);
+}
+
+.bar-title {
     -fx-font-size: 16px;
-    -fx-font-weight: 400;
-    -fx-text-fill: #3a3a3a;
+    -fx-font-weight: 700;
+    -fx-text-fill: #374151;
+}
+
+.bar-row { -fx-spacing: 10; }
+
+.bar-label {
+    -fx-font-size: 13px;
+    -fx-font-weight: 700;
+    -fx-pref-width: 70;
+}
+
+.bar-label.positive { -fx-text-fill: #1b8f5a; }
+.bar-label.neutral  { -fx-text-fill: #7a7f87; }
+.bar-label.negative { -fx-text-fill: #c14545; }
+
+.bar-track {
+    -fx-background-color: rgba(0,0,0,0.05);
+    -fx-background-radius: 999;
+    -fx-pref-width: 340;
+    -fx-pref-height: 14;
+}
+
+.bar-fill {
+    -fx-background-radius: 999;
+    -fx-min-height: 14;
+    -fx-max-height: 14;
+}
+
+.bar-fill.primary  { -fx-background-color: linear-gradient(to right, #c5b4e3 0%, #8da9c4 100%); }
+.bar-fill.positive { -fx-background-color: linear-gradient(to right, #c5b4e3 0%, #8da9c4 100%); }
+.bar-fill.negative { -fx-background-color: linear-gradient(to right, #f6a2a2, #e05252); }
+
+.bar-value {
+    -fx-font-size: 13px;
+    -fx-text-fill: #4b5563;
+    -fx-font-weight: 700;
 }
 
 .feedback-box {
@@ -74,6 +129,7 @@
     -fx-border-width: 2;
     -fx-border-radius: 12;
     -fx-background-radius: 12;
+    -fx-padding: 18;
 }
 
 .api-label {
@@ -103,23 +159,9 @@
     -fx-background-radius: 12;
 }
 
-.warning-text-bold {
-    -fx-font-size: 15px;
-    -fx-font-weight: 700;
-    -fx-text-fill: #a04000;
-    -fx-wrap-text: true;
-}
-
-.warning-text {
-    -fx-font-size: 14px;
-    -fx-font-weight: 400;
-    -fx-text-fill: #a04000;
-    -fx-wrap-text: true;
-}
-
 .results-footer {
     -fx-background-color: #e9e7ea;
-    -fx-background-radius: 0 0 12 12;
+    -fx-background-radius: 0 0 14 14;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.04), 8, 0, 0, -2);
 }
 
@@ -156,4 +198,16 @@
 .btn-home:hover {
     -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #8da4b0 0%, #6f90a3 100%);
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4);
+}
+
+.corner-art-left {
+    -fx-opacity: 0.65;
+    -fx-translate-x: -380;
+    -fx-translate-y: -120;
+}
+
+.corner-art-right {
+    -fx-opacity: 0.65;
+    -fx-translate-x: 380;
+    -fx-translate-y: 240;
 }

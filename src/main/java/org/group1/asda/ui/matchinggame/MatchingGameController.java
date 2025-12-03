@@ -33,6 +33,8 @@ public class MatchingGameController {
     @FXML private Button pauseButton;
     @FXML private Button resumeButton;
 
+    private static final int MAX_ROUNDS = 5;
+
     private GameState gameState = new GameState();
     private List<Card> cards;
     private List<CardButton> cardButtons = new ArrayList<>();
@@ -168,7 +170,7 @@ public class MatchingGameController {
     private void endRound() {
         gameState.stopTimer();
 
-        if (gameState.getCurrRound() < 10) {
+        if (gameState.getCurrRound() < MAX_ROUNDS) {
             gameState.nextRound();
             setupRound();
         } else {

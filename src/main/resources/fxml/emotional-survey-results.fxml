@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.group1.asda.ui.emotionalsurvey.EmotionalSurveyResultsController"
+            stylesheets="@../css/emotional-survey-results.css"
+            styleClass="results-root"
+            prefWidth="980" prefHeight="720">
+
+    <top>
+        <VBox styleClass="results-header">
+            <padding>
+                <Insets top="26" right="32" bottom="22" left="32"/>
+            </padding>
+            <Label text="Emotional Response Survey" styleClass="results-title"/>
+            <Label text="Your feelings at-a-glance" styleClass="results-subtitle"/>
+        </VBox>
+    </top>
+
+    <center>
+        <StackPane>
+            <ImageView styleClass="corner-art-left" fitHeight="240" fitWidth="240" preserveRatio="true">
+                <image>
+                    <Image url="@/images/results/Frame 9.png"/>
+                </image>
+            </ImageView>
+            <ImageView styleClass="corner-art-right" fitHeight="240" fitWidth="240" preserveRatio="true">
+                <image>
+                    <Image url="@/images/results/Frame 10.png"/>
+                </image>
+            </ImageView>
+
+            <ScrollPane fitToWidth="true" styleClass="results-scroll">
+                <VBox spacing="24" alignment="TOP_CENTER" styleClass="results-content">
+                    <padding>
+                        <Insets top="36" right="42" bottom="36" left="42"/>
+                    </padding>
+
+                    <VBox spacing="8" alignment="CENTER">
+                        <Label text="Survey Complete" styleClass="completion-title"/>
+                        <Label text="Thank you for sharing how each pattern made you feel." styleClass="completion-subtitle" wrapText="true" maxWidth="640" alignment="CENTER"/>
+                    </VBox>
+
+                    <HBox spacing="16" alignment="CENTER">
+                        <VBox spacing="14" styleClass="metric-card" alignment="CENTER" HBox.hgrow="ALWAYS">
+                            <Label text="Average Mood" styleClass="metric-label"/>
+                            <Label fx:id="averageLabel" text="0.00 / 5" styleClass="metric-value"/>
+                            <Label fx:id="sentimentLabel" text="Balanced mood" styleClass="metric-chip"/>
+                        </VBox>
+
+                        <VBox spacing="14" styleClass="metric-card" alignment="CENTER" HBox.hgrow="ALWAYS">
+                            <Label text="Patterns Rated" styleClass="metric-label"/>
+                            <Label fx:id="totalLabel" text="0" styleClass="metric-value"/>
+                            <Label text="questions" styleClass="metric-sub"/>
+                        </VBox>
+                    </HBox>
+
+                    <VBox spacing="12" styleClass="bar-card" maxWidth="760">
+                        <Label text="How your feelings leaned" styleClass="bar-title"/>
+                        <HBox spacing="8" alignment="CENTER_LEFT" styleClass="bar-row">
+                            <Label text="Positive" styleClass="bar-label positive"/>
+                            <StackPane fx:id="positiveTrack" styleClass="bar-track" prefWidth="340" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                                <Region fx:id="positiveFill" styleClass="bar-fill positive"/>
+                            </StackPane>
+                            <Label fx:id="positiveLabel" text="0 positive" styleClass="bar-value"/>
+                        </HBox>
+                        <HBox spacing="8" alignment="CENTER_LEFT" styleClass="bar-row">
+                            <Label text="Neutral" styleClass="bar-label neutral"/>
+                            <StackPane fx:id="neutralTrack" styleClass="bar-track" prefWidth="340" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                                <Region fx:id="neutralFill" styleClass="bar-fill neutral"/>
+                            </StackPane>
+                            <Label fx:id="neutralLabel" text="0 neutral" styleClass="bar-value"/>
+                        </HBox>
+                        <HBox spacing="8" alignment="CENTER_LEFT" styleClass="bar-row">
+                            <Label text="Tense" styleClass="bar-label negative"/>
+                            <StackPane fx:id="negativeTrack" styleClass="bar-track" prefWidth="340" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                                <Region fx:id="negativeFill" styleClass="bar-fill negative"/>
+                            </StackPane>
+                            <Label fx:id="negativeLabel" text="0 negative" styleClass="bar-value"/>
+                        </HBox>
+                    </VBox>
+
+                    <VBox spacing="10" styleClass="callout-card" maxWidth="760">
+                        <Label text="This summary is reflective only." styleClass="callout-title"/>
+                        <Label text="It is not a diagnosis. If emotions feel difficult to manage, consider speaking with a licensed clinician." styleClass="callout-text" wrapText="true" maxWidth="720"/>
+                    </VBox>
+                </VBox>
+            </ScrollPane>
+        </StackPane>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER" spacing="16" styleClass="results-footer">
+            <padding>
+                <Insets top="18" right="32" bottom="20" left="32"/>
+            </padding>
+
+            <Button text="Home" onAction="#onHome" styleClass="btn-home"/>
+        </HBox>
+    </bottom>
+</BorderPane>

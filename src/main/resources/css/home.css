@@ -1,0 +1,96 @@
+/* Home Screen - Matching GamePlay design aesthetic */
+
+.home-root {
+    -fx-background-color: linear-gradient(to bottom right, #ffe8d6, #ffd4e5, #fff4cc, #ffe8d6);
+}
+
+/* Header Section */
+.home-header {
+    -fx-alignment: center;
+    -fx-spacing: 12;
+    -fx-padding: 60 24 48 24;
+}
+
+.home-title {
+    -fx-font-size: 72px;
+    -fx-font-weight: 300;
+}
+
+.home-subtitle {
+    -fx-text-fill: #8da9c4;
+    -fx-font-size: 20px;
+    -fx-font-weight: 400;
+}
+
+/* Navigation Grid */
+.nav-grid {
+    -fx-hgap: 32;
+    -fx-vgap: 32;
+    -fx-alignment: center;
+    -fx-padding: 24;
+}
+
+/* Activity Tile - Base */
+.activity-tile {
+    -fx-background-radius: 24;
+    -fx-effect: dropshadow(gaussian, rgba(12,12,13,0.15), 24, 0.0, 0, 8);
+    -fx-cursor: hand;
+}
+
+.activity-tile:hover {
+    -fx-effect: dropshadow(gaussian, rgba(12,12,13,0.25), 32, 0.0, 0, 12);
+    -fx-translate-y: -4;
+}
+
+/* Tile Colors */
+.tile-purple {
+    -fx-background-color: #c5b4e3;
+}
+
+.tile-teal {
+    -fx-background-color: #b0d0d3;
+}
+
+.tile-blue {
+    -fx-background-color: #8da9c4;
+}
+
+.tile-lavender {
+    -fx-background-color: #d8c2ef;
+}
+
+.tile-sky {
+    -fx-background-color: #a8c5dd;
+}
+
+/* Tile Content */
+.tile-content {
+    -fx-alignment: center;
+    -fx-padding: 24;
+}
+
+.tile-icon-container {
+    -fx-alignment: center;
+    -fx-pref-width: 80;
+    -fx-pref-height: 80;
+}
+
+.tile-label {
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-weight: 500;
+    -fx-text-alignment: center;
+    -fx-max-width: 140;
+    -fx-wrap-text: true;
+}
+
+/* Footer */
+.home-footer {
+    -fx-alignment: center;
+    -fx-padding: 32 24 48 24;
+}
+
+.footer-caption {
+    -fx-font-size: 16px;
+    -fx-text-fill: rgba(0,0,0,0.5);
+}

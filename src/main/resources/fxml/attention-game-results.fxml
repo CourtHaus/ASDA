@@ -44,7 +44,7 @@
 
                     <HBox spacing="8">
                         <Label text="Attempts:" styleClass="stat-label-bold"/>
-                        <Label fx:id="attemptsLabel" text="100" styleClass="stat-value-dark"/>
+                        <Label fx:id="attemptsLabel" text="50" styleClass="stat-value-dark"/>
                     </HBox>
                     <HBox spacing="8">
                         <Label text="Correct:" styleClass="stat-label-bold"/>

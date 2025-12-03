@@ -1,21 +1,13 @@
 package org.group1.asda.ui.emotionalsurvey;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import org.group1.asda.domain.emotional.EmotionalGameState;
 import org.group1.asda.domain.emotional.EmotionPattern;
 import org.group1.asda.navigation.Router;
-
-import java.io.IOException;
 
 public class EmotionalSurveyController {
     @FXML private BorderPane rootPane;
@@ -79,53 +71,19 @@ public class EmotionalSurveyController {
     @FXML
     private void onFinish() {
         saveCurrentResponse();
-        showCompletionDialog();
-    }
-
-    private void showCompletionDialog() {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/survey-complete-dialog.fxml"));
-            VBox dialogRoot = loader.load();
-
-            SurveyCompleteDialogController dialogController = loader.getController();
-            dialogController.setAverageScore(gameState.getSurveyAverage());
-
-            // Load CSS
-            Scene dialogScene = new Scene(dialogRoot);
-            dialogScene.getStylesheets().add(getClass().getResource("/css/survey-complete-dialog.css").toExternalForm());
-
-            Stage dialogStage = new Stage();
-            dialogStage.initModality(Modality.APPLICATION_MODAL);
-            dialogStage.initStyle(StageStyle.UNDECORATED);
-            dialogStage.setScene(dialogScene);
-            dialogStage.centerOnScreen();
-
-            dialogStage.showAndWait();
-
-            String action = dialogController.getSelectedAction();
-            if ("PLAY_GAME".equals(action)) {
-                Router.getInstance().goTo("emotion-recognition");
-            } else if ("VIEW_RESULTS".equals(action)) {
-                showResults();
-            } else if ("HOME".equals(action)) {
-                Router.getInstance().goTo("home");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-            // Fallback to simple alert if dialog fails to load
-            showResults();
-        }
+        showResults();
     }
 
     private void showResults() {
-        double avg = gameState.getSurveyAverage();
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Survey Results");
-        alert.setHeaderText("Emotional Response Survey Complete!");
-        alert.setContentText(String.format("Average Response: %.2f / 5.0\n\n" +
-            "Your responses have been recorded.", avg));
-        alert.showAndWait();
-        Router.getInstance().goTo("home");
+        EmotionalSurveyResultsController controller = Router.getInstance()
+            .goToAndGetController("emotional-survey-results", EmotionalSurveyResultsController.class);
+
+        if (controller != null) {
+            controller.setGameState(gameState);
+        } else {
+            // Fallback: if screen fails, return home
+            Router.getInstance().goTo("home");
+        }
     }
 
     @FXML

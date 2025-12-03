@@ -43,7 +43,7 @@ public class AttentionGameController {
     private static final Color RED_COLOR = Color.rgb(255, 114, 114);   // #ff7272
 
     // Config
-    private static final int TOTAL_TRIALS = 100;
+    private static final int TOTAL_TRIALS = 50;
     private static final int STIMULUS_MS  = 1300;
     private static final int ISI_MS       = 700;
 

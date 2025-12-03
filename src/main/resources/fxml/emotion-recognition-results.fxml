@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.*?>
 
@@ -22,65 +24,87 @@
 
     <!-- Results Content -->
     <center>
-        <ScrollPane fitToWidth="true" styleClass="results-scroll">
-            <VBox spacing="24" alignment="TOP_CENTER" styleClass="results-content">
-                <padding>
-                    <Insets top="32" right="48" bottom="32" left="48"/>
-                </padding>
+        <StackPane>
+            <ImageView styleClass="corner-art-left" fitHeight="240" fitWidth="240" preserveRatio="true">
+                <image>
+                    <Image url="@/images/results/Frame 9.png"/>
+                </image>
+            </ImageView>
+            <ImageView styleClass="corner-art-right" fitHeight="240" fitWidth="240" preserveRatio="true">
+                <image>
+                    <Image url="@/images/results/Frame 10.png"/>
+                </image>
+            </ImageView>
 
-                <!-- Completion title -->
-                <HBox spacing="12" alignment="CENTER">
-                    <Label text="✓" styleClass="checkmark-text"/>
-                    <Label text="Emotion Recognition Complete!" styleClass="completion-title"/>
-                </HBox>
-
-                <!-- Stats Box -->
-                <VBox spacing="10" styleClass="stats-box" maxWidth="700">
+            <ScrollPane fitToWidth="true" styleClass="results-scroll">
+                <VBox spacing="24" alignment="TOP_CENTER" styleClass="results-content">
                     <padding>
-                        <Insets top="20" right="32" bottom="20" left="32"/>
+                        <Insets top="36" right="48" bottom="36" left="48"/>
                     </padding>
-                    <HBox spacing="8">
-                        <Label text="Correct Identifications:" styleClass="stat-label-bold"/>
-                        <Label fx:id="correctLabel" text="0" styleClass="stat-value-dark"/>
-                    </HBox>
-                    <HBox spacing="8">
-                        <Label text="Total Emotions:" styleClass="stat-label-bold"/>
-                        <Label fx:id="totalLabel" text="0" styleClass="stat-value-dark"/>
-                    </HBox>
-                    <HBox spacing="8">
-                        <Label text="Accuracy:" styleClass="stat-label-bold"/>
-                        <Label fx:id="accuracyLabel" text="0.0%" styleClass="stat-value-dark"/>
-                    </HBox>
-                </VBox>
 
-                <!-- Feedback Box -->
-                <VBox spacing="12" styleClass="feedback-box" maxWidth="700">
-                    <padding>
-                        <Insets top="20" right="32" bottom="20" left="32"/>
-                    </padding>
-                    <HBox spacing="8">
-                        <Label text="Recognition Level:" styleClass="api-label"/>
-                        <Label fx:id="recognitionLevelLabel" text="N/A" styleClass="api-value"/>
-                    </HBox>
-                    <Label fx:id="feedbackText" wrapText="true"
-                           text="Feedback will appear here."
-                           styleClass="feedback-text" maxWidth="650"/>
-                </VBox>
+                    <VBox spacing="6" alignment="CENTER">
+                        <Label text="Emotion Recognition Complete!" styleClass="completion-title"/>
+                        <Label text="How accurately you identified each pattern" styleClass="completion-subtitle"/>
+                    </VBox>
 
-                <!-- Warning Box -->
-                <VBox spacing="10" styleClass="warning-box" maxWidth="700">
-                    <padding>
-                        <Insets top="18" right="28" bottom="18" left="28"/>
-                    </padding>
-                    <Label text="Note: This tool is for research and self-awareness only."
-                           styleClass="warning-text-bold" wrapText="true" maxWidth="650"/>
-                    <Label text="It does not diagnose any emotional or psychological condition."
-                           styleClass="warning-text" wrapText="true" maxWidth="650"/>
-                    <Label text="If you have concerns about emotional recognition, consider seeking a licensed clinician."
-                           styleClass="warning-text" wrapText="true" maxWidth="650"/>
+                    <HBox spacing="16" alignment="CENTER">
+                        <VBox spacing="12" styleClass="metric-card" alignment="CENTER" HBox.hgrow="ALWAYS">
+                            <Label text="Overall Accuracy" styleClass="metric-label"/>
+                            <Label fx:id="accuracyLabel" text="0%" styleClass="metric-value"/>
+                            <StackPane fx:id="accuracyTrack" styleClass="bar-track" prefWidth="340" alignment="CENTER_LEFT">
+                                <Region fx:id="accuracyFill" styleClass="bar-fill primary"/>
+                            </StackPane>
+                        </VBox>
+
+                        <VBox spacing="12" styleClass="metric-card" alignment="CENTER" HBox.hgrow="ALWAYS">
+                            <Label text="Correct Matches" styleClass="metric-label"/>
+                            <Label fx:id="correctLabel" text="0" styleClass="metric-value"/>
+                            <Label fx:id="totalLabel" text="of 0 patterns" styleClass="metric-sub"/>
+                        </VBox>
+                    </HBox>
+
+                    <VBox spacing="12" styleClass="bar-card" maxWidth="760">
+                        <Label text="Recognition Breakdown" styleClass="bar-title"/>
+                        <HBox spacing="8" alignment="CENTER_LEFT" styleClass="bar-row">
+                            <Label text="Correct" styleClass="bar-label positive"/>
+                            <StackPane fx:id="correctTrack" styleClass="bar-track" prefWidth="340" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                                <Region fx:id="correctFill" styleClass="bar-fill positive"/>
+                            </StackPane>
+                            <Label fx:id="correctPercentLabel" text="0%" styleClass="bar-value"/>
+                        </HBox>
+                        <HBox spacing="8" alignment="CENTER_LEFT" styleClass="bar-row">
+                            <Label text="Missed" styleClass="bar-label negative"/>
+                            <StackPane fx:id="incorrectTrack" styleClass="bar-track" prefWidth="340" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                                <Region fx:id="incorrectFill" styleClass="bar-fill negative"/>
+                            </StackPane>
+                            <Label fx:id="incorrectPercentLabel" text="0%" styleClass="bar-value"/>
+                        </HBox>
+                    </VBox>
+
+                    <VBox spacing="10" styleClass="feedback-box" maxWidth="760">
+                        <HBox spacing="8">
+                            <Label text="Recognition Level:" styleClass="api-label"/>
+                            <Label fx:id="recognitionLevelLabel" text="N/A" styleClass="api-value"/>
+                        </HBox>
+                        <Label fx:id="feedbackText" wrapText="true"
+                               text="Feedback will appear here."
+                               styleClass="feedback-text" maxWidth="700"/>
+                    </VBox>
+
+                    <VBox spacing="10" styleClass="warning-box" maxWidth="760">
+                        <padding>
+                            <Insets top="16" right="24" bottom="16" left="24"/>
+                        </padding>
+                        <Label text="Note: This tool is for research and self-awareness only."
+                               styleClass="warning-text-bold" wrapText="true" maxWidth="700"/>
+        <Label text="It does not diagnose any emotional or psychological condition."
+               styleClass="warning-text" wrapText="true" maxWidth="700"/>
+        <Label text="If you have concerns about emotional recognition, consider seeking a licensed clinician."
+               styleClass="warning-text" wrapText="true" maxWidth="700"/>
+                    </VBox>
                 </VBox>
-            </VBox>
-        </ScrollPane>
+            </ScrollPane>
+        </StackPane>
     </center>
 
     <!-- Footer -->

@@ -16,6 +16,7 @@ import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Circle;
 import javafx.util.Duration;
+import org.group1.asda.navigation.Router;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -226,27 +227,8 @@ public class AttentionGameTutorialController implements Initializable {
     // Begin button action - start the actual game
     @FXML
     public void onBegin() {
-        // Real implementation should switch scene or notify parent controller.
-        // For now, just log to stdout and disable UI to indicate action.
-        System.out.println("Attention tutorial: Begin game requested.");
-        // Disable tutorial controls to avoid repeated clicks
-        disableAllControls();
-    }
-
-    private void disableAllControls() {
-        try {
-            if (pageContainer != null) {
-                for (Node n : pageContainer.getChildren()) {
-                    n.setDisable(true);
-                }
-            }
-        } catch (Exception ignored) {}
-        backButton.setDisable(true);
-        btnPrev.setDisable(true);
-        btnNext.setDisable(true);
-        if (nextButton != null) nextButton.setDisable(true);
-        beginButton.setDisable(true);
-        btnSkip.setDisable(true);
+        // Route to the attention game
+        Router.getInstance().goTo("attention-game");
     }
 
     // Add onNext handler
@@ -258,7 +240,7 @@ public class AttentionGameTutorialController implements Initializable {
     // Skip button - user wants to leave tutorial
     @FXML
     public void onSkip() {
-        System.out.println("Attention tutorial: Skip requested.");
-        disableAllControls();
+        // Route back to home screen
+        Router.getInstance().goTo("home");
     }
 }

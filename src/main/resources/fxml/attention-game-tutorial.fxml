@@ -93,7 +93,7 @@
                 <!-- Page 3: The Colors -->
                 <VBox spacing="24" alignment="CENTER" fx:id="pageColors" maxWidth="800">
                     <Label text="The Colors" styleClass="attention-page-title" />
-                    <Label wrapText="true" text="Each shape will either be Blue or Red. Pay close attention because both the shape AND the color matter!" styleClass="attention-lead-text" maxWidth="700" />
+                    <Label wrapText="true" text="Each shape will either be Light Pink or Powder Blue. Pay close attention because both the shape AND the color matter!" styleClass="attention-lead-text" maxWidth="700" />
                     <HBox alignment="CENTER" styleClass="attention-card attention-card-purple" spacing="60">
                         <padding>
                             <Insets top="36" right="60" bottom="36" left="60"/>
@@ -104,7 +104,7 @@
                                     <Image url="@../images/loading/Ellipse 9.png"/>
                                 </image>
                             </ImageView>
-                            <Label text="Blue" style="-fx-text-fill: #7896b3; -fx-font-size: 32px; -fx-font-weight: 600;"/>
+                            <Label text="Powder Blue" style="-fx-text-fill: #b0e0e6; -fx-font-size: 28px; -fx-font-weight: 600;"/>
                         </VBox>
                         <VBox alignment="CENTER" spacing="16">
                             <ImageView fitWidth="110" fitHeight="110" preserveRatio="true">
@@ -112,7 +112,7 @@
                                     <Image url="@../images/loading/Ellipse 10.png"/>
                                 </image>
                             </ImageView>
-                            <Label text="Red" style="-fx-text-fill: #ff7272; -fx-font-size: 32px; -fx-font-weight: 600;"/>
+                            <Label text="Light Pink" style="-fx-text-fill: #ffb6c1; -fx-font-size: 28px; -fx-font-weight: 600;"/>
                         </VBox>
                     </HBox>
                 </VBox>
@@ -149,7 +149,7 @@
                                     <Label text="Second shape" styleClass="shape-label"/>
                                 </VBox>
                             </HBox>
-                            <Label wrapText="true" alignment="CENTER" text="Same shape (Circle) + Same color (Blue) = MATCH!" styleClass="match-explanation" maxWidth="550"/>
+                            <Label wrapText="true" alignment="CENTER" text="Same shape (Circle) + Same color (Powder Blue) = MATCH!" styleClass="match-explanation" maxWidth="550"/>
                         </VBox>
                     </VBox>
                 </ScrollPane>

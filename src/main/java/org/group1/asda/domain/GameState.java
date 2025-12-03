@@ -79,11 +79,25 @@ public class GameState {
             Color.rgb(221, 160, 221)
         };
 
-        for (int i = 0; i < pairs; i++) {
-            String shape = shapes[i % shapes.length];
-            Color color  = colors[i % colors.length];
-            deck.add(new Card(shape, color));
-            deck.add(new Card(shape, color));
+        // Build all shape/color combinations and shuffle to avoid patterned repeats.
+        List<ShapeColor> pool = new ArrayList<>();
+        for (String shape : shapes) {
+            for (Color color : colors) {
+                pool.add(new ShapeColor(shape, color));
+            }
+        }
+        Collections.shuffle(pool);
+
+        // Draw from the pool, reshuffling if we need more pairs than unique combos.
+        int poolIndex = 0;
+        while (deck.size() / 2 < pairs) {
+            if (poolIndex >= pool.size()) {
+                Collections.shuffle(pool);
+                poolIndex = 0;
+            }
+            ShapeColor combo = pool.get(poolIndex++);
+            deck.add(new Card(combo.shape(), combo.color()));
+            deck.add(new Card(combo.shape(), combo.color()));
         }
 
         Collections.shuffle(deck);
@@ -134,4 +148,6 @@ public class GameState {
 
         return String.format("Attention Performance Index (API): %.1f\n%s", api, interpretation);
     }
+
+    private record ShapeColor(String shape, Color color) {}
 }

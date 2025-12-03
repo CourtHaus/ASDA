@@ -24,26 +24,39 @@
 
     <!-- Main question section -->
     <center>
-        <VBox styleClass="question-section" spacing="20" alignment="TOP_CENTER">
-            <padding>
-                <Insets top="60" right="80" bottom="60" left="80" />
-            </padding>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" styleClass="question-scroll">
+            <content>
+                <StackPane alignment="TOP_CENTER">
+                    <VBox styleClass="question-section" spacing="20" alignment="TOP_CENTER" maxWidth="920"
+                          minWidth="0.0" fillWidth="true">
+                        <padding>
+                            <Insets top="40" right="24" bottom="40" left="24" />
+                        </padding>
 
-            <!-- Question label and text -->
-            <VBox alignment="TOP_LEFT" maxWidth="720">
-                <Label fx:id="questionNumberLabel" text="Question 1:" styleClass="question-label" />
-                <Label fx:id="questionLabel" wrapText="true" styleClass="question-text"
-                       text="S/he prefers to do things with others rather than on her/his own." />
-            </VBox>
+                        <!-- Question label and text -->
+                        <VBox alignment="TOP_LEFT" spacing="8" fillWidth="true" minWidth="0.0">
+                            <Label fx:id="questionNumberLabel" text="Question 1:" styleClass="question-label"
+                                   maxWidth="1.7976931348623157E308" wrapText="true" />
+                            <Label fx:id="questionLabel" wrapText="true" styleClass="question-text"
+                                   text="S/he prefers to do things with others rather than on her/his own."
+                                   maxWidth="1.7976931348623157E308" minWidth="0.0" />
+                        </VBox>
 
-            <!-- Answer options - all options have equal width -->
-            <VBox spacing="18" styleClass="options-container" alignment="CENTER" fillWidth="true">
-                <RadioButton fx:id="opt1" text="Definitely Agree" styleClass="option-button" />
-                <RadioButton fx:id="opt2" text="Slightly Agree" styleClass="option-button" />
-                <RadioButton fx:id="opt3" text="Slightly Disagree" styleClass="option-button" />
-                <RadioButton fx:id="opt4" text="Definitely Disagree" styleClass="option-button" />
-            </VBox>
-        </VBox>
+                        <!-- Answer options - all options have equal width -->
+                        <VBox spacing="18" styleClass="options-container" alignment="CENTER" fillWidth="true" minWidth="0.0">
+                            <RadioButton fx:id="opt1" text="Definitely Agree" styleClass="option-button"
+                                         wrapText="true" minWidth="0.0" maxWidth="1.7976931348623157E308" />
+                            <RadioButton fx:id="opt2" text="Slightly Agree" styleClass="option-button"
+                                         wrapText="true" minWidth="0.0" maxWidth="1.7976931348623157E308" />
+                            <RadioButton fx:id="opt3" text="Slightly Disagree" styleClass="option-button"
+                                         wrapText="true" minWidth="0.0" maxWidth="1.7976931348623157E308" />
+                            <RadioButton fx:id="opt4" text="Definitely Disagree" styleClass="option-button"
+                                         wrapText="true" minWidth="0.0" maxWidth="1.7976931348623157E308" />
+                        </VBox>
+                    </VBox>
+                </StackPane>
+            </content>
+        </ScrollPane>
     </center>
 
     <!-- Footer with progress and navigation -->

@@ -151,6 +151,32 @@
                             </HBox>
                             <Label wrapText="true" alignment="CENTER" text="Same shape (Circle) + Same color (Blue) = MATCH!" styleClass="match-explanation" maxWidth="550"/>
                         </VBox>
+                        <VBox alignment="CENTER" spacing="16" styleClass="attention-card attention-card-purple" maxWidth="650">
+                            <padding>
+                                <Insets top="24" right="40" bottom="24" left="40"/>
+                            </padding>
+                            <Label text="✗ This is NOT a match" styleClass="match-instruction" alignment="CENTER"/>
+                            <HBox spacing="40" alignment="CENTER">
+                                <VBox alignment="CENTER" spacing="8">
+                                    <ImageView fitWidth="130" fitHeight="130" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../images/loading/Ellipse 9.png"/>
+                                        </image>
+                                    </ImageView>
+                                    <Label text="First shape" styleClass="shape-label"/>
+                                </VBox>
+                                <Label text="→" style="-fx-font-size: 32px; -fx-text-fill: #c77c7c; -fx-font-weight: bold;" />
+                                <VBox alignment="CENTER" spacing="8">
+                                    <ImageView fitWidth="130" fitHeight="130" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../images/loading/Rectangle 25.png"/>
+                                        </image>
+                                    </ImageView>
+                                    <Label text="Second shape" styleClass="shape-label"/>
+                                </VBox>
+                            </HBox>
+                            <Label wrapText="true" alignment="CENTER" text="Different shape (Circle vs Square) = NOT a match. Wait until both the shape and color match before pressing SPACE." styleClass="match-explanation" maxWidth="550"/>
+                        </VBox>
                     </VBox>
                 </ScrollPane>
 

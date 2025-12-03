@@ -1,6 +1,6 @@
 /* Assessment Root Variables */
 .assessment-root {
-    -fx-background-color: #1a1a1a;
+    -fx-background-color: white;
 }
 
 /* Header Section */
@@ -42,6 +42,8 @@
     -fx-text-fill: #4a5568;
     -fx-font-weight: 400;
     -fx-line-spacing: 0.5em;
+    -fx-wrap-text: true;
+    -fx-text-overrun: clip;
 }
 
 /* Options Container - centers options */
@@ -61,10 +63,6 @@
     -fx-border-color: transparent;
     -fx-border-width: 2;
     -fx-border-radius: 12;
-    /* Equal width constraints - all options fill the container width */
-    -fx-min-width: 520px;
-    -fx-pref-width: 720px;
-    -fx-max-width: 720px;
     /* Ensure content direction allows radio indicator on right */
     -fx-content-display: right;
     -fx-alignment: center-left;
@@ -194,8 +192,15 @@
 }
 
 /* Responsive adjustments for smaller windows */
-.assessment-header {
-    -fx-min-height: 150px;
+.assessment-header { -fx-min-height: 150px; }
+
+.question-scroll {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.question-scroll > .viewport {
+    -fx-background-color: transparent;
 }
 
 .question-section {

@@ -17,31 +17,31 @@
     <top>
         <HBox styleClass="attention-game-header" alignment="CENTER_LEFT">
             <padding>
-                <Insets top="24" right="32" bottom="24" left="32"/>
+                <Insets top="20" right="20" bottom="20" left="20"/>
             </padding>
 
             <!-- Title and instruction -->
-            <VBox spacing="4" HBox.hgrow="ALWAYS">
-                <Label text="Attention Game" styleClass="attention-game-title"/>
-                <Label text="Press SPACE bar when shapes match!" styleClass="attention-game-subtitle"/>
+            <VBox spacing="4" HBox.hgrow="ALWAYS" minWidth="0.0">
+                <Label text="Attention Game" styleClass="attention-game-title" wrapText="true" maxWidth="1.7976931348623157E308"/>
+                <Label text="Press SPACE bar when shapes match!" styleClass="attention-game-subtitle" wrapText="true" maxWidth="1.7976931348623157E308"/>
             </VBox>
 
             <!-- Stats -->
-            <HBox spacing="24" alignment="CENTER_RIGHT">
+            <HBox spacing="16" alignment="CENTER_RIGHT">
                 <VBox spacing="2" alignment="TOP_RIGHT">
-                    <Label text="Trials" styleClass="stat-label"/>
+                    <Label text="Trials" styleClass="stat-label" wrapText="true"/>
                     <Label fx:id="trialsLabel" text="0/50" styleClass="stat-value"/>
                 </VBox>
                 <VBox spacing="2" alignment="TOP_RIGHT">
-                    <Label text="Correct" styleClass="stat-label"/>
+                    <Label text="Correct" styleClass="stat-label" wrapText="true"/>
                     <Label fx:id="correctLabel" text="0" styleClass="stat-value"/>
                 </VBox>
                 <VBox spacing="2" alignment="TOP_RIGHT">
-                    <Label text="Incorrect" styleClass="stat-label"/>
+                    <Label text="Incorrect" styleClass="stat-label" wrapText="true"/>
                     <Label fx:id="incorrectLabel" text="0" styleClass="stat-value"/>
                 </VBox>
                 <VBox spacing="2" alignment="TOP_RIGHT">
-                    <Label text="Accuracy" styleClass="stat-label"/>
+                    <Label text="Accuracy" styleClass="stat-label" wrapText="true"/>
                     <Label fx:id="accuracyLabel" text="100" styleClass="stat-value"/>
                 </VBox>
             </HBox>
@@ -49,36 +49,38 @@
     </top>
 
     <center>
-        <StackPane styleClass="attention-game-center">
-            <!-- Active game content -->
-            <VBox fx:id="gameContent" alignment="CENTER" spacing="32">
-                <!-- Shape display area -->
-                <StackPane fx:id="shapeContainer" prefWidth="400" prefHeight="300" alignment="CENTER">
-                    <ImageView fx:id="shapeImageView" fitWidth="250" fitHeight="250" preserveRatio="true"/>
-                </StackPane>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" styleClass="attention-scroll">
+            <StackPane styleClass="attention-game-center">
+                <!-- Active game content -->
+                <VBox fx:id="gameContent" alignment="CENTER" spacing="24" maxWidth="900">
+                    <!-- Shape display area -->
+                    <StackPane fx:id="shapeContainer" prefWidth="360" prefHeight="260" alignment="CENTER">
+                        <ImageView fx:id="shapeImageView" fitWidth="240" fitHeight="240" preserveRatio="true"/>
+                    </StackPane>
 
-                <!-- Instruction box -->
-                <VBox alignment="CENTER" spacing="12" styleClass="instruction-box">
-                    <padding>
-                        <Insets top="16" right="24" bottom="16" left="24"/>
-                    </padding>
-                    <Label text="Press when shapes match" styleClass="instruction-text"/>
-                    <Button text="SPACE" styleClass="space-key-display" disable="true" focusTraversable="false"/>
+                    <!-- Instruction box -->
+                    <VBox alignment="CENTER" spacing="12" styleClass="instruction-box" maxWidth="520" minWidth="0.0">
+                        <padding>
+                            <Insets top="14" right="18" bottom="14" left="18"/>
+                        </padding>
+                        <Label text="Press when shapes match" styleClass="instruction-text" wrapText="true" maxWidth="1.7976931348623157E308"/>
+                        <Button fx:id="spaceFlashButton" text="SPACE" styleClass="space-key-display" disable="true" focusTraversable="false"/>
+                    </VBox>
                 </VBox>
-            </VBox>
 
-            <!-- Pause overlay -->
-            <VBox fx:id="pauseOverlay" alignment="CENTER" spacing="16" visible="false" managed="false"
-                  styleClass="pause-overlay">
-                <!-- Pause icon -->
-                <HBox spacing="8" alignment="CENTER">
-                    <Region styleClass="pause-bar"/>
-                    <Region styleClass="pause-bar"/>
-                </HBox>
-                <Label text="Game Paused" styleClass="pause-title"/>
-                <Label text="Click Resume to continue" styleClass="pause-subtitle"/>
-            </VBox>
-        </StackPane>
+                <!-- Pause overlay -->
+                <VBox fx:id="pauseOverlay" alignment="CENTER" spacing="16" visible="false" managed="false"
+                      styleClass="pause-overlay">
+                    <!-- Pause icon -->
+                    <HBox spacing="8" alignment="CENTER">
+                        <Region styleClass="pause-bar"/>
+                        <Region styleClass="pause-bar"/>
+                    </HBox>
+                    <Label text="Game Paused" styleClass="pause-title"/>
+                    <Label text="Click Resume to continue" styleClass="pause-subtitle" wrapText="true" maxWidth="320"/>
+                </VBox>
+            </StackPane>
+        </ScrollPane>
     </center>
 
     <bottom>

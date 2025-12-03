@@ -14,34 +14,37 @@
     <top>
         <VBox styleClass="emotion-header">
             <padding>
-                <Insets top="24" right="32" bottom="24" left="32"/>
+                <Insets top="20" right="20" bottom="20" left="20"/>
             </padding>
-            <Label text="Emotion Recognition Game" styleClass="emotion-title"/>
-            <Label fx:id="questionLabel" text="Pattern 1 of 20" styleClass="emotion-subtitle"/>
-            <ProgressBar fx:id="progressBar" prefWidth="900" prefHeight="8" styleClass="emotion-progress"/>
+            <Label text="Emotion Recognition Game" styleClass="emotion-title" wrapText="true" maxWidth="1.7976931348623157E308"/>
+            <Label fx:id="questionLabel" text="Pattern 1 of 20" styleClass="emotion-subtitle" wrapText="true" maxWidth="1.7976931348623157E308"/>
+            <ProgressBar fx:id="progressBar" prefHeight="8" styleClass="emotion-progress"
+                         maxWidth="1.7976931348623157E308" minWidth="0.0"/>
         </VBox>
     </top>
 
     <center>
-        <VBox alignment="CENTER" spacing="32" styleClass="emotion-content">
-            <padding>
-                <Insets top="32" right="48" bottom="32" left="48"/>
-            </padding>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" styleClass="emotion-scroll">
+            <VBox alignment="CENTER" spacing="24" styleClass="emotion-content" maxWidth="900">
+                <padding>
+                    <Insets top="24" right="20" bottom="32" left="20"/>
+                </padding>
 
-            <StackPane styleClass="image-container" prefHeight="350">
-                <ImageView fx:id="patternImage" fitWidth="450" fitHeight="350" preserveRatio="true"/>
-            </StackPane>
+                <StackPane styleClass="image-container" prefHeight="280" minWidth="0.0">
+                    <ImageView fx:id="patternImage" fitWidth="420" fitHeight="280" preserveRatio="true"/>
+                </StackPane>
 
-            <VBox alignment="CENTER" spacing="16" maxWidth="600">
-                <Label text="What emotion does this pattern evoke?" styleClass="instruction-text"/>
-                <GridPane hgap="12" vgap="12" alignment="CENTER">
-                    <Button fx:id="option1" text="Option 1" onAction="#onOption1" styleClass="btn-option" GridPane.columnIndex="0" GridPane.rowIndex="0" prefWidth="140"/>
-                    <Button fx:id="option2" text="Option 2" onAction="#onOption2" styleClass="btn-option" GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="140"/>
-                    <Button fx:id="option3" text="Option 3" onAction="#onOption3" styleClass="btn-option" GridPane.columnIndex="0" GridPane.rowIndex="1" prefWidth="140"/>
-                    <Button fx:id="option4" text="Option 4" onAction="#onOption4" styleClass="btn-option" GridPane.columnIndex="1" GridPane.rowIndex="1" prefWidth="140"/>
-                </GridPane>
+                <VBox alignment="CENTER" spacing="16" maxWidth="640" minWidth="0.0">
+                    <Label text="What emotion does this pattern evoke?" styleClass="instruction-text" wrapText="true" maxWidth="1.7976931348623157E308"/>
+                    <GridPane hgap="12" vgap="12" alignment="CENTER">
+                        <Button fx:id="option1" text="Option 1" onAction="#onOption1" styleClass="btn-option" GridPane.columnIndex="0" GridPane.rowIndex="0" prefWidth="140" minWidth="120" wrapText="true"/>
+                        <Button fx:id="option2" text="Option 2" onAction="#onOption2" styleClass="btn-option" GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="140" minWidth="120" wrapText="true"/>
+                        <Button fx:id="option3" text="Option 3" onAction="#onOption3" styleClass="btn-option" GridPane.columnIndex="0" GridPane.rowIndex="1" prefWidth="140" minWidth="120" wrapText="true"/>
+                        <Button fx:id="option4" text="Option 4" onAction="#onOption4" styleClass="btn-option" GridPane.columnIndex="1" GridPane.rowIndex="1" prefWidth="140" minWidth="120" wrapText="true"/>
+                    </GridPane>
+                </VBox>
             </VBox>
-        </VBox>
+        </ScrollPane>
     </center>
 
     <bottom>

@@ -4,6 +4,14 @@
     -fx-background-color: linear-gradient(to bottom right, #ffe8d6, #ffd4e5, #fff4cc, #ffe8d6);
 }
 
+.home-scroll {
+    -fx-background-color: transparent;
+}
+
+.home-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
 /* Header Section */
 .home-header {
     -fx-alignment: center;
@@ -20,14 +28,13 @@
     -fx-text-fill: #8da9c4;
     -fx-font-size: 20px;
     -fx-font-weight: 400;
+    -fx-wrap-text: true;
 }
 
 /* Navigation Grid */
 .nav-grid {
-    -fx-hgap: 32;
-    -fx-vgap: 32;
     -fx-alignment: center;
-    -fx-padding: 24;
+    -fx-padding: 24 16 24 16;
 }
 
 /* Activity Tile - Base */
@@ -35,6 +42,9 @@
     -fx-background-radius: 24;
     -fx-effect: dropshadow(gaussian, rgba(12,12,13,0.15), 24, 0.0, 0, 8);
     -fx-cursor: hand;
+    -fx-min-width: 150;
+    -fx-pref-width: 200;
+    -fx-max-width: 260;
 }
 
 .activity-tile:hover {
@@ -80,7 +90,7 @@
     -fx-font-size: 15px;
     -fx-font-weight: 500;
     -fx-text-alignment: center;
-    -fx-max-width: 140;
+    -fx-max-width: 180;
     -fx-wrap-text: true;
 }
 

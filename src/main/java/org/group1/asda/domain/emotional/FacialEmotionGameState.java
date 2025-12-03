@@ -107,13 +107,31 @@ public class FacialEmotionGameState {
 
     public List<String> getEmotionOptions(int questionIndex) {
         List<String> options = new ArrayList<>(FACIAL_EMOTIONS);
-        Collections.shuffle(options);
-        // Ensure correct answer is included
         String correctEmotion = facialPatterns.get(questionIndex).getCorrectEmotion();
+        
+        // Ensure correct answer is included in the list
         if (!options.contains(correctEmotion)) {
-            options.set(0, correctEmotion);
+            options.add(correctEmotion);
         }
-        return options.subList(0, Math.min(4, options.size())); // Return 4 options
+        
+        // Shuffle all options
+        Collections.shuffle(options);
+        
+        // Take 4 options, ensuring correct emotion is one of them
+        List<String> selectedOptions = new ArrayList<>();
+        selectedOptions.add(correctEmotion);
+        
+        // Add 3 more random options
+        for (String option : options) {
+            if (!option.equals(correctEmotion) && selectedOptions.size() < 4) {
+                selectedOptions.add(option);
+            }
+        }
+        
+        // Shuffle the final selection so correct answer isn't always first
+        Collections.shuffle(selectedOptions);
+        
+        return selectedOptions;
     }
 
     public void reset() {

@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/badge/License-Educational-green.svg)]()
 [![Tests](https://img.shields.io/badge/Tests-200%20Passing-brightgreen.svg)]()
 
-A comprehensive desktop application implementing the Autism Quotient (AQ) assessment tool along with cognitive attention and memory games, developed as part of UMGC CMSC 495 Capstone project. The application provides both GUI and CLI interfaces for conducting autism spectrum disorder screening assessments and cognitive performance evaluations.
+A comprehensive desktop application implementing the Autism Quotient (AQ) assessment tool along with cognitive attention and memory games, plus emotional response and recognition modules. Built with JavaFX as a multi-scene app (disclosure → home → tutorials/games/results) with a CLI fallback for the AQ assessment.
 
 ## Table of Contents
 
@@ -15,6 +15,7 @@ A comprehensive desktop application implementing the Autism Quotient (AQ) assess
 - [Cognitive Assessment Games](#cognitive-assessment-games)
   - [Memory Matching Game](#memory-matching-game)
   - [Concentration & Attention Game](#concentration--attention-game)
+  - [Emotional Survey & Recognition](#emotional-survey--recognition)
 - [Technologies Used](#technologies-used)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
@@ -35,9 +36,10 @@ ASDA (Autism Spectrum Disorder Assessment) is a comprehensive JavaFX-based deskt
 
 1. **AQ Assessment**: The standardized Autism Quotient (AQ) questionnaire developed by Simon Baron-Cohen and colleagues at the Autism Research Centre, University of Cambridge. It provides a quantitative measure of autistic traits in adults of average intelligence.
 
-2. **Cognitive Games**: Two interactive games designed to assess attention, memory, and cognitive performance:
+2. **Cognitive Games**: Interactive games designed to assess attention, memory, and emotional processing:
    - **Memory Matching Game**: Progressive difficulty memory card game
    - **Concentration & Attention Game**: Rapid stimulus-response attention test
+   - **Emotional Survey & Recognition**: Mood response slider survey plus facial emotion recognition game
 
 These tools work together to provide a more comprehensive view of cognitive functioning and attention patterns.
 
@@ -50,16 +52,21 @@ These tools work together to provide a more comprehensive view of cognitive func
 - **Score Interpretation**: Clear interpretation of results based on established clinical thresholds
 
 ### Cognitive Games
-- **Memory Matching Game**: 10 progressive rounds testing visual memory and pattern recognition
-  - Starts with 2 pairs, increases to 20 cards by round 10
+- **Memory Matching Game**: Up to 5 progressive rounds testing visual memory and pattern recognition
+  - Starts with 2 pairs, scales difficulty each round (capped to keep header/footer visible)
   - Tracks accuracy, completion time, and memory scores
   - Provides Attention Performance Index (API) with interpretations
 
-- **Concentration & Attention Game**: 100-trial rapid attention test
+- **Concentration & Attention Game**: 50-trial rapid attention test
   - Press SPACE when current stimulus matches previous (shape + color)
   - 1.3-second stimulus display with 0.7-second intervals
   - Measures sustained attention and response accuracy
   - Provides performance recommendations based on accuracy
+
+- **Emotional Survey & Recognition**:
+  - Slider-based emotional response survey for abstract patterns
+  - Facial emotion recognition game with visual stimuli and multiple-choice responses
+  - Results summarized with colorful bar breakdowns and interpretation
 
 ### Interface & Usability
 - **Dual Interface Support**: Both graphical (JavaFX) and command-line interfaces for AQ assessment
@@ -76,50 +83,29 @@ These tools work together to provide a more comprehensive view of cognitive func
 
 ### Memory Matching Game
 
-A progressive difficulty memory card matching game that tests visual memory and pattern recognition abilities.
+A progressive memory card game with controlled difficulty to keep the layout stable.
 
-**How it works:**
-- **10 Rounds**: Starts easy with 2 pairs, progressively increases to 10 pairs (20 cards) by round 10
-- **Preview Phase**: Cards are shown face-up for 3 seconds before the game begins
-- **Gameplay**: Click to flip cards and find matching pairs (same shape AND color)
-- **Scoring System**:
-  - Tracks correct matches, incorrect attempts, and accuracy
-  - Calculates memory score based on accuracy and completion time
-  - First-time mismatches don't count against you
-  - Only repeated attempts on previously seen cards affect your score
-
-**Results:**
-- Round-by-round performance summaries
-- Final Attention Performance Index (API) score
-- Interpretation categories:
-  - **High Focus (85%+ API)**: No attention concerns indicated
-  - **Moderate Focus (70-84% API)**: Minor attention variance detected
-  - **Below Average (55-69% API)**: Consider behavioral self-assessment
-  - **Significant Variance (<55% API)**: Clinical consultation recommended
+- **Up to 5 Rounds**: Starts with 2 pairs and scales up; rounds capped at 5 to keep UI readable
+- **Preview Phase**: Cards show face-up for 3 seconds
+- **Gameplay**: Flip to find matching shape+color pairs; first-time mismatches are forgiven
+- **Scoring**: Tracks correct/incorrect, attempts, accuracy, and memory score with API interpretation
+- **Results**: Summaries plus API bands (High Focus / Moderate / Below Average / Significant Variance)
 
 ### Concentration & Attention Game
 
-A rapid stimulus-response test measuring sustained attention and concentration.
+Rapid stimulus-response test measuring sustained attention.
 
-**How it works:**
-- **100 Trials**: Sequence of colored shapes (circles, squares, triangles)
-- **Task**: Press SPACE when the current stimulus matches the previous one (both shape AND color must match)
-- **Timing**: 1.3 seconds display time + 0.7 second blank interval
-- **Colors Used**: Light pink and powder blue pastel colors
+- **50 Trials**: Sequence of colored shapes (circles, squares, triangles)
+- **Task**: Press SPACE when current stimulus matches previous (shape + color)
+- **Timing**: 1.3s display + 0.7s interval
+- **Results**: Accuracy %, correct/missed counts, and recommendations based on performance
 
-**Scoring:**
-- Correct responses (hits): Pressing SPACE when stimuli match
-- Correct withholding: Not pressing when stimuli differ
-- Real-time accuracy tracking
-- Total completion time measurement
+### Emotional Survey & Recognition
 
-**Results:**
-- Accuracy percentage (correct responses / total trials)
-- Response patterns analysis
-- Performance interpretation:
-  - **Excellent (90%+ accuracy)**: Strong sustained attention
-  - **Moderate (75-89% accuracy)**: Adequate attention with possible fluctuation
-  - **Poor (<75% accuracy)**: Difficulty maintaining attention under rapid stimuli
+Two-part emotional module:
+
+- **Emotional Survey**: Rate mood response (1–5 slider) for abstract art patterns; results show average mood and positive/neutral/tense bar breakdowns.
+- **Emotion Recognition Game**: Identify facial expressions from images; results include accuracy bars, correct/missed breakdown, and qualitative feedback.
 
 ## Technologies Used
 
@@ -131,11 +117,10 @@ A rapid stimulus-response test measuring sustained attention and concentration.
 - **Maven**: Project management and build automation
 
 ### Dependencies
-- **SQLite JDBC (3.43.2.2)**: Lightweight embedded database
-- **Jackson (2.17.2)**: JSON processing library
-- **ControlsFX (11.2.1)**: Extended JavaFX controls
-- **Ikonli (12.3.1)**: Icon packs for JavaFX (Material Design 2)
-- **JUnit 5 (5.11.0)**: Comprehensive unit testing framework
+- **SQLite JDBC**: Embedded database
+- **Jackson**: JSON processing
+- **ControlsFX / Ikonli**: JavaFX controls and icons
+- **JUnit 5**: Testing
 
 ## Prerequisites
 
@@ -179,23 +164,13 @@ Run the application with the graphical interface:
 mvn javafx:run
 ```
 
-The GUI provides access to all features through an intuitive home screen:
+Flow: Loading screen → Disclosure → Home tiles → Tutorial (per game) → Game/Survey → Results.
 
 **Home Screen Options:**
-1. **Start Questionnaire**: Launch the 50-question AQ assessment
-   - Disclaimer screen with important information
-   - Interactive questionnaire with progress tracking
-   - Results screen with score interpretation
-
-2. **Start Matching Game**: Play the progressive memory card game
-   - 10 rounds of increasing difficulty
-   - Real-time performance tracking
-   - Comprehensive results with API score
-
-3. **Start Attention Game**: Take the concentration assessment
-   - 100-trial rapid attention test
-   - Immediate feedback on performance
-   - Detailed accuracy and recommendation report
+1. **Start Questionnaire**: 50-question AQ assessment with progress and results interpretation.
+2. **Matching Game**: 5-round capped memory game with preview and API-based results.
+3. **Attention Game**: 50-trial concentration test with accuracy and recommendations.
+4. **Emotional Survey & Recognition**: Mood slider survey and facial emotion recognition; results include bar charts and feedback.
 
 ### CLI Mode
 
@@ -217,47 +192,22 @@ ASDA/
 │   ├── main/
 │   │   ├── java/
 │   │   │   └── org/group1/asda/
-│   │   │       ├── App.java                      # Main application entry point
-│   │   │       ├── assessment/                   # AQ assessment logic
-│   │   │       │   ├── AQAssessment.java         # Assessment manager
-│   │   │       │   ├── AQQuestion.java           # Question model
-│   │   │       │   ├── AQScoreCalculator.java    # Scoring logic
-│   │   │       │   ├── AQResultInterpreter.java  # Results interpretation
-│   │   │       │   └── AssessmentCli.java        # CLI interface
-│   │   │       ├── domain/                       # Domain models
-│   │   │       │   ├── Question.java             # AQ question model
-│   │   │       │   ├── Card.java                 # Matching game card
-│   │   │       │   ├── GameState.java            # Matching game state
-│   │   │       │   ├── Stimulus.java             # Attention game stimulus
-│   │   │       │   └── AttentionGameState.java   # Attention game state
-│   │   │       ├── navigation/                   # UI navigation
-│   │   │       │   └── Router.java               # Screen routing
-│   │   │       ├── persistence/                  # Data access layer
-│   │   │       │   ├── Database.java             # Database initialization
-│   │   │       │   ├── QuestionDao.java          # Question data access
-│   │   │       │   ├── ResponseDao.java          # Response data access
-│   │   │       │   └── SessionDao.java           # Session data access
+│   │   │       ├── App.java                      # Main application entry point (loading → disclosure → home)
+│   │   │       ├── assessment/                   # AQ assessment logic (CLI + GUI)
+│   │   │       ├── domain/                       # Domain models (AQ, matching, attention, emotional)
+│   │   │       ├── navigation/Router.java        # Scene routing and stylesheets
+│   │   │       ├── persistence/                  # Database init + DAOs
 │   │   │       ├── service/                      # Business logic
-│   │   │       │   ├── AssessmentService.java
-│   │   │       │   └── QuestionnaireService.java
-│   │   │       └── ui/                           # UI controllers
-│   │   │           ├── attentiongame/            # Attention game UI
-│   │   │           │   └── AttentionGameController.java
-│   │   │           ├── disclaimer/
-│   │   │           ├── home/                     # Main menu
-│   │   │           │   └── HomeController.java
-│   │   │           ├── matchinggame/             # Matching game UI
-│   │   │           │   └── MatchingGameController.java
-│   │   │           ├── questionnaire/
-│   │   │           └── results/
+│   │   │       └── ui/                           # UI controllers grouped by feature:
+│   │   │           ├── attentiongame/            # Attention game + results
+│   │   │           ├── matchinggame/             # Matching game + tutorial/results
+│   │   │           ├── emotionalsurvey/          # Emotional survey + results
+│   │   │           ├── emotionrecognition/       # Recognition game + results
+│   │   │           ├── home/                     # Home screen
+│   │   │           └── disclaimer/               # Disclosure screen
 │   │   └── resources/
-│   │       ├── css/                              # Stylesheets
-│   │       │   ├── base.css
-│   │       │   ├── theme-light.css
-│   │       │   └── assessment.css
-│   │       └── fxml/                             # FXML view definitions
-│   │           ├── attention-game.fxml           # Attention game view
-│   │           ├── disclaimer.fxml
+│   │       ├── css/                              # Stylesheets per screen (home, games, results, disclosure)
+│   │       └── fxml/                             # FXML view definitions (loading, disclosure, home, games, results)
 │   │           ├── home.fxml                     # Main menu
 │   │           ├── matching-game.fxml            # Matching game view
 │   │           ├── questionnaire.fxml

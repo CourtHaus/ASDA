@@ -5,6 +5,23 @@
   -color-on-surface: #222222;
   -color-surface-variant: #F2F3F5;
   -font-family: "Roboto", "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  /* Pastel color palette */
+  -color-pastel-purple: #a78bfa;
+  -color-pastel-purple-light: #ddd6fe;
+  -color-pastel-purple-bg: #faf5ff;
+  -color-pastel-red: #f87171;
+  -color-pastel-red-light: #fecaca;
+  -color-pastel-red-bg: #fef2f2;
+  -color-pastel-blue: #60a5fa;
+  -color-pastel-blue-light: #bfdbfe;
+  -color-pastel-blue-bg: #eff6ff;
+  -color-pastel-yellow: #facc15;
+  -color-pastel-yellow-light: #fde68a;
+  -color-pastel-yellow-bg: #fefce8;
+  -color-pastel-green: #4ade80;
+  -color-pastel-green-light: #bbf7d0;
+  -color-pastel-green-bg: #f0fdf4;
 }
 
 .root {
@@ -17,3 +34,22 @@
 .title { -fx-font-size: 20px; -fx-font-weight: 600; }
 .card { -fx-background-color: -color-surface-variant; -fx-background-radius: 12; -fx-padding: 16; }
 .button.primary { -fx-background-color: -color-primary; -fx-text-fill: -color-on-primary; -fx-background-radius: 8; }
+
+/* Transparent scroll pane styling */
+.transparent-scroll {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.transparent-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.transparent-scroll > .scroll-bar {
+    -fx-background-color: transparent;
+}
+
+/* Smooth transitions */
+* {
+    -fx-smooth: true;
+}

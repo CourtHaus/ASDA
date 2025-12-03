@@ -1,22 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
 <?import javafx.geometry.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.group1.asda.ui.home.HomeController">
-    <top>
-        <HBox spacing="8" styleClass="toolbar">
-            <Label fx:id="title" text="ASDA" styleClass="title" />
-        </HBox>
-    </top>
-    <center>
-        <VBox alignment="CENTER" spacing="16">
-            <Label text="Welcome to ASDA" />
-            <Button fx:id="startBtn" text="Start Questionnaire" onAction="#onStart" styleClass="primary" />
-            <Button fx:id="matchingGameBtn" text="Start Matching Game" onAction="#onStartMatchingGame" styleClass="primary" />
-            <Button fx:id="attentionGameBtn" text="Start Attention Game" onAction="#onStartAttentionGame" styleClass="primary" />
-            <Button fx:id="emotionalSurveyBtn" text="Emotional Response Survey" onAction="#onStartEmotionalSurvey" styleClass="primary" />
-            <Button fx:id="emotionRecognitionBtn" text="Emotion Recognition Game" onAction="#onStartEmotionRecognition" styleClass="primary" />
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="org.group1.asda.ui.home.HomeController"
+           styleClass="home-root">
+    <VBox alignment="TOP_CENTER" spacing="0">
+        <!-- Header Section -->
+        <VBox styleClass="home-header" alignment="CENTER">
+            <Text fx:id="title" text="ASDA" styleClass="home-title">
+                <fill>
+                    <LinearGradient endX="1.0" endY="0.0" startX="0.0" startY="0.0">
+                        <stops>
+                            <Stop color="#c5b4e3" offset="0.0" />
+                            <Stop color="#8da9c4" offset="0.5" />
+                            <Stop color="#b0d0d3" offset="1.0" />
+                        </stops>
+                    </LinearGradient>
+                </fill>
+            </Text>
+            <Label text="A Safe Space to Learn and Play" styleClass="home-subtitle" />
         </VBox>
-    </center>
-</BorderPane>
+
+        <!-- Navigation Grid -->
+        <GridPane styleClass="nav-grid" alignment="CENTER">
+            <columnConstraints>
+                <ColumnConstraints halignment="CENTER" />
+                <ColumnConstraints halignment="CENTER" />
+                <ColumnConstraints halignment="CENTER" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints valignment="CENTER" />
+                <RowConstraints valignment="CENTER" />
+            </rowConstraints>
+
+            <!-- Questionnaire Tile -->
+            <VBox styleClass="activity-tile, tile-purple" onMouseClicked="#onStart"
+                  GridPane.columnIndex="0" GridPane.rowIndex="0"
+                  prefWidth="160" prefHeight="160">
+                <VBox styleClass="tile-content" spacing="8" alignment="CENTER" VBox.vgrow="ALWAYS">
+                    <StackPane styleClass="tile-icon-container">
+                        <ImageView fitWidth="80" fitHeight="80" preserveRatio="true">
+                            <image>
+                                <Image url="@/images/homepage/Cube 1.png" />
+                            </image>
+                        </ImageView>
+                    </StackPane>
+                    <Label text="Questionnaire" styleClass="tile-label" wrapText="true" alignment="CENTER" />
+                </VBox>
+            </VBox>
+
+            <!-- Matching Game Tile -->
+            <VBox styleClass="activity-tile, tile-teal" onMouseClicked="#onStartMatchingGame"
+                  GridPane.columnIndex="1" GridPane.rowIndex="0"
+                  prefWidth="160" prefHeight="160">
+                <VBox styleClass="tile-content" spacing="8" alignment="CENTER" VBox.vgrow="ALWAYS">
+                    <StackPane styleClass="tile-icon-container">
+                        <ImageView fitWidth="80" fitHeight="80" preserveRatio="true">
+                            <image>
+                                <Image url="@/images/homepage/Icosahedron.png" />
+                            </image>
+                        </ImageView>
+                    </StackPane>
+                    <Label text="Matching Game" styleClass="tile-label" wrapText="true" alignment="CENTER" />
+                </VBox>
+            </VBox>
+
+            <!-- Attention Game Tile -->
+            <VBox styleClass="activity-tile, tile-blue" onMouseClicked="#onStartAttentionGame"
+                  GridPane.columnIndex="2" GridPane.rowIndex="0"
+                  prefWidth="160" prefHeight="160">
+                <VBox styleClass="tile-content" spacing="8" alignment="CENTER" VBox.vgrow="ALWAYS">
+                    <StackPane styleClass="tile-icon-container">
+                        <ImageView fitWidth="80" fitHeight="80" preserveRatio="true">
+                            <image>
+                                <Image url="@/images/homepage/Thorus 2.png" />
+                            </image>
+                        </ImageView>
+                    </StackPane>
+                    <Label text="Attention Game" styleClass="tile-label" wrapText="true" alignment="CENTER" />
+                </VBox>
+            </VBox>
+
+            <!-- Emotional Survey Tile -->
+            <VBox styleClass="activity-tile, tile-lavender" onMouseClicked="#onStartEmotionalSurvey"
+                  GridPane.columnIndex="0" GridPane.rowIndex="1"
+                  prefWidth="160" prefHeight="160">
+                <VBox styleClass="tile-content" spacing="8" alignment="CENTER" VBox.vgrow="ALWAYS">
+                    <StackPane styleClass="tile-icon-container">
+                        <ImageView fitWidth="80" fitHeight="80" preserveRatio="true">
+                            <image>
+                                <Image url="@/images/homepage/Sphere.png" />
+                            </image>
+                        </ImageView>
+                    </StackPane>
+                    <Label text="Emotional Survey" styleClass="tile-label" wrapText="true" alignment="CENTER" />
+                </VBox>
+            </VBox>
+
+            <!-- Emotion Recognition Tile -->
+            <VBox styleClass="activity-tile, tile-sky" onMouseClicked="#onStartEmotionRecognition"
+                  GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.columnSpan="2"
+                  prefWidth="352" prefHeight="160">
+                <VBox styleClass="tile-content" spacing="8" alignment="CENTER" VBox.vgrow="ALWAYS">
+                    <StackPane styleClass="tile-icon-container">
+                        <ImageView fitWidth="80" fitHeight="80" preserveRatio="true">
+                            <image>
+                                <Image url="@/images/homepage/Sphere-2.png" />
+                            </image>
+                        </ImageView>
+                    </StackPane>
+                    <Label text="Emotion Recognition" styleClass="tile-label" wrapText="true" alignment="CENTER" maxWidth="320" />
+                </VBox>
+            </VBox>
+        </GridPane>
+
+        <!-- Footer -->
+        <VBox styleClass="home-footer">
+            <Label text="Select an activity to begin" styleClass="footer-caption" />
+        </VBox>
+    </VBox>
+</StackPane>

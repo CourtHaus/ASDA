@@ -27,6 +27,7 @@ public class Router {
         // Load stylesheets
         URL base = getClass().getResource("/css/base.css");
         URL theme = getClass().getResource("/css/theme-light.css");
+        URL home = getClass().getResource("/css/home.css");
         URL assessment = getClass().getResource("/css/assessment.css");
         URL loading = getClass().getResource("/css/loading.css");
         URL disclosure = getClass().getResource("/css/disclosure.css");
@@ -44,6 +45,7 @@ public class Router {
 
         if (base != null) scene.getStylesheets().add(base.toExternalForm());
         if (theme != null) scene.getStylesheets().add(theme.toExternalForm());
+        if (home != null) scene.getStylesheets().add(home.toExternalForm());
         if (assessment != null) scene.getStylesheets().add(assessment.toExternalForm());
         if (loading != null) scene.getStylesheets().add(loading.toExternalForm());
         if (disclosure != null) scene.getStylesheets().add(disclosure.toExternalForm());

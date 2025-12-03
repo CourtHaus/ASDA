@@ -1,22 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.group1.asda.ui.home.HomeController">
-    <top>
-        <HBox spacing="8" styleClass="toolbar">
-            <Label fx:id="title" text="ASDA" styleClass="title" />
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.group1.asda.ui.home.HomeController" styleClass="home-screen">
+    <VBox spacing="20" alignment="TOP_CENTER" style="-fx-padding: 20;">
+        <!-- Header -->
+        <HBox spacing="8" style="-fx-padding: 12 16; -fx-background-color: rgba(0, 0, 0, 0.2);">
+            <Label fx:id="title" text="ASDA" style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: 600;" />
         </HBox>
-    </top>
-    <center>
-        <VBox alignment="CENTER" spacing="16">
-            <Label text="Welcome to ASDA" />
-            <Button fx:id="startBtn" text="Start Questionnaire" onAction="#onStart" styleClass="primary" />
-            <Button fx:id="matchingGameBtn" text="Start Matching Game" onAction="#onStartMatchingGame" styleClass="primary" />
-            <Button fx:id="attentionGameBtn" text="Start Attention Game" onAction="#onStartAttentionGame" styleClass="primary" />
-            <Button fx:id="emotionalSurveyBtn" text="Emotional Response Survey" onAction="#onStartEmotionalSurvey" styleClass="primary" />
-            <Button fx:id="emotionRecognitionBtn" text="Emotion Recognition Game" onAction="#onStartEmotionRecognition" styleClass="primary" />
-        </VBox>
-    </center>
-</BorderPane>
+        
+        <!-- Welcome Text -->
+        <Label text="Welcome to ASDA" styleClass="welcome-text" style="-fx-padding: 10 0 0 0;" />
+        
+        <!-- Tiles Grid -->
+        <GridPane styleClass="tiles-grid" alignment="CENTER" hgap="20" vgap="20">
+            <!-- Row 0: Questionnaire Tile -->
+            <VBox styleClass="game-tile" alignment="CENTER" spacing="12" onMouseClicked="#onStart" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <ImageView styleClass="tile-icon" fitWidth="80" fitHeight="80" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/emotional/Symmetrical_teal_mandala_52138706.png" />
+                    </image>
+                </ImageView>
+                <Label text="Start Questionnaire" styleClass="tile-title" wrapText="true" maxWidth="220" />
+            </VBox>
+            
+            <!-- Row 0: Matching Game Tile -->
+            <VBox styleClass="game-tile" alignment="CENTER" spacing="12" onMouseClicked="#onStartMatchingGame" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                <ImageView styleClass="tile-icon" fitWidth="80" fitHeight="80" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/emotional/Colorful_cheerful_circles_dots_095da58b.png" />
+                    </image>
+                </ImageView>
+                <Label text="Start Matching Game" styleClass="tile-title" wrapText="true" maxWidth="220" />
+            </VBox>
+            
+            <!-- Row 0: Attention Game Tile -->
+            <VBox styleClass="game-tile" alignment="CENTER" spacing="12" onMouseClicked="#onStartAttentionGame" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                <ImageView styleClass="tile-icon" fitWidth="80" fitHeight="80" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/emotional/Glowing_radiant_circles_f78881de.png" />
+                    </image>
+                </ImageView>
+                <Label text="Start Attention Game" styleClass="tile-title" wrapText="true" maxWidth="220" />
+            </VBox>
+            
+            <!-- Row 1: Emotional Response Survey Tile (emotion-based game) -->
+            <VBox styleClass="game-tile" alignment="CENTER" spacing="12" onMouseClicked="#onStartEmotionalSurvey" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <ImageView styleClass="tile-icon" fitWidth="80" fitHeight="80" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/emotional/Vibrant_paint_splatter_13d2318d.png" />
+                    </image>
+                </ImageView>
+                <Label text="Emotional Response Survey" styleClass="tile-title" wrapText="true" maxWidth="220" />
+            </VBox>
+            
+            <!-- Row 1: Emotion Recognition Game Tile (emotion-based game) -->
+            <VBox styleClass="game-tile" alignment="CENTER" spacing="12" onMouseClicked="#onStartEmotionRecognition" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <ImageView styleClass="tile-icon" fitWidth="80" fitHeight="80" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/emotional/Abstract_blue_purple_curves_6652dd0a.png" />
+                    </image>
+                </ImageView>
+                <Label text="Emotion Recognition Game" styleClass="tile-title" wrapText="true" maxWidth="220" />
+            </VBox>
+        </GridPane>
+    </VBox>
+</StackPane>

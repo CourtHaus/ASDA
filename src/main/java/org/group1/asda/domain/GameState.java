@@ -55,6 +55,14 @@ public class GameState {
         return Math.max(1, totalTimeMs / 1000);
     }
 
+    public double getElapsedTimeSeconds() {
+        return totalTimeMs / 1000.0;
+    }
+
+    public int getTotalAttempts() {
+        return totalAttempts;
+    }
+
     public int getMemoryScore() {
         double score = (getAccuracy() * 10) - (getElapsedSeconds() / 5.0);
         return (int) Math.max(0, score);

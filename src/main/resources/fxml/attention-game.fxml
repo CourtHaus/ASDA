@@ -1,35 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.canvas.*?>
 <?import javafx.geometry.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.shape.SVGPath?>
 
 <BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="org.group1.asda.ui.attentiongame.AttentionGameController"
             fx:id="rootPane"
-            styleClass="attention-game-root">
+            stylesheets="@../css/attention-game.css"
+            styleClass="attention-game-root"
+            prefWidth="980" prefHeight="600">
 
     <!-- Game Screen -->
     <top>
-        <VBox styleClass="attention-game-header">
-            <Label fx:id="headerLabel" wrapText="true" textAlignment="CENTER"
-                   styleClass="attention-game-instruction"
-                   maxWidth="700">
-                <text>Press SPACE when the current shape is the same color &amp; shape as the previous one. Withhold press otherwise.</text>
-            </Label>
-        </VBox>
+        <HBox styleClass="attention-game-header" alignment="CENTER_LEFT">
+            <padding>
+                <Insets top="24" right="32" bottom="24" left="32"/>
+            </padding>
+
+            <!-- Title and instruction -->
+            <VBox spacing="4" HBox.hgrow="ALWAYS">
+                <Label text="Attention Game" styleClass="attention-game-title"/>
+                <Label text="Press SPACE bar when shapes match!" styleClass="attention-game-subtitle"/>
+            </VBox>
+
+            <!-- Stats -->
+            <HBox spacing="24" alignment="CENTER_RIGHT">
+                <VBox spacing="2" alignment="TOP_RIGHT">
+                    <Label text="Trials" styleClass="stat-label"/>
+                    <Label fx:id="trialsLabel" text="0/100" styleClass="stat-value"/>
+                </VBox>
+                <VBox spacing="2" alignment="TOP_RIGHT">
+                    <Label text="Correct" styleClass="stat-label"/>
+                    <Label fx:id="correctLabel" text="0" styleClass="stat-value"/>
+                </VBox>
+                <VBox spacing="2" alignment="TOP_RIGHT">
+                    <Label text="Incorrect" styleClass="stat-label"/>
+                    <Label fx:id="incorrectLabel" text="0" styleClass="stat-value"/>
+                </VBox>
+                <VBox spacing="2" alignment="TOP_RIGHT">
+                    <Label text="Accuracy" styleClass="stat-label"/>
+                    <Label fx:id="accuracyLabel" text="100" styleClass="stat-value"/>
+                </VBox>
+            </HBox>
+        </HBox>
     </top>
 
     <center>
-        <StackPane styleClass="attention-game-canvas-container">
-            <Canvas fx:id="stimulusCanvas" width="500" height="400"/>
+        <StackPane styleClass="attention-game-center">
+            <!-- Active game content -->
+            <VBox fx:id="gameContent" alignment="CENTER" spacing="32">
+                <!-- Shape display area -->
+                <StackPane fx:id="shapeContainer" prefWidth="400" prefHeight="300" alignment="CENTER">
+                    <ImageView fx:id="shapeImageView" fitWidth="250" fitHeight="250" preserveRatio="true"/>
+                </StackPane>
+
+                <!-- Instruction box -->
+                <VBox alignment="CENTER" spacing="12" styleClass="instruction-box">
+                    <padding>
+                        <Insets top="16" right="24" bottom="16" left="24"/>
+                    </padding>
+                    <Label text="Press when shapes match" styleClass="instruction-text"/>
+                    <Button text="SPACE" styleClass="space-key-display" disable="true" focusTraversable="false"/>
+                </VBox>
+            </VBox>
+
+            <!-- Pause overlay -->
+            <VBox fx:id="pauseOverlay" alignment="CENTER" spacing="16" visible="false" managed="false"
+                  styleClass="pause-overlay">
+                <!-- Pause icon -->
+                <HBox spacing="8" alignment="CENTER">
+                    <Region styleClass="pause-bar"/>
+                    <Region styleClass="pause-bar"/>
+                </HBox>
+                <Label text="Game Paused" styleClass="pause-title"/>
+                <Label text="Click Resume to continue" styleClass="pause-subtitle"/>
+            </VBox>
         </StackPane>
     </center>
 
     <bottom>
-        <HBox alignment="CENTER" styleClass="attention-game-footer">
-            <Label fx:id="statsLabel" text="Trials: 0/100   Correct: 0   Incorrect: 0   Accuracy: 0%"
-                   styleClass="attention-game-stats"/>
+        <HBox alignment="CENTER" spacing="16" styleClass="attention-game-footer">
+            <padding>
+                <Insets top="20" right="32" bottom="20" left="32"/>
+            </padding>
+
+            <Button fx:id="pauseButton" text="Pause" onAction="#onPause" styleClass="btn-pause"/>
+            <Button fx:id="resumeButton" text="Resume" onAction="#onResume" styleClass="btn-pause" visible="false" managed="false"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Button text="Home" onAction="#onHome" styleClass="btn-home"/>
         </HBox>
     </bottom>
 </BorderPane>

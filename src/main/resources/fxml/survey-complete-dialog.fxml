@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.group1.asda.ui.emotionalsurvey.SurveyCompleteDialogController"
+      styleClass="dialog-root"
+      spacing="24"
+      alignment="CENTER"
+      prefWidth="500">
+    <padding>
+        <Insets top="32" right="32" bottom="32" left="32"/>
+    </padding>
+
+    <!-- Header -->
+    <VBox spacing="8" alignment="CENTER">
+        <Label text="✓" styleClass="dialog-icon"/>
+        <Label text="Survey Complete!" styleClass="dialog-title"/>
+    </VBox>
+
+    <!-- Message -->
+    <VBox spacing="12" alignment="CENTER">
+        <Label text="Thank you for completing the Emotional Response Survey!"
+               styleClass="dialog-message" wrapText="true" alignment="CENTER" maxWidth="420"/>
+        <Label fx:id="averageLabel" text="Average Response: 3.5 / 5.0"
+               styleClass="dialog-stat" wrapText="true" alignment="CENTER"/>
+    </VBox>
+
+    <!-- Question Box -->
+    <VBox spacing="12" alignment="CENTER" styleClass="question-box">
+        <padding>
+            <Insets top="20" right="24" bottom="20" left="24"/>
+        </padding>
+        <Label text="Would you like to continue with the" styleClass="question-text" wrapText="true" alignment="CENTER"/>
+        <Label text="Emotion Recognition Game?" styleClass="question-highlight" wrapText="true" alignment="CENTER"/>
+        <Label text="Test your ability to identify emotions from abstract patterns!"
+               styleClass="question-subtext" wrapText="true" alignment="CENTER" maxWidth="380"/>
+    </VBox>
+
+    <!-- Buttons -->
+    <HBox spacing="12" alignment="CENTER">
+        <Button fx:id="playGameButton" text="Play Emotion Game" styleClass="btn-primary-dialog" prefWidth="160"/>
+        <Button fx:id="viewResultsButton" text="View Results" styleClass="btn-secondary-dialog" prefWidth="140"/>
+    </HBox>
+
+    <Button fx:id="homeButton" text="Return to Home" styleClass="btn-link-dialog"/>
+</VBox>

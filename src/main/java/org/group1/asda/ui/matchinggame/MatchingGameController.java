@@ -5,12 +5,12 @@ import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 import org.group1.asda.domain.Card;
@@ -19,18 +19,29 @@ import org.group1.asda.navigation.Router;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public class MatchingGameController {
-    @FXML private Label statsLabel;
+    @FXML private BorderPane rootPane;
     @FXML private GridPane grid;
+    @FXML private Label roundLabel;
+    @FXML private Label correctLabel;
+    @FXML private Label incorrectLabel;
+    @FXML private Label accuracyLabel;
+    @FXML private Label instructionLabel;
+    @FXML private VBox gameContent;
+    @FXML private VBox pauseOverlay;
+    @FXML private Button pauseButton;
+    @FXML private Button resumeButton;
 
     private GameState gameState = new GameState();
     private List<Card> cards;
     private List<CardButton> cardButtons = new ArrayList<>();
     private List<CardButton> flippedButtons = new ArrayList<>();
     private boolean lockBoard = false;
+    private boolean isPaused = false;
     private int matchedPairs = 0;
+    private PauseTransition previewTimer;
+    private PauseTransition flipBackTimer;
 
     @FXML
     public void initialize() {
@@ -44,12 +55,11 @@ public class MatchingGameController {
         lockBoard = true;
         matchedPairs = 0;
 
-        int pairs = Math.min(2 + (gameState.getCurrRound() - 1) * 2, 10);
+        int pairs = Math.min(2 + (gameState.getCurrRound() - 1) * 2, 8);
         cards = gameState.generateDeck(pairs);
         gameState.resetRoundStats();
 
-        int cols = (int) Math.ceil(Math.sqrt(pairs * 2));
-
+        int cols = 4;
         int index = 0;
         for (Card card : cards) {
             CardButton btn = new CardButton(card);
@@ -71,30 +81,28 @@ public class MatchingGameController {
             btn.flip();
         }
 
-        final int[] countdown = {3};
-        statsLabel.setText(String.format("Round: %d | Memorize the cards! Starting in %d...",
-            gameState.getCurrRound(), countdown[0]));
+        instructionLabel.setText("Memorize the cards! Game starts in 3...");
 
-        PauseTransition pause = new PauseTransition(Duration.seconds(1));
-        pause.setOnFinished(e -> {
+        final int[] countdown = {3};
+        previewTimer = new PauseTransition(Duration.seconds(1));
+        previewTimer.setOnFinished(e -> {
             countdown[0]--;
             if (countdown[0] > 0) {
-                statsLabel.setText(String.format("Round: %d | Memorize the cards! Starting in %d...",
-                    gameState.getCurrRound(), countdown[0]));
-                pause.playFromStart();
+                instructionLabel.setText(String.format("Memorize the cards! Game starts in %d...", countdown[0]));
+                previewTimer.playFromStart();
             } else {
                 for (CardButton btn : cardButtons) {
                     btn.flip();
                 }
                 lockBoard = false;
-                updateStats();
+                instructionLabel.setText("Select two cards and see if they match. Try to remember what you see!");
             }
         });
-        pause.play();
+        previewTimer.play();
     }
 
     private void flip(CardButton btn) {
-        if (lockBoard || btn.isFlipped()) return;
+        if (lockBoard || btn.isFlipped() || isPaused) return;
         btn.flip();
         flippedButtons.add(btn);
 
@@ -131,8 +139,8 @@ public class MatchingGameController {
                 first.setIncorrectStyle();
                 second.setIncorrectStyle();
 
-                PauseTransition pause = new PauseTransition(Duration.millis(1200));
-                pause.setOnFinished(e -> {
+                flipBackTimer = new PauseTransition(Duration.millis(1200));
+                flipBackTimer.setOnFinished(e -> {
                     first.flip();
                     second.flip();
                     first.resetStyle();
@@ -141,7 +149,7 @@ public class MatchingGameController {
                     lockBoard = false;
                     updateStats();
                 });
-                pause.play();
+                flipBackTimer.play();
             }
 
             first.getCard().markSeen();
@@ -150,56 +158,98 @@ public class MatchingGameController {
     }
 
     private void updateStats() {
-        statsLabel.setText(String.format(
-            "Round: %d | Correct: %d | Incorrect: %d | Accuracy: %.1f%%",
-            gameState.getCurrRound(),
-            gameState.getTotalCorrect(),
-            gameState.getTotalIncorrect(),
-            gameState.getAccuracy()
-        ));
+        roundLabel.setText(String.valueOf(gameState.getCurrRound()));
+        correctLabel.setText(String.valueOf(gameState.getTotalCorrect()));
+        incorrectLabel.setText(String.valueOf(gameState.getTotalIncorrect()));
+        double acc = gameState.getAccuracy();
+        accuracyLabel.setText(String.format("%.0f%%", acc));
     }
 
     private void endRound() {
         gameState.stopTimer();
 
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Round Complete");
-        alert.setHeaderText("Round " + gameState.getCurrRound() + " Complete!");
-        alert.setContentText(gameState.getResultsSummary());
-        alert.showAndWait();
-
         if (gameState.getCurrRound() < 10) {
             gameState.nextRound();
             setupRound();
         } else {
-            showFinalResults();
+            navigateToResults();
         }
     }
 
-    private void showFinalResults() {
-        String finalSummary = gameState.getFinalSummary();
-        String attentionProfile = gameState.getAttentionPerformanceIndex();
+    private void navigateToResults() {
+        MatchingGameResultsController resultsController =
+            Router.getInstance().goToAndGetController("matching-game-results", MatchingGameResultsController.class);
 
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Game Complete");
-        alert.setHeaderText("All 10 Rounds Complete!");
-        alert.setContentText(
-            "FINAL RESULTS\n" + finalSummary + "\n\n" + attentionProfile +
-            "\n\nNote: This tool is for research and self-awareness only.\n" +
-            "It does not diagnose ADHD, Autism, or any medical condition.\n" +
-            "If significant attention variance is indicated, consider seeking a licensed clinician for formal evaluation."
-        );
-
-        ButtonType homeButton = new ButtonType("Return to Home");
-        alert.getButtonTypes().setAll(homeButton);
-
-        Optional<ButtonType> result = alert.showAndWait();
-        if (result.isPresent()) {
+        if (resultsController != null) {
+            resultsController.setGameState(gameState);
+        } else {
+            System.err.println("Error loading results screen controller");
             Router.getInstance().goTo("home");
         }
     }
 
-    // Inner class for card buttons with custom rendering
+    @FXML
+    private void onPause() {
+        if (isPaused) return;
+
+        isPaused = true;
+        pauseTimers();
+
+        gameContent.setVisible(false);
+        pauseOverlay.setVisible(true);
+        pauseOverlay.setManaged(true);
+
+        pauseButton.setVisible(false);
+        pauseButton.setManaged(false);
+        resumeButton.setVisible(true);
+        resumeButton.setManaged(true);
+    }
+
+    @FXML
+    private void onResume() {
+        if (!isPaused) return;
+
+        isPaused = false;
+        resumeTimers();
+
+        gameContent.setVisible(true);
+        pauseOverlay.setVisible(false);
+        pauseOverlay.setManaged(false);
+
+        pauseButton.setVisible(true);
+        pauseButton.setManaged(true);
+        resumeButton.setVisible(false);
+        resumeButton.setManaged(false);
+
+        rootPane.requestFocus();
+    }
+
+    @FXML
+    private void onHome() {
+        if (previewTimer != null) previewTimer.stop();
+        if (flipBackTimer != null) flipBackTimer.stop();
+        Router.getInstance().goTo("home");
+    }
+
+    private void pauseTimers() {
+        if (previewTimer != null && previewTimer.getStatus() == PauseTransition.Status.RUNNING) {
+            previewTimer.pause();
+        }
+        if (flipBackTimer != null && flipBackTimer.getStatus() == PauseTransition.Status.RUNNING) {
+            flipBackTimer.pause();
+        }
+    }
+
+    private void resumeTimers() {
+        if (previewTimer != null && previewTimer.getStatus() == PauseTransition.Status.PAUSED) {
+            previewTimer.play();
+        }
+        if (flipBackTimer != null && flipBackTimer.getStatus() == PauseTransition.Status.PAUSED) {
+            flipBackTimer.play();
+        }
+    }
+
+    // Card button with custom rendering
     private static class CardButton extends Button {
         private Card card;
         private boolean flipped = false;
@@ -214,11 +264,11 @@ public class MatchingGameController {
             content.setAlignment(Pos.CENTER);
             setGraphic(content);
 
-            setPrefSize(CARD_SIZE + 20, CARD_SIZE + 20);
-            setMinSize(CARD_SIZE + 20, CARD_SIZE + 20);
-            setMaxSize(CARD_SIZE + 20, CARD_SIZE + 20);
+            setPrefSize(CARD_SIZE + 20, (CARD_SIZE + 20) * 1.3);
+            setMinSize(CARD_SIZE + 20, (CARD_SIZE + 20) * 1.3);
+            setMaxSize(CARD_SIZE + 20, (CARD_SIZE + 20) * 1.3);
 
-            setStyle("-fx-background-color: white; -fx-border-color: #ccc; -fx-border-width: 1;");
+            resetStyle();
             render();
         }
 
@@ -236,15 +286,22 @@ public class MatchingGameController {
         }
 
         public void setMatchedStyle() {
-            setStyle("-fx-background-color: #90EE90; -fx-border-color: #ccc; -fx-border-width: 1;");
+            getStyleClass().removeAll("card-button", "card-button-back", "card-button-incorrect");
+            getStyleClass().add("card-button-matched");
         }
 
         public void setIncorrectStyle() {
-            setStyle("-fx-background-color: #FFB6C1; -fx-border-color: #ccc; -fx-border-width: 1;");
+            getStyleClass().removeAll("card-button", "card-button-back", "card-button-matched");
+            getStyleClass().add("card-button-incorrect");
         }
 
         public void resetStyle() {
-            setStyle("-fx-background-color: white; -fx-border-color: #ccc; -fx-border-width: 1;");
+            getStyleClass().removeAll("card-button-matched", "card-button-incorrect", "card-button");
+            if (flipped) {
+                getStyleClass().add("card-button");
+            } else {
+                getStyleClass().add("card-button-back");
+            }
         }
 
         private void render() {
@@ -253,14 +310,18 @@ public class MatchingGameController {
 
             if (flipped) {
                 drawCard(gc);
+            } else {
+                gc.setFill(Color.WHITE);
+                gc.setFont(javafx.scene.text.Font.font(40));
+                gc.fillText("?", CARD_SIZE / 2 - 12, CARD_SIZE / 2 + 14);
             }
         }
 
         private void drawCard(GraphicsContext gc) {
             gc.setFill(card.getColor());
-            int size = CARD_SIZE - 20;
-            int x = 10;
-            int y = 10;
+            int size = CARD_SIZE - 30;
+            int x = 15;
+            int y = 15;
 
             switch (card.getShape()) {
                 case "Circle":

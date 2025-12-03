@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.group1.asda.ui.matchinggametutorial.MatchingGameTutorialController"
+            stylesheets="@../css/matching-game-tutorial.css"
+            styleClass="matching-tutorial-root"
+            prefWidth="980" prefHeight="600">
+
+    <!-- HEADER -->
+    <top>
+        <HBox styleClass="matching-tutorial-header" alignment="CENTER_LEFT">
+            <padding>
+                <Insets top="24" right="32" bottom="24" left="32"/>
+            </padding>
+            <Label text="Tutorial: Matching Game" styleClass="matching-tutorial-title" HBox.hgrow="ALWAYS"/>
+            <Button text="✕ Skip" fx:id="btnSkip" onAction="#onSkip" styleClass="btn-matching-skip"/>
+        </HBox>
+    </top>
+
+    <!-- CENTER: Single page view -->
+    <center>
+        <VBox alignment="CENTER" spacing="0" styleClass="matching-tutorial-content">
+            <padding>
+                <Insets top="40" right="60" bottom="40" left="60"/>
+            </padding>
+
+            <!-- StackPane to show one page at a time -->
+            <StackPane fx:id="pageContainer" prefHeight="400">
+                <!-- Page 1: Welcome -->
+                <VBox spacing="20" alignment="CENTER" fx:id="pageWelcome" maxWidth="800">
+                    <Label text="Welcome To Matching Game!" styleClass="matching-page-title" />
+                    <Label wrapText="true" alignment="CENTER" text="Time to put your memory to the test! In this game you will flip cards to find matching pairs. This will help us see how well you remember and how accurately you can recall details." styleClass="matching-lead-text" maxWidth="700" />
+                </VBox>
+
+                <!-- Page 2: Cards Face Down -->
+                <VBox spacing="24" alignment="CENTER" fx:id="pageCards" maxWidth="800">
+                    <Label wrapText="true" alignment="CENTER" text="The game starts with all cards face down. Every card has a matching pair with same shape and color." styleClass="matching-description" maxWidth="700" />
+
+                    <GridPane alignment="CENTER" hgap="12" vgap="12">
+                        <VBox styleClass="tutorial-card-back" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                        <VBox styleClass="tutorial-card-back" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                        <VBox styleClass="tutorial-card-back" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                        <VBox styleClass="tutorial-card-back" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+                        <VBox styleClass="tutorial-card-back" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                        <VBox styleClass="tutorial-card-back" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                        <VBox styleClass="tutorial-card-back" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                        <VBox styleClass="tutorial-card-back" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+                    </GridPane>
+
+                    <VBox alignment="CENTER" styleClass="goal-box">
+                        <padding>
+                            <Insets top="16" right="24" bottom="16" left="24"/>
+                        </padding>
+                        <Label wrapText="true" alignment="CENTER" text="Your goal is to find all matching pairs by remembering where each card is located." styleClass="goal-text" maxWidth="600"/>
+                    </VBox>
+                </VBox>
+
+                <!-- Page 3: Card Flip -->
+                <VBox spacing="24" alignment="CENTER" fx:id="pageFlip" maxWidth="800">
+                    <Label wrapText="true" alignment="CENTER" text="Click any card to flip it face up and see what is underneath." styleClass="matching-description" maxWidth="700" />
+
+                    <HBox alignment="CENTER" spacing="24" styleClass="flip-demo-box">
+                        <padding>
+                            <Insets top="32" right="40" bottom="32" left="40"/>
+                        </padding>
+                        <VBox styleClass="tutorial-card-back"/>
+                        <Label text="→" style="-fx-font-size: 32px; -fx-text-fill: #8ba888; -fx-font-weight: bold;" />
+                        <VBox styleClass="tutorial-card-front" alignment="CENTER">
+                            <ImageView fitWidth="60" fitHeight="60" preserveRatio="true">
+                                <image>
+                                    <Image url="@../images/loading/Ellipse 10.png"/>
+                                </image>
+                            </ImageView>
+                        </VBox>
+                    </HBox>
+
+                    <Label wrapText="true" alignment="CENTER" text="You can only flip two cards at a time. Try to remember what you see!" styleClass="matching-subtitle" maxWidth="600"/>
+                </VBox>
+
+                <!-- Page 4: Match Examples (Scrollable) -->
+                <ScrollPane fitToWidth="true" fitToHeight="true" styleClass="matching-scroll-page" fx:id="pageMatches">
+                    <VBox spacing="24" alignment="TOP_CENTER" maxWidth="800">
+                        <padding>
+                            <Insets top="0" right="20" bottom="0" left="20"/>
+                        </padding>
+                        <Label wrapText="true" alignment="CENTER" text="Two cards match if they have the same shape and the same color." styleClass="matching-description" maxWidth="700" />
+
+                        <VBox alignment="CENTER" spacing="16" styleClass="matching-card-green">
+                            <padding>
+                                <Insets top="24" right="40" bottom="24" left="40"/>
+                            </padding>
+                            <Label text="✓ This is a MATCH!" styleClass="match-title"/>
+                            <HBox spacing="40" alignment="CENTER">
+                                <VBox styleClass="tutorial-card-front" alignment="CENTER">
+                                    <ImageView fitWidth="60" fitHeight="60" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../images/loading/Ellipse 18.png"/>
+                                        </image>
+                                    </ImageView>
+                                </VBox>
+                                <Label text="→" style="-fx-font-size: 24px; -fx-text-fill: #8ba888;" />
+                                <VBox styleClass="tutorial-card-front" alignment="CENTER">
+                                    <ImageView fitWidth="60" fitHeight="60" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../images/loading/Ellipse 18.png"/>
+                                        </image>
+                                    </ImageView>
+                                </VBox>
+                            </HBox>
+                            <Label wrapText="true" alignment="CENTER" text="Both are purple circle = They match!" styleClass="match-explanation" maxWidth="600"/>
+                        </VBox>
+
+                        <VBox alignment="CENTER" spacing="16" styleClass="matching-card-red">
+                            <padding>
+                                <Insets top="24" right="40" bottom="24" left="40"/>
+                            </padding>
+                            <Label text="✕ This is NOT a MATCH!" styleClass="nomatch-title"/>
+                            <HBox spacing="40" alignment="CENTER">
+                                <VBox styleClass="tutorial-card-front" alignment="CENTER">
+                                    <ImageView fitWidth="60" fitHeight="60" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../images/loading/Ellipse 18-2.png"/>
+                                        </image>
+                                    </ImageView>
+                                </VBox>
+                                <Label text="→" style="-fx-font-size: 24px; -fx-text-fill: #c14545;" />
+                                <VBox styleClass="tutorial-card-front" alignment="CENTER">
+                                    <ImageView fitWidth="60" fitHeight="60" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../images/loading/Ellipse 18.png"/>
+                                        </image>
+                                    </ImageView>
+                                </VBox>
+                            </HBox>
+                            <Label wrapText="true" alignment="CENTER" text="Different colors = They don't match!" styleClass="nomatch-explanation" maxWidth="600"/>
+                        </VBox>
+                    </VBox>
+                </ScrollPane>
+
+                <!-- Page 5: What Happens -->
+                <VBox spacing="24" alignment="CENTER" fx:id="pageHappens" maxWidth="800">
+                    <Label wrapText="true" alignment="CENTER" text="After flipping two cards, one of two things will happen:" styleClass="matching-description" maxWidth="700" />
+
+                    <VBox alignment="CENTER" spacing="16" styleClass="matching-card-green">
+                        <padding>
+                            <Insets top="20" right="32" bottom="20" left="32"/>
+                        </padding>
+                        <Label text="✓ They Match!" styleClass="match-title"/>
+                        <Label wrapText="true" alignment="CENTER" text="Cards stay face up and you keep playing." styleClass="match-explanation" maxWidth="600"/>
+                    </VBox>
+
+                    <VBox alignment="CENTER" spacing="16" styleClass="matching-card-red">
+                        <padding>
+                            <Insets top="20" right="32" bottom="20" left="32"/>
+                        </padding>
+                        <Label text="⟲ They Don't Match!" styleClass="nomatch-title"/>
+                        <Label wrapText="true" alignment="CENTER" text="Cards flip back over. Try to remember where they are!" styleClass="nomatch-explanation" maxWidth="600"/>
+                    </VBox>
+
+                    <VBox alignment="CENTER" styleClass="goal-box-purple">
+                        <padding>
+                            <Insets top="16" right="24" bottom="16" left="24"/>
+                        </padding>
+                        <Label wrapText="true" alignment="CENTER" text="Goal: Keep flipping cards until you find all the matching pairs." styleClass="goal-text-bold" maxWidth="600"/>
+                    </VBox>
+                </VBox>
+
+                <!-- Page 6: All Set -->
+                <VBox spacing="20" alignment="CENTER" fx:id="pageAllSet" maxWidth="800">
+                    <Label text="You're All Set!" styleClass="matching-page-title" />
+                    <Label wrapText="true" alignment="CENTER" text="Remember: Each card has a matching pair. Flip carefully, pay attention and try to remember what you have seen. Take your time, have fun and don't worry if you miss a few. Do your best!" styleClass="matching-lead-text" maxWidth="700" />
+                </VBox>
+            </StackPane>
+        </VBox>
+    </center>
+
+    <!-- FOOTER -->
+    <bottom>
+        <HBox styleClass="matching-tutorial-footer" alignment="CENTER" spacing="12">
+            <padding>
+                <Insets top="20" right="32" bottom="20" left="32"/>
+            </padding>
+
+            <Button text="← Back" fx:id="backButton" onAction="#onBack" styleClass="btn-matching-back"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <!-- Pagination dots with navigation arrows -->
+            <HBox alignment="CENTER" spacing="12">
+                <Button text="◀" fx:id="btnPrev" styleClass="btn-pagination-arrow"/>
+                <HBox spacing="8" alignment="CENTER" fx:id="dots">
+                    <Circle radius="6" style="-fx-fill: #c2bfc2;"/>
+                    <Circle radius="6" style="-fx-fill: #c2bfc2;"/>
+                    <Circle radius="6" style="-fx-fill: #c2bfc2;"/>
+                    <Circle radius="6" style="-fx-fill: #c2bfc2;"/>
+                    <Circle radius="6" style="-fx-fill: #c2bfc2;"/>
+                    <Circle radius="6" style="-fx-fill: #c2bfc2;"/>
+                </HBox>
+                <Button text="▶" fx:id="btnNext" styleClass="btn-pagination-arrow"/>
+            </HBox>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Button text="Next →" fx:id="nextButton" onAction="#onNext" styleClass="btn-matching-next" />
+            <Button text="Start Playing" fx:id="beginButton" onAction="#onBegin" styleClass="btn-matching-next" visible="false" managed="false" />
+        </HBox>
+    </bottom>
+</BorderPane>

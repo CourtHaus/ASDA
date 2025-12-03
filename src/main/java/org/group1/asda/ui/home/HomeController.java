@@ -12,6 +12,8 @@ public class HomeController {
     @FXML private Button startBtn;
     @FXML private Button matchingGameBtn;
     @FXML private Button attentionGameBtn;
+    @FXML private Button emotionalSurveyBtn;
+    @FXML private Button emotionRecognitionBtn;
 
     @FXML
     public void initialize() {
@@ -29,13 +31,23 @@ public class HomeController {
 
     @FXML
     public void onStartMatchingGame(ActionEvent e) {
-        // Route to matching game
-        Router.getInstance().goTo("matching-game");
+        // Route to matching game tutorial before starting the game
+        Router.getInstance().goTo("matching-game-tutorial");
     }
 
     @FXML
     public void onStartAttentionGame(ActionEvent e) {
         // Route to attention game tutorial before starting the game
         Router.getInstance().goTo("attention-game-tutorial");
+    }
+
+    @FXML
+    public void onStartEmotionalSurvey(ActionEvent e) {
+        Router.getInstance().goTo("emotional-survey");
+    }
+
+    @FXML
+    public void onStartEmotionRecognition(ActionEvent e) {
+        Router.getInstance().goTo("emotion-recognition");
     }
 }

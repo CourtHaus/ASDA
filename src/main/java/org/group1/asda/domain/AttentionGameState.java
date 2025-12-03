@@ -57,4 +57,11 @@ public class AttentionGameState {
 
         return String.format("%s.\nRecommendation: %s\n(Non-diagnostic: consider a clinician if concerns persist.)", band, rec);
     }
+
+    public double getElapsedTimeSeconds() {
+        if (endNano > startNano) {
+            return (endNano - startNano) / 1_000_000_000.0;
+        }
+        return 0.0;
+    }
 }

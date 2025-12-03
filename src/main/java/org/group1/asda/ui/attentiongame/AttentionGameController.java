@@ -2,32 +2,45 @@ package org.group1.asda.ui.attentiongame;
 
 import javafx.animation.PauseTransition;
 import javafx.fxml.FXML;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 import org.group1.asda.domain.AttentionGameState;
 import org.group1.asda.domain.Stimulus;
 import org.group1.asda.navigation.Router;
 
-import java.util.Optional;
 import java.util.Random;
 
 public class AttentionGameController {
     @FXML private BorderPane rootPane;
-    @FXML private Label headerLabel;
-    @FXML private Canvas stimulusCanvas;
-    @FXML private Label statsLabel;
+    @FXML private ImageView shapeImageView;
+    @FXML private Label trialsLabel;
+    @FXML private Label correctLabel;
+    @FXML private Label incorrectLabel;
+    @FXML private Label accuracyLabel;
+    @FXML private VBox gameContent;
+    @FXML private VBox pauseOverlay;
+    @FXML private Button pauseButton;
+    @FXML private Button resumeButton;
 
-    // Pastel Colors
-    private static final Color PRIMARY_COLOR   = Color.rgb(255, 182, 193); // Light Pink
-    private static final Color SECONDARY_COLOR = Color.rgb(176, 224, 230); // Powder Blue
+    // Shape images (blue and red)
+    private Image blueCircle;
+    private Image blueSquare;
+    private Image blueTriangle;
+    private Image redCircle;
+    private Image redTriangle;
+    private Image redSquare;
+
+    // Colors
+    private static final Color BLUE_COLOR = Color.rgb(120, 150, 179);  // #7896b3
+    private static final Color RED_COLOR = Color.rgb(255, 114, 114);   // #ff7272
 
     // Config
     private static final int TOTAL_TRIALS = 100;
@@ -42,12 +55,15 @@ public class AttentionGameController {
     private boolean awaitingResponse = false;
     private boolean pressedThisTrial = false;
     private int trialIndex = 0;
+    private boolean isPaused = false;
 
     private PauseTransition showTimer;
     private PauseTransition isiTimer;
 
     @FXML
     public void initialize() {
+        loadShapeImages();
+
         // Setup keyboard handler
         rootPane.setOnKeyPressed(this::onKeyPressed);
         rootPane.setFocusTraversable(true);
@@ -57,6 +73,21 @@ public class AttentionGameController {
         startGame();
     }
 
+    private void loadShapeImages() {
+        try {
+            blueCircle = new Image(getClass().getResourceAsStream("/images/loading/Ellipse 9.png"));
+            blueSquare = new Image(getClass().getResourceAsStream("/images/loading/Rectangle 25.png"));
+            blueTriangle = new Image(getClass().getResourceAsStream("/images/loading/Polygon 8.png"));
+            redCircle = new Image(getClass().getResourceAsStream("/images/loading/Ellipse 10.png"));
+            // For red triangle and square, we'll use a placeholder or create red versions
+            // For now, using the available images
+            redTriangle = new Image(getClass().getResourceAsStream("/images/loading/Polygon 8.png")); // TODO: Add red version
+            redSquare = new Image(getClass().getResourceAsStream("/images/loading/Rectangle 25.png")); // TODO: Add red version
+        } catch (Exception e) {
+            System.err.println("Error loading shape images: " + e.getMessage());
+        }
+    }
+
     private void startGame() {
         gameState.resetRoundStats();
         gameState.startTimer();
@@ -64,7 +95,7 @@ public class AttentionGameController {
         showTimer = new PauseTransition(Duration.millis(STIMULUS_MS));
         showTimer.setOnFinished(e -> {
             scoreTrial();
-            clearCanvas();
+            clearShape();
             awaitingResponse = false;
             pressedThisTrial = false;
             isiTimer.play();
@@ -83,7 +114,7 @@ public class AttentionGameController {
         }
 
         current = randomStimulus();
-        drawStimulus(current);
+        displayStimulus(current);
 
         awaitingResponse = true;
         pressedThisTrial = false;
@@ -92,7 +123,7 @@ public class AttentionGameController {
         showTimer.playFromStart();
 
         trialIndex++;
-        updateStatsLabel();
+        updateStatsDisplay();
     }
 
     private void onKeyPressed(KeyEvent event) {
@@ -102,7 +133,7 @@ public class AttentionGameController {
     }
 
     private void onSpacePressed() {
-        if (!awaitingResponse || pressedThisTrial) return;
+        if (!awaitingResponse || pressedThisTrial || isPaused) return;
         pressedThisTrial = true;
     }
 
@@ -117,81 +148,142 @@ public class AttentionGameController {
         }
 
         last = current;
-        updateStatsLabel();
+        updateStatsDisplay();
     }
 
-    private void updateStatsLabel() {
+    private void updateStatsDisplay() {
         int correct = gameState.getTotalCorrect();
         int incorrect = gameState.getTotalIncorrect();
         int attempts = correct + incorrect;
         double accuracy = gameState.getAccuracy();
-        statsLabel.setText(String.format(
-            "Trials: %d/%d   Correct: %d   Incorrect: %d   Accuracy: %.1f%%",
-            attempts, TOTAL_TRIALS, correct, incorrect, accuracy));
+
+        trialsLabel.setText(String.format("%d/%d", attempts, TOTAL_TRIALS));
+        correctLabel.setText(String.valueOf(correct));
+        incorrectLabel.setText(String.valueOf(incorrect));
+        accuracyLabel.setText(String.format("%.0f", accuracy));
     }
 
     private void endGame() {
         gameState.stopTimer();
+        navigateToResults();
+    }
 
-        String finalSummary = gameState.getFinalSummary();
-        String attentionProfile = gameState.getAttentionPerformanceIndex();
+    private void navigateToResults() {
+        AttentionGameResultsController resultsController =
+            Router.getInstance().goToAndGetController("attention-game-results", AttentionGameResultsController.class);
 
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Game Complete");
-        alert.setHeaderText("Concentration & Attention Game Complete!");
-        alert.setContentText(
-            finalSummary + "\n\n" + attentionProfile +
-            "\n\nNote: This tool is for research and self-awareness only.\n" +
-            "It does not diagnose ADHD, ADD, Autism, or any medical condition.\n" +
-            "If significant attention variance is indicated, consider seeking a licensed clinician for formal evaluation."
-        );
-
-        ButtonType homeButton = new ButtonType("Return to Home");
-        alert.getButtonTypes().setAll(homeButton);
-
-        Optional<ButtonType> result = alert.showAndWait();
-        if (result.isPresent()) {
+        if (resultsController != null) {
+            resultsController.setGameState(gameState);
+        } else {
+            System.err.println("Error loading results screen controller");
+            // Fallback to home
             Router.getInstance().goTo("home");
         }
     }
 
     private Stimulus randomStimulus() {
         String[] shapes = {"Circle", "Square", "Triangle"};
-        Color[] colors = {PRIMARY_COLOR, SECONDARY_COLOR};
+        Color[] colors = {BLUE_COLOR, RED_COLOR};
         return new Stimulus(shapes[rng.nextInt(shapes.length)], colors[rng.nextInt(colors.length)]);
     }
 
-    private void drawStimulus(Stimulus stimulus) {
-        GraphicsContext gc = stimulusCanvas.getGraphicsContext2D();
-        gc.clearRect(0, 0, stimulusCanvas.getWidth(), stimulusCanvas.getHeight());
+    private void displayStimulus(Stimulus stimulus) {
+        if (stimulus == null) {
+            clearShape();
+            return;
+        }
 
-        if (stimulus == null) return;
-
-        double canvasW = stimulusCanvas.getWidth();
-        double canvasH = stimulusCanvas.getHeight();
-        double size = Math.min(canvasW, canvasH) / 3;
-        double x = (canvasW - size) / 2;
-        double y = (canvasH - size) / 2;
-
-        gc.setFill(stimulus.getColor());
-
-        switch (stimulus.getShape()) {
-            case "Circle":
-                gc.fillOval(x, y, size, size);
-                break;
-            case "Square":
-                gc.fillRect(x, y, size, size);
-                break;
-            case "Triangle":
-                double[] xPoints = {x + size / 2, x, x + size};
-                double[] yPoints = {y, y + size, y + size};
-                gc.fillPolygon(xPoints, yPoints, 3);
-                break;
+        Image image = getShapeImage(stimulus);
+        if (image != null) {
+            shapeImageView.setImage(image);
+            shapeImageView.setVisible(true);
         }
     }
 
-    private void clearCanvas() {
-        GraphicsContext gc = stimulusCanvas.getGraphicsContext2D();
-        gc.clearRect(0, 0, stimulusCanvas.getWidth(), stimulusCanvas.getHeight());
+    private Image getShapeImage(Stimulus stimulus) {
+        boolean isBlue = stimulus.getColor().equals(BLUE_COLOR);
+        String shape = stimulus.getShape();
+
+        if ("Circle".equals(shape)) {
+            return isBlue ? blueCircle : redCircle;
+        } else if ("Square".equals(shape)) {
+            return isBlue ? blueSquare : redSquare;
+        } else if ("Triangle".equals(shape)) {
+            return isBlue ? blueTriangle : redTriangle;
+        }
+
+        return null;
+    }
+
+    private void clearShape() {
+        shapeImageView.setImage(null);
+        shapeImageView.setVisible(false);
+    }
+
+    @FXML
+    private void onPause() {
+        if (isPaused) return;
+
+        isPaused = true;
+        pauseTimers();
+
+        // Show pause overlay
+        gameContent.setVisible(false);
+        pauseOverlay.setVisible(true);
+        pauseOverlay.setManaged(true);
+
+        // Swap buttons
+        pauseButton.setVisible(false);
+        pauseButton.setManaged(false);
+        resumeButton.setVisible(true);
+        resumeButton.setManaged(true);
+    }
+
+    @FXML
+    private void onResume() {
+        if (!isPaused) return;
+
+        isPaused = false;
+        resumeTimers();
+
+        // Hide pause overlay
+        gameContent.setVisible(true);
+        pauseOverlay.setVisible(false);
+        pauseOverlay.setManaged(false);
+
+        // Swap buttons
+        pauseButton.setVisible(true);
+        pauseButton.setManaged(true);
+        resumeButton.setVisible(false);
+        resumeButton.setManaged(false);
+
+        rootPane.requestFocus();
+    }
+
+    @FXML
+    private void onHome() {
+        // Stop timers before leaving
+        if (showTimer != null) showTimer.stop();
+        if (isiTimer != null) isiTimer.stop();
+
+        Router.getInstance().goTo("home");
+    }
+
+    private void pauseTimers() {
+        if (showTimer != null && showTimer.getStatus() == PauseTransition.Status.RUNNING) {
+            showTimer.pause();
+        }
+        if (isiTimer != null && isiTimer.getStatus() == PauseTransition.Status.RUNNING) {
+            isiTimer.pause();
+        }
+    }
+
+    private void resumeTimers() {
+        if (showTimer != null && showTimer.getStatus() == PauseTransition.Status.PAUSED) {
+            showTimer.play();
+        }
+        if (isiTimer != null && isiTimer.getStatus() == PauseTransition.Status.PAUSED) {
+            isiTimer.play();
+        }
     }
 }

@@ -15,6 +15,8 @@
             <Button fx:id="startBtn" text="Start Questionnaire" onAction="#onStart" styleClass="primary" />
             <Button fx:id="matchingGameBtn" text="Start Matching Game" onAction="#onStartMatchingGame" styleClass="primary" />
             <Button fx:id="attentionGameBtn" text="Start Attention Game" onAction="#onStartAttentionGame" styleClass="primary" />
+            <Button fx:id="emotionalSurveyBtn" text="Emotional Response Survey" onAction="#onStartEmotionalSurvey" styleClass="primary" />
+            <Button fx:id="emotionRecognitionBtn" text="Emotion Recognition Game" onAction="#onStartEmotionRecognition" styleClass="primary" />
         </VBox>
     </center>
 </BorderPane>

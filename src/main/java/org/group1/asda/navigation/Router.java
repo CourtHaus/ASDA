@@ -34,6 +34,12 @@ public class Router {
         URL results = getClass().getResource("/css/results.css");
         URL attentionGameTutorial = getClass().getResource("/css/attention-game-tutorial.css");
         URL attentionGame = getClass().getResource("/css/attention-game.css");
+        URL attentionGameResults = getClass().getResource("/css/attention-game-results.css");
+        URL matchingGameTutorial = getClass().getResource("/css/matching-game-tutorial.css");
+        URL matchingGame = getClass().getResource("/css/matching-game.css");
+        URL matchingGameResults = getClass().getResource("/css/matching-game-results.css");
+        URL emotionalSurvey = getClass().getResource("/css/emotional-survey.css");
+        URL emotionRecognition = getClass().getResource("/css/emotion-recognition.css");
 
         if (base != null) scene.getStylesheets().add(base.toExternalForm());
         if (theme != null) scene.getStylesheets().add(theme.toExternalForm());
@@ -44,6 +50,12 @@ public class Router {
         if (results != null) scene.getStylesheets().add(results.toExternalForm());
         if (attentionGameTutorial != null) scene.getStylesheets().add(attentionGameTutorial.toExternalForm());
         if (attentionGame != null) scene.getStylesheets().add(attentionGame.toExternalForm());
+        if (attentionGameResults != null) scene.getStylesheets().add(attentionGameResults.toExternalForm());
+        if (matchingGameTutorial != null) scene.getStylesheets().add(matchingGameTutorial.toExternalForm());
+        if (matchingGame != null) scene.getStylesheets().add(matchingGame.toExternalForm());
+        if (matchingGameResults != null) scene.getStylesheets().add(matchingGameResults.toExternalForm());
+        if (emotionalSurvey != null) scene.getStylesheets().add(emotionalSurvey.toExternalForm());
+        if (emotionRecognition != null) scene.getStylesheets().add(emotionRecognition.toExternalForm());
 
         stage.setScene(scene);
     }
@@ -56,9 +68,14 @@ public class Router {
             case "questionnaire-intro" -> load("/fxml/questionnaire-intro.fxml");
             case "questionnaire" -> load("/fxml/questionnaire.fxml");
             case "results" -> load("/fxml/results.fxml");
+            case "matching-game-tutorial" -> load("/fxml/matching-game-tutorial.fxml");
             case "matching-game" -> load("/fxml/matching-game.fxml");
+            case "matching-game-results" -> load("/fxml/matching-game-results.fxml");
             case "attention-game-tutorial" -> load("/fxml/attention-game-tutorial.fxml");
             case "attention-game" -> load("/fxml/attention-game.fxml");
+            case "attention-game-results" -> load("/fxml/attention-game-results.fxml");
+            case "emotional-survey" -> load("/fxml/emotional-survey.fxml");
+            case "emotion-recognition" -> load("/fxml/emotion-recognition.fxml");
             default -> new Label("Unknown screen: " + screen);
         };
         if (root.getChildren().isEmpty()) {
@@ -80,9 +97,14 @@ public class Router {
             case "questionnaire-intro" -> "/fxml/questionnaire-intro.fxml";
             case "questionnaire" -> "/fxml/questionnaire.fxml";
             case "results" -> "/fxml/results.fxml";
+            case "matching-game-tutorial" -> "/fxml/matching-game-tutorial.fxml";
             case "matching-game" -> "/fxml/matching-game.fxml";
+            case "matching-game-results" -> "/fxml/matching-game-results.fxml";
             case "attention-game-tutorial" -> "/fxml/attention-game-tutorial.fxml";
             case "attention-game" -> "/fxml/attention-game.fxml";
+            case "attention-game-results" -> "/fxml/attention-game-results.fxml";
+            case "emotional-survey" -> "/fxml/emotional-survey.fxml";
+            case "emotion-recognition" -> "/fxml/emotion-recognition.fxml";
             default -> null;
         };
         if (path == null) return null;

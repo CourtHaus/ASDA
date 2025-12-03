@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.ImageView?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.group1.asda.ui.emotionrecognition.EmotionRecognitionController"
+            fx:id="rootPane"
+            stylesheets="@../css/emotion-recognition.css"
+            styleClass="emotion-root"
+            prefWidth="980" prefHeight="700">
+
+    <top>
+        <VBox styleClass="emotion-header">
+            <padding>
+                <Insets top="24" right="32" bottom="24" left="32"/>
+            </padding>
+            <Label text="Emotion Recognition Game" styleClass="emotion-title"/>
+            <Label fx:id="questionLabel" text="Pattern 1 of 20" styleClass="emotion-subtitle"/>
+            <ProgressBar fx:id="progressBar" prefWidth="900" prefHeight="8" styleClass="emotion-progress"/>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="32" styleClass="emotion-content">
+            <padding>
+                <Insets top="32" right="48" bottom="32" left="48"/>
+            </padding>
+
+            <StackPane styleClass="image-container" prefHeight="350">
+                <ImageView fx:id="patternImage" fitWidth="450" fitHeight="350" preserveRatio="true"/>
+            </StackPane>
+
+            <VBox alignment="CENTER" spacing="16" maxWidth="600">
+                <Label text="What emotion does this pattern evoke?" styleClass="instruction-text"/>
+                <GridPane hgap="12" vgap="12" alignment="CENTER">
+                    <Button fx:id="option1" text="Option 1" onAction="#onOption1" styleClass="btn-option" GridPane.columnIndex="0" GridPane.rowIndex="0" prefWidth="140"/>
+                    <Button fx:id="option2" text="Option 2" onAction="#onOption2" styleClass="btn-option" GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="140"/>
+                    <Button fx:id="option3" text="Option 3" onAction="#onOption3" styleClass="btn-option" GridPane.columnIndex="0" GridPane.rowIndex="1" prefWidth="140"/>
+                    <Button fx:id="option4" text="Option 4" onAction="#onOption4" styleClass="btn-option" GridPane.columnIndex="1" GridPane.rowIndex="1" prefWidth="140"/>
+                </GridPane>
+            </VBox>
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER" spacing="16" styleClass="emotion-footer">
+            <padding>
+                <Insets top="20" right="32" bottom="20" left="32"/>
+            </padding>
+
+            <Label fx:id="feedbackLabel" text="" styleClass="feedback-label"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Home" onAction="#onHome" styleClass="btn-home"/>
+        </HBox>
+    </bottom>
+</BorderPane>

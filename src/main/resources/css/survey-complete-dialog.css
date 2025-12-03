@@ -1,0 +1,110 @@
+/* Survey Complete Dialog Styles */
+
+.dialog-root {
+    -fx-background-color: white;
+    -fx-background-radius: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 20, 0, 0, 4);
+}
+
+.dialog-icon {
+    -fx-text-fill: #8ba888;
+    -fx-font-size: 48px;
+    -fx-font-weight: bold;
+}
+
+.dialog-title {
+    -fx-text-fill: #2d2d2d;
+    -fx-font-size: 28px;
+    -fx-font-weight: 600;
+}
+
+.dialog-message {
+    -fx-text-fill: #4a4a4a;
+    -fx-font-size: 16px;
+    -fx-font-weight: 400;
+    -fx-text-alignment: center;
+}
+
+.dialog-stat {
+    -fx-text-fill: #b8a6d4;
+    -fx-font-size: 18px;
+    -fx-font-weight: 700;
+    -fx-text-alignment: center;
+}
+
+.question-box {
+    -fx-background-color: #f8f9ff;
+    -fx-border-color: #d4a6c4;
+    -fx-border-width: 2;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+}
+
+.question-text {
+    -fx-text-fill: #5a5a5a;
+    -fx-font-size: 15px;
+    -fx-font-weight: 500;
+    -fx-text-alignment: center;
+}
+
+.question-highlight {
+    -fx-text-fill: #d4a6c4;
+    -fx-font-size: 18px;
+    -fx-font-weight: 700;
+    -fx-text-alignment: center;
+}
+
+.question-subtext {
+    -fx-text-fill: #7a7a7a;
+    -fx-font-size: 13px;
+    -fx-font-style: italic;
+    -fx-text-alignment: center;
+}
+
+.btn-primary-dialog {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #d4a6c4 0%, #b88ba8 100%);
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-weight: 600;
+    -fx-background-radius: 22;
+    -fx-padding: 12 24;
+    -fx-cursor: HAND;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 8, 0, 0, 2);
+}
+
+.btn-primary-dialog:hover {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #c496b4 0%, #a87b98 100%);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 3);
+}
+
+.btn-secondary-dialog {
+    -fx-background-color: white;
+    -fx-border-color: #d4a6c4;
+    -fx-border-width: 2;
+    -fx-text-fill: #b88ba8;
+    -fx-font-size: 15px;
+    -fx-font-weight: 600;
+    -fx-background-radius: 22;
+    -fx-border-radius: 22;
+    -fx-padding: 12 24;
+    -fx-cursor: HAND;
+}
+
+.btn-secondary-dialog:hover {
+    -fx-background-color: #f8f4f8;
+    -fx-border-color: #b88ba8;
+}
+
+.btn-link-dialog {
+    -fx-background-color: transparent;
+    -fx-text-fill: #8a8a8a;
+    -fx-font-size: 14px;
+    -fx-font-weight: 500;
+    -fx-underline: true;
+    -fx-cursor: HAND;
+    -fx-padding: 8 16;
+}
+
+.btn-link-dialog:hover {
+    -fx-text-fill: #5a5a5a;
+}

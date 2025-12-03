@@ -5,24 +5,89 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="org.group1.asda.ui.matchinggame.MatchingGameController"
-            styleClass="game-container">
+            fx:id="rootPane"
+            stylesheets="@../css/matching-game.css"
+            styleClass="matching-game-root"
+            prefWidth="980" prefHeight="700">
+
+    <!-- Header -->
     <top>
-        <VBox spacing="8" styleClass="toolbar">
-            <Label text="Memory Matching Game" styleClass="title" />
-            <Label fx:id="statsLabel" text="Round 1" styleClass="stats-label" />
-        </VBox>
+        <HBox styleClass="matching-game-header" alignment="CENTER_LEFT">
+            <padding>
+                <Insets top="24" right="32" bottom="24" left="32"/>
+            </padding>
+
+            <!-- Title and instruction -->
+            <VBox spacing="4" HBox.hgrow="ALWAYS">
+                <Label text="Matching Game" styleClass="matching-game-title"/>
+                <Label text="Find all the matching pairs!" styleClass="matching-game-subtitle"/>
+            </VBox>
+
+            <!-- Stats -->
+            <HBox spacing="24" alignment="CENTER_RIGHT">
+                <VBox spacing="2" alignment="TOP_RIGHT">
+                    <Label text="Round" styleClass="stat-label"/>
+                    <Label fx:id="roundLabel" text="1" styleClass="stat-value"/>
+                </VBox>
+                <VBox spacing="2" alignment="TOP_RIGHT">
+                    <Label text="Correct" styleClass="stat-label"/>
+                    <Label fx:id="correctLabel" text="0" styleClass="stat-value"/>
+                </VBox>
+                <VBox spacing="2" alignment="TOP_RIGHT">
+                    <Label text="Incorrect" styleClass="stat-label"/>
+                    <Label fx:id="incorrectLabel" text="0" styleClass="stat-value"/>
+                </VBox>
+                <VBox spacing="2" alignment="TOP_RIGHT">
+                    <Label text="Accuracy" styleClass="stat-label"/>
+                    <Label fx:id="accuracyLabel" text="100%" styleClass="stat-value"/>
+                </VBox>
+            </HBox>
+        </HBox>
     </top>
+
+    <!-- Center game area -->
     <center>
-        <StackPane>
-            <GridPane fx:id="grid"
-                      alignment="CENTER"
-                      hgap="10"
-                      vgap="10"
-                      styleClass="game-grid">
+        <StackPane styleClass="matching-game-center">
+            <!-- Game content -->
+            <VBox fx:id="gameContent" alignment="CENTER" spacing="32">
                 <padding>
-                    <Insets top="20" right="20" bottom="20" left="20"/>
+                    <Insets top="32" right="32" bottom="32" left="32"/>
                 </padding>
-            </GridPane>
+
+                <!-- Card grid -->
+                <GridPane fx:id="grid" alignment="CENTER" hgap="12" vgap="12" styleClass="card-grid"/>
+
+                <!-- Instruction text -->
+                <Label fx:id="instructionLabel" text="Select two cards and see if they match. Try to remember what you see!"
+                       styleClass="instruction-label" wrapText="true" maxWidth="600" alignment="CENTER"/>
+            </VBox>
+
+            <!-- Pause overlay -->
+            <VBox fx:id="pauseOverlay" alignment="CENTER" spacing="16" visible="false" managed="false"
+                  styleClass="pause-overlay">
+                <HBox spacing="8" alignment="CENTER">
+                    <Region styleClass="pause-bar"/>
+                    <Region styleClass="pause-bar"/>
+                </HBox>
+                <Label text="Game Paused" styleClass="pause-title"/>
+                <Label text="Click Resume to continue" styleClass="pause-subtitle"/>
+            </VBox>
         </StackPane>
     </center>
+
+    <!-- Footer -->
+    <bottom>
+        <HBox alignment="CENTER" spacing="16" styleClass="matching-game-footer">
+            <padding>
+                <Insets top="20" right="32" bottom="20" left="32"/>
+            </padding>
+
+            <Button fx:id="pauseButton" text="Pause" onAction="#onPause" styleClass="btn-pause"/>
+            <Button fx:id="resumeButton" text="Resume" onAction="#onResume" styleClass="btn-pause" visible="false" managed="false"/>
+
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Button text="Home" onAction="#onHome" styleClass="btn-home"/>
+        </HBox>
+    </bottom>
 </BorderPane>

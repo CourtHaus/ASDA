@@ -7,7 +7,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.util.Duration;
-import org.group1.asda.domain.emotional.EmotionalGameState;
+import org.group1.asda.domain.emotional.FacialEmotionGameState;
 import org.group1.asda.domain.emotional.EmotionPattern;
 import org.group1.asda.navigation.Router;
 
@@ -24,7 +24,7 @@ public class EmotionRecognitionController {
     @FXML private Button option4;
     @FXML private Label feedbackLabel;
 
-    private final EmotionalGameState gameState = new EmotionalGameState();
+    private final FacialEmotionGameState gameState = new FacialEmotionGameState();
     private List<String> currentOptions;
     private boolean waitingForNext = false;
 
@@ -118,17 +118,25 @@ public class EmotionRecognitionController {
     }
 
     private void showResults() {
-        int correct = gameState.getRecognitionCorrectCount();
-        int total = gameState.getTotalQuestions();
-        double accuracy = gameState.getRecognitionAccuracy();
+        EmotionRecognitionResultsController controller = Router.getInstance()
+            .goToAndGetController("emotion-recognition-results", EmotionRecognitionResultsController.class);
+        
+        if (controller != null) {
+            controller.setGameState(gameState);
+        } else {
+            // Fallback to simple alert if controller loading fails
+            int correct = gameState.getRecognitionCorrectCount();
+            int total = gameState.getTotalQuestions();
+            double accuracy = gameState.getRecognitionAccuracy();
 
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Game Complete");
-        alert.setHeaderText("Emotion Recognition Complete!");
-        alert.setContentText(String.format("Score: %d / %d\nAccuracy: %.1f%%\n\n" +
-            "Your emotional recognition ability has been assessed.", correct, total, accuracy));
-        alert.showAndWait();
-        Router.getInstance().goTo("home");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Game Complete");
+            alert.setHeaderText("Emotion Recognition Complete!");
+            alert.setContentText(String.format("Score: %d / %d\nAccuracy: %.1f%%\n\n" +
+                "Your emotional recognition ability has been assessed.", correct, total, accuracy));
+            alert.showAndWait();
+            Router.getInstance().goTo("home");
+        }
     }
 
     @FXML

@@ -1,0 +1,159 @@
+/* Emotion Recognition Results Screen Styles */
+
+.results-root {
+    -fx-background-color: linear-gradient(from 0% 0% to 0% 100%, #f6f8fb 0%, #ffffff 100%);
+}
+
+.results-header {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #9db4c0 0%, #7fa0b3 100%);
+    -fx-background-radius: 12 12 0 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 12, 0, 0, 6);
+}
+
+.results-title {
+    -fx-text-fill: white;
+    -fx-font-size: 26px;
+    -fx-font-weight: 600;
+}
+
+.results-subtitle {
+    -fx-text-fill: rgba(255, 255, 255, 0.9);
+    -fx-font-size: 14px;
+    -fx-font-weight: 400;
+}
+
+.results-scroll {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.results-scroll .viewport {
+    -fx-background-color: transparent;
+}
+
+.results-content {
+    -fx-background-color: white;
+}
+
+.checkmark-text {
+    -fx-fill: #7fa0b3;
+    -fx-font-size: 32px;
+    -fx-text-fill: #7fa0b3;
+    -fx-font-weight: bold;
+}
+
+.completion-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #4a4a4a;
+}
+
+.stats-box {
+    -fx-background-color: white;
+    -fx-border-color: #7fa0b3;
+    -fx-border-width: 2;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+}
+
+.stat-label-bold {
+    -fx-font-size: 16px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #5a5a5a;
+}
+
+.stat-value-dark {
+    -fx-font-size: 16px;
+    -fx-font-weight: 400;
+    -fx-text-fill: #3a3a3a;
+}
+
+.feedback-box {
+    -fx-background-color: #f0f8ff;
+    -fx-border-color: #9db4c0;
+    -fx-border-width: 2;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+}
+
+.api-label {
+    -fx-font-size: 16px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #4a6b7f;
+}
+
+.api-value {
+    -fx-font-size: 16px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #4a6b7f;
+}
+
+.feedback-text {
+    -fx-font-size: 15px;
+    -fx-font-weight: 400;
+    -fx-text-fill: #4a5568;
+    -fx-wrap-text: true;
+}
+
+.warning-box {
+    -fx-background-color: #fff9e6;
+    -fx-border-color: #f4d06f;
+    -fx-border-width: 2;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+}
+
+.warning-text-bold {
+    -fx-font-size: 15px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #a04000;
+    -fx-wrap-text: true;
+}
+
+.warning-text {
+    -fx-font-size: 14px;
+    -fx-font-weight: 400;
+    -fx-text-fill: #a04000;
+    -fx-wrap-text: true;
+}
+
+.results-footer {
+    -fx-background-color: #e9e7ea;
+    -fx-background-radius: 0 0 12 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.04), 8, 0, 0, -2);
+}
+
+.btn-play-again {
+    -fx-background-color: white;
+    -fx-border-color: rgba(0, 0, 0, 0.12);
+    -fx-border-width: 1.5;
+    -fx-text-fill: #4a4a4a;
+    -fx-font-size: 15px;
+    -fx-font-weight: 500;
+    -fx-background-radius: 22;
+    -fx-border-radius: 22;
+    -fx-padding: 10 32;
+    -fx-cursor: HAND;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 4, 0, 0, 2);
+}
+
+.btn-play-again:hover {
+    -fx-background-color: #f8f8f8;
+    -fx-border-color: rgba(0, 0, 0, 0.18);
+}
+
+.btn-home {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #9db4c0 0%, #7fa0b3 100%);
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-weight: 600;
+    -fx-background-radius: 22;
+    -fx-padding: 10 36;
+    -fx-cursor: HAND;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 8, 0, 0, 3);
+}
+
+.btn-home:hover {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #8da4b0 0%, #6f90a3 100%);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4);
+}
